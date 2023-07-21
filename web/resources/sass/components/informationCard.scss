@@ -1,0 +1,12 @@
+.informationCard {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .informationCard {
+    .image-row {
+      display: none !important;
+    }
+  }
+}
+

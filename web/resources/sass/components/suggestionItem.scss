@@ -1,0 +1,14 @@
+.suggestionItem {
+  .cardInfo {
+    width: 18rem,;
+    border: 1px solid #DADADA;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .suggestionItem {
+    margin-bottom: 16px;
+    .cardInfo {
+      width: 25rem;
+    }
+  }
+}

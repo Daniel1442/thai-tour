@@ -1,0 +1,23 @@
+$grey-light: #f2f2f2;
+$grey: #a5a5a5;
+$grey-semi-dark: #5d5d5d;
+$black: #000;
+$primary-light: #ff9797;
+$primary: #d71313;
+
+$colors: (
+        "white": #fff,
+        "grey-light": $grey-light,
+        "grey": $grey,
+        "grey-semi-dark": $grey-semi-dark,
+        "black": $black,
+        "primary-light": $primary-light,
+        "primary": $primary,
+);
+
+$xl: 1400px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+$xs: 360px;
+$container-width: 1400px;
