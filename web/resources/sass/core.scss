@@ -48,6 +48,18 @@ html, body {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .mobileNavbar{
+    background-color: #05A8E6;
+    z-index: 99999999999;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    padding-left: 10px;
+  }
+}
+
 .cursor-pointer {
   cursor: pointer;
 }

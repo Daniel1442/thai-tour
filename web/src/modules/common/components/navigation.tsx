@@ -14,13 +14,14 @@ const Navigation: React.FC = () => {
     const redirectToHomepage = () => {
         router.push('/')
     }
+    const [toggle, setToggle] = useState(false)
 
 
     return (
 
         <div className={'background-blue navigation'}>
             <div className="container">
-                <nav className="navbar navbar-expand-lg navbar-light" style={{height: '60px'}}>
+                <nav className="navbar navbar-expand-lg navbar-light" style={{height: '60px'}} onClick={() => (setToggle(!toggle))}>
                     <div className="container-fluid">
                         <a href="#" className="navbar-brand">
                             <img
@@ -38,7 +39,7 @@ const Navigation: React.FC = () => {
                                 data-bs-target="#navbarCollapse">
                             <span className="navbar-toggler-icon"></span>
                         </button>
-                        <div className="collapse navbar-collapse" id="navbarCollapse">
+                        <div className={`collapse navbar-collapse mobileNavbar ${toggle ? 'show' : ''}`} id="navbarCollapse">
                             <div className="navbar-nav">
                                 <a href="" className="nav-item nav-link font-white">O nás</a>
                                 <a href="#" className="nav-item nav-link font-white">Ubytování</a>
