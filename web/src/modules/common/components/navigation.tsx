@@ -1,4 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
+import Dropdown from "./dropdown";
+import {useRouter} from "next/router";
 
 
 const Navigation: React.FC = () => {
@@ -6,6 +8,14 @@ const Navigation: React.FC = () => {
     useEffect(() => {
         width = typeof window !== 'undefined' && window.innerWidth;
     }, [width]);
+
+    const router = useRouter();
+
+    const redirectToHomepage = () => {
+        router.push('/')
+    }
+
+
     return (
 
         <div className={'background-blue navigation'}>
@@ -14,10 +24,12 @@ const Navigation: React.FC = () => {
                     <div className="container-fluid">
                         <a href="#" className="navbar-brand">
                             <img
+                                onClick={() => redirectToHomepage()}
                                 className={'mobile'}
                                 src={"https://www.thaitour.cz/favicon.png"}
                                 alt="ThaiTour"/>
                             <img
+                                onClick={() => redirectToHomepage()}
                                 className={'desktop'}
                                 src={"http://www.thaitour.cz/wp-content/themes/twentyten/images/logo.jpg"}
                                 alt="ThaiTour"/>
@@ -28,13 +40,13 @@ const Navigation: React.FC = () => {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarCollapse">
                             <div className="navbar-nav">
-                                <a href="/" className="nav-item nav-link font-white">O nás</a>
+                                <a href="" className="nav-item nav-link font-white">O nás</a>
                                 <a href="#" className="nav-item nav-link font-white">Ubytování</a>
                                 <a href="#" className="nav-item nav-link font-white">Letenky</a>
                                 <a href="#" className="nav-item nav-link font-white">Transfer</a>
                                 <a href="#" className="nav-item nav-link font-white">Výlety</a>
                                 <a href="#" className="nav-item nav-link font-white">Golf</a>
-                                <a href="#" className="nav-item nav-link font-white">O Thajsku</a>
+                                <Dropdown name={'O thajsku'}/>
                                 <a href="#" className="nav-item nav-link font-white">Kontakt</a>
                             </div>
                         </div>
