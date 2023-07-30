@@ -23,7 +23,7 @@ const Navigation: React.FC = () => {
             <div className="container">
                 <nav className="navbar navbar-expand-lg navbar-light" style={{height: '60px'}} onClick={() => (setToggle(!toggle))}>
                     <div className="container-fluid">
-                        <a href="#" className="navbar-brand">
+                        <a className="navbar-brand">
                             <img
                                 onClick={() => redirectToHomepage()}
                                 className={'mobile'}
@@ -41,14 +41,14 @@ const Navigation: React.FC = () => {
                         </button>
                         <div className={`collapse navbar-collapse mobileNavbar ${toggle ? 'show' : ''}`} id="navbarCollapse">
                             <div className="navbar-nav">
-                                <a href="" className="nav-item nav-link font-white">O nás</a>
+                                <a href="/aboutUs" className="nav-item nav-link font-white">O nás</a>
                                 <a href="#" className="nav-item nav-link font-white">Ubytování</a>
                                 <a href="#" className="nav-item nav-link font-white">Letenky</a>
                                 <a href="#" className="nav-item nav-link font-white">Transfer</a>
                                 <a href="#" className="nav-item nav-link font-white">Výlety</a>
                                 <a href="#" className="nav-item nav-link font-white">Golf</a>
                                 <Dropdown name={'O thajsku'}/>
-                                <a href="#" className="nav-item nav-link font-white">Kontakt</a>
+                                <a href="/contacts" className="nav-item nav-link font-white">Kontakt</a>
                             </div>
                         </div>
                     </div>
