@@ -1,19 +1,49 @@
 services:
   api:
-    build: 
+    container_name: api
+    build:
       context: api
       dockerfile: Dockerfile
     ports:
       - 8080:8080
     environment: 
-      DB_URL: jdbc:postgresql://192.168.60.206:5432/postgres?currentSchema=thai_tour&sslmode=disable    
+      DB_URL: jdbc:postgresql://thai_tour:5432/postgres?currentSchema=public&sslmode=disable
       DB_USERNAME: postgres   
-      DB_PASSWORD: new_password 
+      DB_PASSWORD: new_password
+    depends_on:
+      - thai_tour
   web:
+    container_name: web
     build:  
       context: web
       dockerfile: Dockerfile
     ports:
-      - 80:3000  
+      - 3000:3000
     depends_on:
       - api
+    volumes:
+      - webdata:/app/build
+  thai_tour:
+    image: 'postgres:15.1-alpine'
+    container_name: thai_tour
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=new_password
+      - POSTGRES_DB=thai_tour
+  web-server:
+    image: nginx:1.21.6-alpine
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+      - webdata:/usr/share/nginx/html/:ro
+#      - ./certbot/www/:/var/www/certbot/:ro
+#      - ./certbot/conf/:/etc/letsencrypt/
+
+volumes:
+  webdata:
+

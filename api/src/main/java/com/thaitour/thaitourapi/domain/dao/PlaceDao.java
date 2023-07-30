@@ -18,7 +18,7 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class PlaceDao {
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-    private static final String SQL_FILTER_PLACE_BASE = " from thai_tour.place pla "
+    private static final String SQL_FILTER_PLACE_BASE = " from public.place pla "
             + " where true = true %conditions% ";
 
     private static final String SQL_FILTER_PLACE = "select pla.id as id, "

@@ -7,7 +7,7 @@ spring:
       password: admin
       roles: manager
   datasource:
-    jdbc-url: 'jdbc:postgresql://192.168.60.206:5432/postgres?currentSchema=thai_tour&sslmode=disable'
+    jdbc-url: 'jdbc:postgresql://thai_tour/postgres?currentSchema=public&sslmode=disable'
     username: postgres
     password: new_password
   jpa:
@@ -20,7 +20,7 @@ spring:
         format_sql: true
   flyway:
     enabled: false
-    baseline-on-migrate: true
+#    baseline-on-migrate: true
   autoconfigure:
     exclude:
       - >-

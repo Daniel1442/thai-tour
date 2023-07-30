@@ -20,9 +20,9 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class ParameterDao {
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-    private static final String SQL_FILTER_PARAMETER_BASE = "from thai_tour.place_parameter plp "
-            + "join thai_tour.place pla on plp.place_id = pla.id "
-            + "join thai_tour.parameter par on plp.parameter_id = par.id "
+    private static final String SQL_FILTER_PARAMETER_BASE = "from public.place_parameter plp "
+            + "join public.place pla on plp.place_id = pla.id "
+            + "join public.parameter par on plp.parameter_id = par.id "
             + "where true = true %conditions% ";
 
     private static final String SQL_FILTER_PARAMETER = "select par.id as id, "
