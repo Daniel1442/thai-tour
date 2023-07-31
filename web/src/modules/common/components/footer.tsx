@@ -38,8 +38,8 @@ const Footer: React.FC<ContactProps> = ({href, contact}) => {
                         <form>
                             <h5 className={'footer-mobile'}>Reference klientů</h5>
                             <div className="d-flex flex-column flex-sm-row mt-3 gap-2 footer-mobile">
-                                <button className="btn btn btn-outline-primary" type="button">Přejít na refernce
-                                </button>
+                                <a href={'/reference'} className="btn btn btn-outline-primary" type="button">Přejít na refernce
+                                </a>
                             </div>
                         </form>
                     </div>
