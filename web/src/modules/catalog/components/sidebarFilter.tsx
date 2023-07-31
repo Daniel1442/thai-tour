@@ -24,7 +24,7 @@ const SidebarFilter: React.FC = () => {
 
     useEffect(() => {
         width = typeof window !== 'undefined' && window.innerWidth;
-        if (width > 768) {
+        if (width < 768) {
             setShowType(false)
             setShowLocation(false)
         }
