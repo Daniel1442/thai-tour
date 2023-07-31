@@ -12,7 +12,7 @@ const DestinationSideBar: React.FC = () => {
     } = useContext(PlaceContext) as PlaceContent;
 
     return (
-        <div className={'destinationSideBar my-3'}>
+        <div className={'destinationSideBar '}>
             <div className={'row'}>
                 <div className={'col-12 my-3'}>
                     <div className={'bg-white rounded p-5'}>
@@ -36,6 +36,12 @@ const DestinationSideBar: React.FC = () => {
                         <div className={'row mt-3'}>
                             <p className={'text-muted d-flex justify-content-center'}>{place &&place.review * 5} hodnocení</p>
                         </div>
+                        <div className={'row mt-3'}>
+                            <div className={'d-flex justify-content-center'}>
+                                <button className={'btn'} style={{backgroundColor: '#FFD700', color: "#fff"}}>Přidat hodnocení
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -56,7 +62,7 @@ const DestinationSideBar: React.FC = () => {
                     </div>
                 </div>
 
-                <div className={'col-12'}>
+                <div className={'col-12 my-3'}>
                     <div className={'bg-white rounded p-5'}>
                         <div className={'row'}>
 

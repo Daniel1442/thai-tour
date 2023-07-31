@@ -1,15 +1,18 @@
 import React, {useRef, useState} from 'react';
 import Button from 'react-bootstrap/Button';
 
+interface ComponentProps {
+    image: string
+}
 
-const SuggestionArticle: React.FC = () => {
+const SuggestionArticle: React.FC<ComponentProps> = ({image}) => {
 
     return (
         <div className={'suggestionItem col-lg-3 col-sm-12  d-flex justify-content-center'}>
 
-            <div className="card cardInfo">
+            <div className="card cardInfo border-0">
                 <img
-                    src="http://www.thaitour.cz/wp-content/uploads/14.jpg"
+                    src={image}
                     className="card-img-top" alt="..."/>
                 <div className="card-body mb-3">
                     <p className="card-text">

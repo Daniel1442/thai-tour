@@ -11,8 +11,8 @@ interface ContactProps {
 const Footer: React.FC<ContactProps> = ({href, contact}) => {
 
     return (
-        <div className="container">
-            <footer className="py-5">
+        <div className="container border-top">
+            <footer className="py-5" style={{}}>
                 <div className="row">
                     <div className="col-lg-4 col-md-4 col-sm-12 mb-3">
                         <h5 className={'footer-mobile'}>Kontaktní informace</h5>
@@ -56,7 +56,7 @@ const Footer: React.FC<ContactProps> = ({href, contact}) => {
 
                 </div>
 
-                <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top footer-m">
+                <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 footer-m">
                     <p className={'m-lg-0 m-sm-auto'}>© 2022 Company, Inc. All rights reserved.</p>
                     <ul className="list-unstyled d-flex footer-m">
                         <li className="ms-3"><a className="link-dark" href="#">

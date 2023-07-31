@@ -58,10 +58,10 @@ const Index = () => {
 
             <div className={'row mt-5 mb-5'}>
                 <h3 className={'mb-4'}>Nevíte kam? Inspirujte se!</h3>
-                <SuggestionArticle/>
-                <SuggestionArticle/>
-                <SuggestionArticle/>
-                <SuggestionArticle/>
+                <SuggestionArticle image={'http://www.thaitour.cz/wp-content/uploads/14.jpg'}/>
+                <SuggestionArticle image={'http://www.thaitour.cz/wp-content/uploads/21.jpg'}/>
+                <SuggestionArticle image={'http://www.thaitour.cz/wp-content/uploads/31.jpg'}/>
+                <SuggestionArticle image={'http://www.thaitour.cz/wp-content/uploads/14.jpg'}/>
             </div>
         </div>
         <Footer href={''} contact={''}/>

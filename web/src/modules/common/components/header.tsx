@@ -4,7 +4,7 @@ import ContactButton from "./contactButton";
 const Header: React.FC = () => {
 
     return (
-        <div className={'header'} style={{height: '40px', backgroundColor: '#F5F4F7'}}>
+        <div className={'header'} style={{height: '40px', backgroundColor: '#fff'}}>
             <div className={'container'}>
                 <div className={'row'}>
                     <div className={'col-12 d-flex justify-content-end'}>
