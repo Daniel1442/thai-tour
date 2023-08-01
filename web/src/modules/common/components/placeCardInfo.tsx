@@ -13,7 +13,7 @@ const PlaceCardInfo: React.FC<ComponentProps> = ({heading, text, points}) => {
                 <div className={"mt-3 col-12 d-flex justify-content-start"}><h5>{heading}</h5>
                 </div>
                 <div className={"col-12 d-flex justify-content-start"}>
-                    <p>{text}</p></div>
+                    <p className={'mb-0'}>{text}</p></div>
             </div>
             <div>
                 <div className={'importantInfo pt-3'} style={{borderRadius: ' 4px'}}>
@@ -28,7 +28,7 @@ const PlaceCardInfo: React.FC<ComponentProps> = ({heading, text, points}) => {
                                          borderRadius: '4px'
                                      }}>
                                     <div
-                                        className={'col-lg-12 col-sm-12 d-flex justify-content-start'}>
+                                        className={'col-lg-12 col-sm-12 ps-0 d-flex justify-content-start'}>
                                         <div className=' entry-content'>
                                             {points.map((element, index) => {
                                                 return <p>&#x2714; {element}</p>

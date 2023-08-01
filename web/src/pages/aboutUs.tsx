@@ -141,7 +141,7 @@ const AboutUs = () => {
                         </div>
 
                         <div className={"col-12 d-flex justify-content-start"}>
-                            <a className={'btn btn-small btn-primary'} href={'/catalog'}>On-line katalog</a>
+                            <a className={'btn btn-small '} href={'/catalog'} style={{backgroundColor: '#e9f3fb'}}>On-line katalog</a>
                         </div>
                     </div>
                     <div>
@@ -227,7 +227,7 @@ const AboutUs = () => {
                         </div>
 
                         <div className={"col-12 d-flex justify-content-start"}>
-                            <a className={'btn btn-small btn-primary'} href={'/thaiRecommendation'}>Popis
+                            <a className={'btn btn-small '} href={'/thaiRecommendation'} style={{backgroundColor: '#e9f3fb'}}>Popis
                                 lokalit</a>
                         </div>
                     </div>
@@ -245,7 +245,7 @@ const AboutUs = () => {
                         </div>
 
                         <div className={"col-12 d-flex justify-content-start"}>
-                            <a href={'#'} className={'btn btn-small btn-primary'}>Zájezdy</a>
+                            <a href={'#'} className={'btn btn-small '}>Zájezdy</a>
                         </div>
                     </div>
                     <div>
@@ -378,12 +378,12 @@ const AboutUs = () => {
                         </div>
 \
                         <div className={"col-12 d-flex justify-content-start"}>
-                            <a href={'/thaiTours'} className={'btn btn-small btn-primary'}>Výlety v
+                            <a href={'/thaiTours'} className={'btn btn-small '} style={{backgroundColor: '#e9f3fb'}}>Výlety v
                                 Thajsku</a>
                         </div>
                     </div>
                     <div className={'col-12'}>
-                        <div className={"mt-3 col-12 d-flex justify-content-start"}><h5>Golf v Thajsku</h5>
+                        <div className={"mt-3 col-12 d-flex justify-content-start"} ><h5>Golf v Thajsku</h5>
                         </div>
                         <div className={"col-12 d-flex justify-content-start"}>
                             <p>Hrajete golf? Pak si nesmíte nechat ujít golf v Thajsku! Thajsko nabízí ty
@@ -402,7 +402,7 @@ const AboutUs = () => {
                         </div>
 
                         <div className={"col-12 d-flex justify-content-start"}>
-                            <a href={'/thaiGolf'} className={'btn btn-small btn-primary'}>Golf v Thajsku</a>
+                            <a href={'/thaiGolf'} className={'btn btn-small '} style={{backgroundColor: '#e9f3fb'}}>Golf v Thajsku</a>
                         </div>
                     </div>
                     <div className={'col-12 mt-3'}>

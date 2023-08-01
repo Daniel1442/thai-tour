@@ -14,17 +14,17 @@ const InformationCard: React.FC = () => {
 
     return (
         <div className={'informationCard p-2 bg-white'} style={{borderRadius: '4px'}}>
-            <div className={'row my-3 d-flex justify-content-center image-row'}>
-                {place.placeImageListList && Object.entries(place.placeImageListList).map(([id, image], index) => {
-                    return(
-                        <div className={`col-2 me-3 ${index === 0 ? 'p-0' : ''}`}>
-                            <img
-                                src={image.target}
-                                className="rounded" alt="..."/>
-                        </div>
-                    )
-                })}
-            </div>
+            {/*<div className={'row my-3 d-flex justify-content-center image-row'}>*/}
+            {/*    {place.placeImageListList && Object.entries(place.placeImageListList).map(([id, image], index) => {*/}
+            {/*        return(*/}
+            {/*            <div className={`col-2 me-3 ${index === 0 ? 'p-0' : ''}`}>*/}
+            {/*                <img*/}
+            {/*                    src={image.target}*/}
+            {/*                    className="rounded" alt="..."/>*/}
+            {/*            </div>*/}
+            {/*        )*/}
+            {/*    })}*/}
+            {/*</div>*/}
             <div className={'row my-lg-5 mx-lg-3 m-sm-0'}>
                 {width <= 760 ?
                     <>

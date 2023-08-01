@@ -13,7 +13,7 @@ const LocalPlaceDescription = () => {
             <div className={'aboutDestination p-2 bg-white text-left'} style={{borderRadius: '4px'}}>
                 <h1 className={'my-5'}>Thajsko – Popis lokalit</h1>
                 <div className={'row m-3'}>
-                    <div className={'col-12 px-lg-5 d-flex justify-content-start'}>
+                    <div className={'col-12 d-flex justify-content-start'}>
                         <div className={'row'}>
                             <div className={"col-12 d-flex justify-content-start"}>
                                 <p>Thajsko je země plná úsměvů a zároveň je to jedna z nejoblíbenějších destinací, kde
@@ -22,7 +22,7 @@ const LocalPlaceDescription = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={'col-12 px-lg-5 d-flex justify-content-start'}>
+                    <div className={'col-12 d-flex justify-content-start'}>
                         <div className={'row'}>
                             <div className={"col-12 d-flex justify-content-start"}>
                                 <img className={'w-100 h-100'}

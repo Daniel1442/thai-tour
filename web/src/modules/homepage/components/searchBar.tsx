@@ -6,6 +6,8 @@ import {PlaceFinderPayload} from "../models";
 import SearchBarInput from "./searchBarInput";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCalendarDay, faGlobe} from "@fortawesome/free-solid-svg-icons";
+import FormDatePicker from "../../common/components/formDatePicker";
+import {initDate} from "../../common/helper/dateHelper";
 
 
 
@@ -42,7 +44,7 @@ const SearchBar: React.FC = () => {
 
                             <div className={'col-lg-3 col-sm-12 inputCol'}>
                                 <div className={'position-relative cursor-disabled '}>
-                                    <input className="form-control cursor-disabled" type="text" placeholder="Od kdy" disabled={true}
+                                    <input className="form-control cursor-disabled" type="date" placeholder="Od kdy" disabled={true}
                                            aria-label="default input example"/>
                                 <FontAwesomeIcon icon={faCalendarDay}
                                                  style={{position: "absolute", top: "10px", right: "10px", color: '#212529'}}/>
@@ -53,7 +55,7 @@ const SearchBar: React.FC = () => {
                             <div className={'col-lg-3 col-sm-12 inputCol'}>
                                 <div className={'position-relative cursor-disabled'}>
 
-                                    <input className="form-control cursor-disabled" type="text" placeholder="Kdo kdy" disabled={true}
+                                    <input className="form-control cursor-disabled" type="date" placeholder="Kdo kdy" disabled={true}
                                            aria-label="default input example"/>
                                     <FontAwesomeIcon icon={faCalendarDay}
                                                      style={{position: "absolute", top: "10px", right: "10px", color: '#212529'}}/>

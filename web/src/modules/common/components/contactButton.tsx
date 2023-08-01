@@ -9,7 +9,7 @@ interface ContactProps {
 const ContactButton: React.FC<ContactProps> = ({href, contact}) => {
 
     return (
-        <div className={'m-top-2__item contactButton'}>
+        <div className={'m-top-2__item contactButton cursor-pointer'}>
             <div className={'m-top-2__inner'}>
                 <span>
                     <a href={href} className={'btn btn--link btn--sm m-top-2__link'}>

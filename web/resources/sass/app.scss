@@ -1,10 +1,12 @@
 @import "~bootstrap";
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
 
 @import "variables";
 @import "core";
 @import "fonts";
 
 @import "components/aboutDestination";
+@import "components/datepicker";
 @import "components/contactButton";
 @import "components/catalogItem";
 @import "components/header";

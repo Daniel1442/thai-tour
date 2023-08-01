@@ -20,7 +20,7 @@ const SuggestionItem: React.FC<ComponentProps> = ({place}) => {
                 <img
                     src="http://www.thaitour.cz/wp-content/uploads/Beachfront-Swimming-Pool_Bua-Fah-Restaurant-2-198x126.jpg"
                     className="card-img-top" alt="..."/>
-                <div className="card-body mb-2">
+                <div className="card-body ">
                     <h5 className="card-title card-link mb-3"> {place.name} <StarRatings
                         rating={place.review}
                         starRatedColor="gold"

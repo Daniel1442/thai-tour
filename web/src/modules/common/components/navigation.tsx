@@ -23,7 +23,7 @@ const Navigation: React.FC = () => {
             <div className="container">
                 <nav className="navbar navbar-expand-lg navbar-light" style={{height: '60px'}} onClick={() => (setToggle(!toggle))}>
                     <div className="container-fluid">
-                        <a className="navbar-brand">
+                        <a className="navbar-brand cursor-pointer">
                             <img
                                 onClick={() => redirectToHomepage()}
                                 className={'mobile'}
