@@ -43,6 +43,7 @@ export interface PlaceDetail {
     location: string;
     type: string;
     address: string;
+    value: string;
     review: number;
     isActive: boolean;
     updatedAt: Date;

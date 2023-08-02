@@ -38,7 +38,7 @@ const SuggestionItem: React.FC<ComponentProps> = ({place}) => {
                             <UserReviewBadge review={place.review}/>
                         </div>
                         <div style={{paddingTop: '4px'}}>
-                            <b className={'text-danger'}>od 7500 Kč</b>
+                            <b className={'text-danger'}>od 7 500 Kč</b>
                         </div>
                     </li>
                 </ul>

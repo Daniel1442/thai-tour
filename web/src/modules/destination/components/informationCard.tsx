@@ -13,7 +13,7 @@ const InformationCard: React.FC = () => {
     } = useContext(PlaceContext) as PlaceContent;
 
     return (
-        <div className={'informationCard p-2 bg-white'} style={{borderRadius: '4px'}}>
+        <div className={'informationCard py-2 bg-white'} style={{borderRadius: '4px'}}>
             {/*<div className={'row my-3 d-flex justify-content-center image-row'}>*/}
             {/*    {place.placeImageListList && Object.entries(place.placeImageListList).map(([id, image], index) => {*/}
             {/*        return(*/}
@@ -25,11 +25,11 @@ const InformationCard: React.FC = () => {
             {/*        )*/}
             {/*    })}*/}
             {/*</div>*/}
-            <div className={'row my-lg-5 mx-lg-3 m-sm-0'}>
+            <div className={'row my-lg-5 mx-lg-0 m-sm-0'}>
                 {width <= 760 ?
                     <>
                         <div className={'col-12 d-flex justify-content-start'}>
-                            <h1 className={'me-2 detailHeding'}>{place && place.name}</h1>
+                            <h2 className={'me-2 detailHeding'}>{place && place.name}</h2>
                         </div>
                         <div className={'col-12 d-flex justify-content-start mb-2'}>
                             <StarRatings
@@ -45,10 +45,19 @@ const InformationCard: React.FC = () => {
                             <p>
                                 {place &&place.address}</p>
                         </div>
+                        <div className={'col-12 d-flex justify-content-start'}>
+                            <p>
+                                {place &&place.value}</p>
+                        </div>
+                        <div className={'col-12 d-flex justify-content-start'}>
+                            <a href={'#moreInfo'} className={'text-decoration-none cursor-pointer'}>
+                                Více informací o místě</a>
+                        </div>
+
                     </> :
                     <>
                         <div className={'col-12 d-flex justify-content-start'}>
-                            <h1 className={'me-2'}>{place && place.name}</h1>
+                            <h2 className={'me-2'}>{place && place.name}</h2>
                             <StarRatings
                                 rating={place &&place.review}
                                 starRatedColor="gold"
@@ -61,7 +70,14 @@ const InformationCard: React.FC = () => {
                         <div className={'col-12 d-flex justify-content-start'}>
                             <p>
                                 {place &&place.address}</p>
-
+                        </div>
+                        <div className={'col-12 d-flex justify-content-start'}>
+                            <p>
+                                {place &&place.value}</p>
+                        </div>
+                        <div className={'col-12 d-flex justify-content-start'}>
+                            <a href={'#moreInfo'} className={'text-decoration-none cursor-pointer'}>
+                                Více informací o místě</a>
                         </div>
                     </>
                 }

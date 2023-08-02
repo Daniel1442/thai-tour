@@ -27,12 +27,12 @@ const Dropdown: React.FC<DropdownProps> = ({name}) => {
     return (
         <div className={'dropdown'}>
             <a href="#" className="nav-item nav-link font-white dropdown-toggle" onClick={() => setToggle(!toggle)}  data-bs-toggle="dropdown" aria-expanded="false">{name}</a>
-            <ul className={`dropdown-menu ${toggle ? 'show':''}`} ref={wrapperRef}>
-                <li><a className="dropdown-item" href="/localPlacesDescription">Popis lokalit</a></li>
-                <li><a className="dropdown-item" href="#">Počasí v Thajsku</a></li>
-                <li><a className="dropdown-item" href="#">Výlety v Thajsku</a></li>
-                <li><a className="dropdown-item" href="#">Golf v Thajsku</a></li>
-                <li><a className="dropdown-item" href="#">Co navštívit v Thajsku</a></li>
+            <ul className={`dropdown-menu background-blue ${toggle ? 'show':''}`} ref={wrapperRef}>
+                <li><a className="dropdown-item font-white" href="/localPlacesDescription">Popis lokalit</a></li>
+                <li><a className="dropdown-item font-white" href="#">Počasí v Thajsku</a></li>
+                <li><a className="dropdown-item font-white" href="#">Výlety v Thajsku</a></li>
+                <li><a className="dropdown-item font-white" href="#">Golf v Thajsku</a></li>
+                <li><a className="dropdown-item font-white" href="#">Co navštívit v Thajsku</a></li>
             </ul>
         </div>
     )

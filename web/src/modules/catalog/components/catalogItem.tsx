@@ -14,7 +14,7 @@ const CatalogItem: React.FC<ComponentProps> = ({place}) => {
         router.push(`/destination?id=${placeId}`)
     }
     return (
-        <div className={'catalogItem background-white mt-3 rounded-corners'}>
+        <div className={'catalogItem background-white mt-3 rounded-corners cursor-pointer'} onClick={() => redirectToDetail(place && place.id)}>
             <div className={'row'}>
                 <div className={'col-4'}>
                     <img src={place && place.image}/>
@@ -41,7 +41,7 @@ const CatalogItem: React.FC<ComponentProps> = ({place}) => {
                             <UserReviewBadge review={place.review}/>
                         </div>
                         <div className={'col-6 d-flex justify-content-end'}>
-                            <b className={'font-red      me-4 mt-2'}> od 1200 Kč za os.</b>
+                            <b className={'font-red      me-4 mt-2'}> od 1 200 Kč za os.</b>
                             <button className={'btn btn-sm background-yellow rounded-corners font-white me-3 ms-3'} style={{    width: '70px',
                                 height: '30px',
                                 marginTop: '4px'}}

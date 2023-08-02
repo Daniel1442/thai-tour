@@ -56,7 +56,7 @@ const InformationImageCard: React.FC = () => {
         <div className={'informationImageCard'}>
             <div className={'row my-3'}>
                 <div className={'col-12'}>
-                    <ImageGallery items={images} showNav={false} showThumbnails={true} infinite={true}
+                    <ImageGallery items={images} showNav={true} showThumbnails={true} infinite={true}
                                   showFullscreenButton={true} showPlayButton={false}/>
                 </div>
             </div>

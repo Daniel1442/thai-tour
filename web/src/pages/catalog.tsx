@@ -7,6 +7,7 @@ import Header from "../modules/common/components/header";
 import {PlaceContent, PlaceContext} from "../context/placeContext";
 import {useRouter} from "next/router";
 import {PlaceFinderPayload} from "../modules/homepage/models";
+import CatalogItemMobile from "../modules/catalog/components/catalogItemMobile";
 
 const Catalog = () => {
     const router = useRouter()
@@ -17,6 +18,10 @@ const Catalog = () => {
         payload
     } = useContext(PlaceContext) as PlaceContent;
 
+    let width = typeof window !== 'undefined' && window.innerWidth;
+    useEffect(() => {
+        width = typeof window !== 'undefined' && window.innerWidth;
+    }, [width]);
 
     useEffect(() => {
         if (payload == null) {
@@ -39,7 +44,10 @@ const Catalog = () => {
                 <div className={'col-lg-8 col-sm-12'}>
                     {placeList.length > 0 ? Object.entries(placeList).map(([id, place]) => {
                         return (
-                            <CatalogItem place={place} key={id}/>
+                            width > 768 ?
+                                <CatalogItem place={place} key={id}/>
+                                : <CatalogItemMobile place={place} key={id}/>
+
                         )
                     }) : <div className="alert alert-danger mt-3" role="alert">
                         <h4 className="alert-heading">Bohužel!</h4>
@@ -47,6 +55,19 @@ const Catalog = () => {
                         <hr/>
                         <p className="mb-0">Zkuste upravit své filtry</p>
                     </div>}
+                    <nav aria-label="Page navigation example" className={'mt-5'}>
+                        <ul className="pagination justify-content-center">
+                            <li className="page-item disabled">
+                                <a className="page-link font-blue" href="#" >Předcházející</a>
+                            </li>
+                            <li className="page-item "><a className="page-link" href="#">1</a></li>
+                            <li className="page-item "><a className="page-link" href="#">2</a></li>
+                            <li className="page-item "><a className="page-link" href="#">3</a></li>
+                            <li className="page-item ">
+                                <a className="page-link font-blue" href="#">Další</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
 
             </div>

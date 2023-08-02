@@ -8,8 +8,8 @@ const Header: React.FC = () => {
             <div className={'container'}>
                 <div className={'row'}>
                     <div className={'col-12 d-flex justify-content-end'}>
-                        <ContactButton href={'tel: +420 777 625 302'} contact={'Zavolejte na: +420 777 625 302'} key={'phoneBtn'}/>
-                        <ContactButton href={'mailto: info@thaitour.cz'} contact={'Napište na: info@thaitour.cz'} key={'emailBtn'}/>
+                        <ContactButton type={"phone"}href={'tel: +420 777 625 302'} contact={'Zavolejte na: +420 777 625 302'} key={'phoneBtn'}/>
+                        <ContactButton type={'mail'} href={'mailto: info@thaitour.cz'} contact={'Napište na: info@thaitour.cz'} key={'emailBtn'}/>
                     </div>
                 </div>
             </div>

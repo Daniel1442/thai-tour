@@ -1,41 +1,49 @@
 import React, {useRef, useState} from 'react';
 import StarRatings from "react-star-ratings";
 import {useRouter} from "next/router";
-
-const CatalogItemMobile: React.FC = () => {
+import {PlaceRow} from "../../homepage/models";
+import UserReviewBadge from "../../homepage/components/userReviewBadge";
+interface ComponentProps {
+    place: PlaceRow
+}
+const CatalogItemMobile: React.FC<ComponentProps> = ({place}) => {
     const router = useRouter();
-
+    const redirectToDetail = (placeId: string) => {
+        router.push(`/destination?id=${placeId}`)
+    }
     return (
         <div className={'catalogItem background-white mt-3 rounded-corners'}>
             <div className={'row'}>
                 <div className={'col-12'}>
-                    <img src={'http://www.thaitour.cz/wp-content/gallery/railay-great-view-resort/exterior_001.jpg'}/>
+                    <img src={place && place.image}/>
                 </div>
                 <div className={'col-12 px-4 pb-3'}>
                     <div className={'col-12 mt-3'}>
-                        Thajsko - Railay Great View Resort & Spa
+                        <h5 className="card-title card-link mb-1"> {place.name} <StarRatings
+                            rating={place.review}
+                            starRatedColor="gold"
+                            numberOfStars={5}
+                            name='rating'
+                            starDimension="15px"
+                            starSpacing="0px"
+                        /></h5>
+                        <p className="card-text" style={{fontSize: '11px'}}>
+                            {place.address}</p>
                     </div>
-                    <div className={'col-12 mt-2 text-muted'} style={{fontSize: '11px'}}>
-                        588 Moo 2, Tambol Ao Nang, Maung, Krabi 81000 Thajsko
+                    <div className={'col-12 pt-3 text-muted'} style={{fontSize: '11px'}}>
+                        {place && place.value}
                     </div>
                     <br/>
                     <div className={'row mt-5 d-flex'}>
                         <div className={'col-12 d-flex justify-content-start'}>
-                            <div className={'mt-2 me-1'}>
-                                <b className={'pt-2'}>4 / 5 </b>
+                            <div className={'mt-2 me-5'}>
+                                <UserReviewBadge review={place.review}/>
                             </div>
-                            <div className={'me-5 mt-1'}>
-                                <StarRatings
-                                    rating={1}
-                                    starRatedColor="gold"
-                                    numberOfStars={1}
-                                    name='rating'
-                                    starDimension="20px"
-                                    starSpacing="5px"
-                                />
-                            </div>
-                            <b className={'font-red mt-2 ms-5'}> od 1200 Kč za os.</b>
-                            <button className={'btn background-yellow rounded-corners font-white ms-2 mb-1 '} onClick={() => router.push('/destination')}>Náhled
+                            <b className={'font-red ms-5 mt-2'}> od 1 200 Kč za os.</b>
+                            <button className={'btn btn-sm background-yellow rounded-corners font-white ms-2'} style={{    width: '70px',
+                                height: '30px',
+                                marginTop: '4px'}}
+                                    onClick={() => redirectToDetail(place && place.id)}>Náhled
                             </button>
                         </div>
                     </div>
