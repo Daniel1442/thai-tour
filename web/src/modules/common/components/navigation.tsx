@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import Dropdown from "./dropdown";
 import {useRouter} from "next/router";
+import DropdownPlaces from "./dropdownPlaces";
 
 
 const Navigation: React.FC = () => {
@@ -42,9 +43,9 @@ const Navigation: React.FC = () => {
                         <div className={`collapse navbar-collapse mobileNavbar ${toggle ? 'show' : ''}`} id="navbarCollapse">
                             <div className="navbar-nav">
                                 <a href="/aboutUs" className="nav-item nav-link font-white">O nás</a>
-                                <a href="#" className="nav-item nav-link font-white">Ubytování</a>
-                                <a href="#" className="nav-item nav-link font-white">Letenky</a>
-                                <a href="#" className="nav-item nav-link font-white">Transfer</a>
+                                <DropdownPlaces name={'Ubytování'}/>
+                                <a href="/airplaneTickets" className="nav-item nav-link font-white">Letenky</a>
+                                <a href="/transfer" className="nav-item nav-link font-white">Transfer</a>
                                 <a href="#" className="nav-item nav-link font-white">Výlety</a>
                                 <a href="#" className="nav-item nav-link font-white">Golf</a>
                                 <Dropdown name={'O thajsku'}/>

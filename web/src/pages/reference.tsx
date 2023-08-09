@@ -9,8 +9,6 @@ const Reference = () => {
     return <div className={'homepage'}>
         <Header/>
         <Navigation/>
-
-
         <section className="gradient-custom">
             <div className="container  py-5">
                 <div className={'bg-white rounded-corners'}>
