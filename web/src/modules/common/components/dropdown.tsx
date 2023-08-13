@@ -30,8 +30,8 @@ const Dropdown: React.FC<DropdownProps> = ({name}) => {
             <ul className={`dropdown-menu background-blue ${toggle ? 'show':''}`} ref={wrapperRef}>
                 <li><a className="dropdown-item font-white" href="/localPlacesDescription">Popis lokalit</a></li>
                 <li><a className="dropdown-item font-white" href="#">Počasí v Thajsku</a></li>
-                <li><a className="dropdown-item font-white" href="#">Výlety v Thajsku</a></li>
-                <li><a className="dropdown-item font-white" href="#">Golf v Thajsku</a></li>
+                <li><a className="dropdown-item font-white" href="/tripCatalog">Výlety v Thajsku</a></li>
+                <li><a className="dropdown-item font-white" href="/thaiGolf">Golf v Thajsku</a></li>
                 <li><a className="dropdown-item font-white" href="#">Co navštívit v Thajsku</a></li>
             </ul>
         </div>

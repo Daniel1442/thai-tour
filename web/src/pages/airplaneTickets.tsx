@@ -16,7 +16,7 @@ const AirPlaneTickets = () => {
                     <img src={'http://www.thaitour.cz/wp-content/uploads/2013/10/Letadlo.jpg'} width={'100%'}/>
                 </div>
                 <div className={'col-12'}>
-                    <iframe src={'http://letenky.kralovna.cz/booking/?idProdejce=4710&lang=cs-cz'} width={'100%'}
+                    <iframe src={'https://letenky.kralovna.cz/booking/?idProdejce=4710&lang=cs-cz'} width={'100%'}
                             height={'900px'}/>
                 </div>
             </div>

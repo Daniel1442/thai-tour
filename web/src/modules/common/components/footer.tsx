@@ -14,8 +14,10 @@ const Footer: React.FC<ContactProps> = ({href, contact}) => {
         <div className={'border-top pt-5'}>
             <div className={'container'}>
                 <div className={'row'}>
-                    <div className={'col-lg-3 col-sm-0'}></div>
-                    <div className={'col-lg-6 col-sm-12'}>
+                    <div className={'col-lg-4 col-sm-0'}>
+                        <img src={'https://en.proft.me/media/js/meteor_mail.png'} />
+                    </div>
+                    <div className={'col-lg-7 col-sm-12'}>
                         <h3>Nabídky nejlepších zájezdů na e-mail</h3>
                         <p>Ty nejzajímavější zájezdy pravidelně na váš e-mail! Preferujete exotické pláže, zasněžené
                             ledovce

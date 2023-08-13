@@ -4,7 +4,7 @@ import {PlaceContent, PlaceContext} from "../../../context/placeContext";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSun, faWater} from "@fortawesome/free-solid-svg-icons";
 import Modal from 'react-modal';
-import Rating from 'react-animated-rating';
+import StarsRating from "react-star-rate";
 
 const customStyles = {
     content: {
@@ -13,6 +13,9 @@ const customStyles = {
         right: 'auto',
         bottom: 'auto',
         marginRight: '-50%',
+        border: '1px solid #EDEDED',
+        boxShadow: '0 0 50px #ccc',
+        borderRadius: '4px',
         transform: 'translate(-50%, -50%)',
         zIndex: 9999
     },
@@ -49,6 +52,8 @@ const DestinationSideBar: React.FC = () => {
     function closeModalForm() {
         setIsOpenForm(false);
     }
+
+    const [value, setValue] = useState<number>(0);
 
     return (
         <div className={'destinationSideBar '}>
@@ -136,24 +141,24 @@ const DestinationSideBar: React.FC = () => {
                 style={customStyles}
             >
                 <div className={'container'}>
-                    <h3>Přidat hodnocení</h3>
-                    <div className={'row mt-5'}>
+                    <b>Přidat hodnocení</b>
+                    <h3 className={'mt-2'}>{place && place.name}</h3>
+                    <div className={'row mt-3'}>
                         <div className={'col-12'}>
                             <form className={'bg-white p-3 rounded-corners'}>
                                 <div className="mb-3">
-                                    <label className="form-label">Hodnocení</label>
+                                    <label className="form-label mb-0">Hodnocení</label>
                                     <br/>
-                                    <StarRatings
-                                        rating={5}
-                                        starRatedColor="gold"
-                                        numberOfStars={5}
-                                        name='rating'
-                                        starDimension="40px"
-                                        starSpacing="5px"
-                                    />                         </div>
+                                    <StarsRating
+                                        value={value}
+                                        onChange={(value) => {
+                                            setValue(value as number);
+                                        }}
+                                    />
+                                </div>
                                 <div className="form-group">
-                                    <label htmlFor="exampleFormControlTextarea1">Komentář</label>
-                                    <textarea className="form-control"></textarea>
+                                    <label htmlFor="exampleFormControlTextarea1" className={'mb-2'}>Komentář</label>
+                                    <textarea className="form-control h-50"></textarea>
                                 </div>
 
                                 <button type="submit" className="btn background-yellow font-white mt-5">Uložit</button>
@@ -168,8 +173,9 @@ const DestinationSideBar: React.FC = () => {
                 style={customStyles}
             >
                 <div className={'container'}>
-                    <h3>Zažádat o cenu ubytování</h3>
-                    <div className={'row mt-5'}>
+                    <b>Zažádat o cenu ubytování</b>
+                    <h3 className={'mt-2'}>{place && place.name}</h3>
+                    <div className={'row mt-3'}>
                         <div className={'col-12'}>
                             <form className={'bg-white p-3 rounded-corners'}>
                                 <div className="mb-3">
@@ -199,7 +205,7 @@ const DestinationSideBar: React.FC = () => {
                                     <textarea className="form-control"></textarea>
                                 </div>
 
-                                <button type="submit" className="btn btn-primary mt-5">Odeslat</button>
+                                <button type="submit" className="btn background-yellow font-white mt-5">Odeslat</button>
                             </form>
                         </div>
                     </div>

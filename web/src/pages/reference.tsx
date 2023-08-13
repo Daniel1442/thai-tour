@@ -14,7 +14,7 @@ const Reference = () => {
                 <div className={'bg-white rounded-corners'}>
                     <div className={'row'}>
                         <div className={'col-12 px-4'}>
-                            <h3 className={'mt-3'}>Refernce</h3>
+                            <h3 className={'mt-3'}>Reference</h3>
                             <p>Zde si můžete přečíst reakce našich klientů reflektující kvality našich služeb, které pro
                                 Vás
                                 stále zlepšujeme, a které můžete vyzkoušet i Vy sami, když zvolíte Thaitour.cz jako

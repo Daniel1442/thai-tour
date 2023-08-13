@@ -46,8 +46,8 @@ const Navigation: React.FC = () => {
                                 <DropdownPlaces name={'Ubytování'}/>
                                 <a href="/airplaneTickets" className="nav-item nav-link font-white">Letenky</a>
                                 <a href="/transfer" className="nav-item nav-link font-white">Transfer</a>
-                                <a href="#" className="nav-item nav-link font-white">Výlety</a>
-                                <a href="#" className="nav-item nav-link font-white">Golf</a>
+                                <a href="/tripCatalog" className="nav-item nav-link font-white">Výlety</a>
+                                <a href="/thaiGolf" className="nav-item nav-link font-white">Golf</a>
                                 <Dropdown name={'O thajsku'}/>
                                 <a href="/contacts" className="nav-item nav-link font-white">Kontakt</a>
                             </div>

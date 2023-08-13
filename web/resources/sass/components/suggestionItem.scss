@@ -4,8 +4,8 @@
     border: 1px solid #DADADA;
 
     &:hover {
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
-    }
+      //border-radius: 50%;
+      box-shadow: 0 0 50px #ccc;    }
   }
 }
 @media only screen and (max-width: 768px) {
