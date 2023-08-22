@@ -52,7 +52,7 @@ public class Tag {
     private String updatedBy;
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "article_tag", schema = "thai_tour",
+    @JoinTable(name = "article_tag", schema = "public",
             joinColumns = @JoinColumn(name = "tag_id"),
             inverseJoinColumns = @JoinColumn(name = "article_id"))
     private List<Article> articleList;
