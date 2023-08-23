@@ -14,6 +14,7 @@ import java.util.UUID;
 public class RawArticle {
     private UUID id;
     private UUID tagId;
+    private String image;
     private String name;
     private Boolean isActive;
     private Date dateOfRelease;

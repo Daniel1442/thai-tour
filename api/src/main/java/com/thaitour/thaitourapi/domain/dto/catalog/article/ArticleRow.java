@@ -16,6 +16,7 @@ public class ArticleRow {
     private UUID id;
     private UUID tagId;
     private String name;
+    private String image;
     private Boolean isActive;
     private Date dateOfRelease;
 }
