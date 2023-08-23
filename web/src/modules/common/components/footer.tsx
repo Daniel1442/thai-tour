@@ -1,6 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faIcons} from "@fortawesome/free-solid-svg-icons";
+import {useRouter} from "next/router";
 
 
 interface ContactProps {
@@ -9,142 +10,143 @@ interface ContactProps {
 }
 
 const Footer: React.FC<ContactProps> = ({href, contact}) => {
+    const router = useRouter();
 
+    const redirectToHomepage = () => {
+        router.push('/')
+    }
     return (
-        <div className={'border-top pt-5'}>
-            <div className={'container'}>
-                <div className={'row'}>
-                    <div className={'col-lg-4 col-sm-0'}>
-                        <img src={'https://en.proft.me/media/js/meteor_mail.png'} />
-                    </div>
-                    <div className={'col-lg-7 col-sm-12'}>
-                        <h3>Nabídky nejlepších zájezdů na e-mail</h3>
-                        <p>Ty nejzajímavější zájezdy pravidelně na váš e-mail! Preferujete exotické pláže, zasněžené
-                            ledovce
-                            nebo plavbu lodí? Vždy u nás najdete, co hledáte. Nebojte, váš e-mail neposkytneme nikomu
-                            jinému.</p>
-                        <div className="input-group mb-3">
-                            <input type="email" className="form-control" placeholder="Email"
-                                   aria-describedby="basic-addon2"/>
-                            <div className="input-group-append">
-                                <button className="btn btn-outline-secondary" type="button">Přihlásit</button>
-                            </div>
+        <>
+            <div className={'border-top pt-5'}>
+                <div className={'container'}>
+                    <div className={'row'}>
+                        <div className={'col-lg-12 d-flex'}>
+                            <h2>Spojte se s Thai Tour</h2>
+                            <ul className="list-unstyled d-flex justify-content-center footer-m">
+                                <li className="ms-3"><a className="link-dark" href="#">
+                                    <img src={'https://cdn-icons-png.flaticon.com/512/2168/2168336.png'}
+                                         width={30}
+                                         height={30}/>
+
+                                </a></li>
+                                <li className="ms-3"><a className="link-dark" href="#">
+                                    <img src={'https://cdn-icons-png.flaticon.com/512/3669/3669688.png'}
+                                         width={30}
+                                         height={30}/>
+
+                                </a></li>
+                                <li className="ms-3"><a className="link-dark" href="#">
+                                    <img src={'https://cdn-icons-png.flaticon.com/512/2168/2168281.png'}
+                                         width={30}
+                                         height={30}/>
+                                </a></li>
+                                <li className="ms-3"><a className="link-dark" href="#">
+                                    <img src={'https://cdn-icons-png.flaticon.com/512/1384/1384015.png'}
+                                         width={30}
+                                         height={30}/>
+                                </a></li>
+                                <li className="ms-3"><a className="link-dark" href="#">
+                                    <img src={'https://cdn-icons-png.flaticon.com/512/1384/1384014.png'}
+                                         width={30}
+                                         height={30}/>
+                                </a></li>
+                            </ul>
                         </div>
                     </div>
-                    <div className={'col-lg-3 col-sm-0'}></div>
-                </div>
-
-                <div className="container border-top mt-5">
-                    <footer className="py-5" style={{}}>
-                        <div className="row">
-                            <div className="col-lg-3 col-md-3 col-sm-12 mb-3">
-                                <h5 className={'footer-mobile'}>Kontaktní informace</h5>
-                                <ul className="nav flex-column footer-mobile">
-                                    <li className="nav-item mb-2"><a href="tel:+420 777 625 302"
-                                                                     className="nav-link p-0 text-muted">Telefon: +420
-                                        777
-                                        625
-                                        302</a></li>
-                                    <li className="nav-item mb-2"><a href="mailto: info@thaitour.cz"
-                                                                     className="nav-link p-0 text-muted">Email:
-                                        info@thaitour.cz</a>
-                                    </li>
-                                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Všeobecné
-                                        obchodní podmínky</a>
-                                    </li>
-                                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Fakturační
-                                        údaje</a></li>
-                                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Bankovní
-                                        spojení</a></li>
-                                </ul>
-                            </div>
-
-                            <div className="col-lg-3 col-md-3 col-sm-12 mb-3">
-                                <h5 className={'footer-mobile'}>O Thai Tour</h5>
-                                <ul className="nav flex-column footer-mobile">
-                                    <li className="nav-item mb-2">
-                                        <a className="nav-link p-0 text-muted">Často kladené otázky</a>
-                                    </li>
-                                    <li className="nav-item mb-2">
-                                        <a className="nav-link p-0 text-muted" href={'/reference'}>Refence klientů</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div className="col-lg-3 col-md-3 col-sm-12 mb-3">
-                                <h5 className={'footer-mobile'}>Další informace</h5>
-                                <ul className="nav flex-column footer-mobile">
-                                    <li className="nav-item mb-2">
-                                        <a className="nav-link p-0 text-muted">O Thajsku</a>
-                                    </li>
-                                    <li className="nav-item mb-2">
-                                        <a className="nav-link p-0 text-muted" href={'/reference'}>Golf v Thajsku</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="col-lg-3 col-md-3 mb-3 col-sm-12">
-                                <h5 className={'footer-mobile'}>Citace</h5>
-                                <i className={'footer-mobile'}>“Agenturu Thai tour jsem našla náhodou na internetu a
-                                    když
-                                    jsem si
-                                    zjistila, že za celou
-                                    organizaci dovolené si účtují jen poplatky za ubytování a výlety a přečetla si
-                                    kladné
-                                    reference, neváhala jsem služeb využít. S přítelem jsme byli v Bangkoku, na Koh
-                                    Samui a
-                                    Krabi a dovolenou si náramně užili. Nejvíce jsem ocenila ušetřený čas za hledání
-                                    hotelů
-                                    a
-                                    výletů a ty, které paní Škodová doporučila, byly fajn :-) Služby agentury jsou velmi
-                                    profesionální, takže v budoucnu je využiji zase :-)”</i>
-                            </div>
+                    <div className={'row mt-5'}>
+                        <div className={'col-lg-3 col-sm-12'}>
+                            <h4>Nadpis 1</h4>
+                            <ul style={{listStyleType: 'none', paddingLeft: '0'}}>
+                                <li>text 1</li>
+                                <li>text 1</li>
+                                <li>text 1</li>
+                                <li>text 1</li>
+                                <li>text 1</li>
+                                <li>text 1</li>
+                                <li>text 1</li>
+                                <li>text 1</li>
+                                <li>text 1</li>
+                                <li>text 1</li>
+                            </ul>
                         </div>
-
-                        <div className="d-flex flex-column flex-sm-row justify-content-center py-4 my-4 footer-m">
-                            <div className={'row'}>
-                                <div className={'col-12'}>
-                                    <p className={'text-center m-lg-0 m-sm-auto'}>© 2000–2023. Thai Tour.cz, a.s. -
-                                        největší
-                                        cestovní agentura pro Thajské destinace v ČR. Tato stránka využívá cookies.</p>
-                                </div>
-                                <div className={'col-12 2 mt-3'}>
-                                    <ul className="list-unstyled d-flex justify-content-center footer-m">
-                                        <li className="ms-3"><a className="link-dark" href="#">
-                                            <img src={'https://cdn-icons-png.flaticon.com/512/2168/2168336.png'}
-                                                 width={30}
-                                                 height={30}/>
-
-                                        </a></li>
-                                        <li className="ms-3"><a className="link-dark" href="#">
-                                            <img src={'https://cdn-icons-png.flaticon.com/512/3669/3669688.png'}
-                                                 width={30}
-                                                 height={30}/>
-
-                                        </a></li>
-                                        <li className="ms-3"><a className="link-dark" href="#">
-                                            <img src={'https://cdn-icons-png.flaticon.com/512/2168/2168281.png'}
-                                                 width={30}
-                                                 height={30}/>
-                                        </a></li>
-                                        <li className="ms-3"><a className="link-dark" href="#">
-                                            <img src={'https://cdn-icons-png.flaticon.com/512/1384/1384015.png'}
-                                                 width={30}
-                                                 height={30}/>
-                                        </a></li>
-                                        <li className="ms-3"><a className="link-dark" href="#">
-                                            <img src={'https://cdn-icons-png.flaticon.com/512/1384/1384014.png'}
-                                                 width={30}
-                                                 height={30}/>
-                                        </a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
+                        <div className={'col-lg-3 col-sm-12'}>
+                            <h4>Nadpis 2</h4>
+                            <ul style={{listStyleType: 'none', paddingLeft: '0'}}>
+                                <li>text 2</li>
+                                <li>text 2</li>
+                                <li>text 2</li>
+                                <li>text 2</li>
+                                <li>text 2</li>
+                                <li>text 2</li>
+                                <li>text 2</li>
+                                <li>text 2</li>
+                                <li>text 2</li>
+                                <li>text 2</li>
+                            </ul>
                         </div>
-                    </footer>
+                        <div className={'col-lg-3 col-sm-12'}>
+                            <h4>Nadpis 2</h4>
+                            <ul style={{listStyleType: 'none', paddingLeft: '0'}}>
+                                <li>text 3</li>
+                                <li>text 3</li>
+                                <li>text 3</li>
+                                <li>text 3</li>
+                                <li>text 3</li>
+                                <li>text 3</li>
+                                <li>text 3</li>
+                                <li>text 3</li>
+                                <li>text 3</li>
+                                <li>text 3</li>
+                            </ul>
+                        </div>
+                        <div className={'col-lg-3 col-sm-12'}>
+                            <h4>Nadpis 4</h4>
+                            <ul style={{listStyleType: 'none', paddingLeft: '0'}}>
+                                <li>text 4</li>
+                                <li>text 4</li>
+                                <li>text 4</li>
+                                <li>text 4</li>
+                                <li>text 4</li>
+                                <li>text 4</li>
+                                <li>text 4</li>
+                                <li>text 4</li>
+                                <li>text 4</li>
+                                <li>text 4</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div className={'border-top pt-5'}>
+                <div className={'container'}>
+                    <div className={'row'}>
+                        <div className={'col-12  d-flex justify-content-center'}>
+                            <img
+                                onClick={() => redirectToHomepage()}
+                                src={"https://www.thaitour.cz/favicon.png"}
+                                className={'me-3'}
+                                alt="ThaiTour"/>
+
+                            <a  className={'me-3'}>Mapa webu</a>
+
+                            <a  className={'me-3'}>Právní podmínky</a>
+
+                            <a  className={'me-3'}>Ochrana soukromí</a>
+
+                            <a  className={'me-3'}>Cookies
+                            </a>
+
+                            <a className={'me-3'} >Dokumenty</a>
+
+                            <a  className={'me-3'}>Ceník</a>
+                        </div>
+                    </div>
+                    <div className={'row text-center mt-5 mb-3'}>
+                        <small>Copyright © 2023 Vodafone Czech Republic a.s.</small>
+                    </div>
+                </div>
+            </div>
+        </>
     )
 }
 export default Footer;

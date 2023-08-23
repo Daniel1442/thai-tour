@@ -43,6 +43,7 @@ const Navigation: React.FC = () => {
                         <div className={`collapse navbar-collapse mobileNavbar ${toggle ? 'show' : ''}`} id="navbarCollapse">
                             <div className="navbar-nav">
                                 <a href="/aboutUs" className="nav-item nav-link font-white">O nás</a>
+                                <a href="/blog" className="nav-item nav-link font-white">Blog</a>
                                 <DropdownPlaces name={'Ubytování'}/>
                                 <a href="/airplaneTickets" className="nav-item nav-link font-white">Letenky</a>
                                 <a href="/transfer" className="nav-item nav-link font-white">Transfer</a>

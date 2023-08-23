@@ -115,6 +115,51 @@ html, body {
   background-color: #ED254E
 }
 
+.big {
+  //  width: 570px;
+  //  height: 300px;
+  //  overflow: hidden;
+    position: relative;
+  //  float: left;
+  //  display: inline-block;
+  //  cursor: pointer;
+  //
+    .zoomInImg {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+  //
+  .blackGradient{
+    position: absolute;
+    top: 0;
+    background: linear-gradient(transparent, transparent, transparent, black);
+  }
+  .textInImg {
+    display: block;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 19px ;
+    text-align: left;
+    padding: 5px;
+    position: absolute;
+    top: 1;
+    left: 0;
+    bottom: 0;
+    right: 1;
+    //height: 50px;
+    cursor: pointer;
+  }
+
+  //  &:hover, &:focus{
+  //    -ms-transform: scale(1.2);
+  //    -moz-transform: scale(1.2);
+  //    -webkit-transform: scale(1.2);
+  //    -o-transform: scale(1.2);
+  //    transform: scale(1.2);
+  //  }
+  //
+}
 
 .rounded-corners {
   border-radius: 4px;
@@ -124,6 +169,11 @@ html, body {
   &:hover {
     background-color: transparent !important;
   }
+}
+.imageFull{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
 .page-link {
