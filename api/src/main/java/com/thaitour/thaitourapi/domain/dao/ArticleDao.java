@@ -20,11 +20,11 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class ArticleDao {
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-    private static final String SQL_FILTER_PLACE_BASE = " from public.article tar "
-            + " left join public.article_tag as atag ON atag.article_id = tar.id "
+    private static final String SQL_FILTER_PLACE_BASE = " from thai_tour.article tar "
+            + " left join thai_tour.article_tag as atag ON atag.article_id = tar.id "
             + " where true = true %conditions% ";
 
-    private static final String SQL_FILTER_PLACE = "select tar.id as id, "
+    private static final String SQL_FILTER_PLACE = "select distinct on (tar.id) tar.id as id, "
             + "tar.name as name, "
             + "tar.image as image, "
             + "tar.is_active as isActive, "
