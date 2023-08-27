@@ -1,6 +1,4 @@
-import React, {useRef, useState} from 'react';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faIcons} from "@fortawesome/free-solid-svg-icons";
+import React from 'react';
 import {useRouter} from "next/router";
 
 
@@ -17,7 +15,7 @@ const Footer: React.FC<ContactProps> = ({href, contact}) => {
     }
     return (
         <>
-            <div className={'border-top pt-5'}>
+            <div className={'border-top pt-5 desktop'}>
                 <div className={'container'}>
                     <div className={'row'}>
                         <div className={'col-lg-12 d-flex'}>

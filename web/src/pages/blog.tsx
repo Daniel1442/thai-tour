@@ -1,16 +1,13 @@
 import React, {useContext, useEffect} from "react";
 import Navigation from '../modules/common/components/navigation';
 import Footer from "../modules/common/components/footer";
-import SidebarFilter from "../modules/catalog/components/sidebarFilter";
-import CatalogItem from "../modules/catalog/components/catalogItem";
 import Header from "../modules/common/components/header";
 import {PlaceContent, PlaceContext} from "../context/placeContext";
 import {useRouter} from "next/router";
-import {PlaceFinderPayload} from "../modules/homepage/models";
-import CatalogItemMobile from "../modules/catalog/components/catalogItemMobile";
-import Button from "react-bootstrap/Button";
 import {ArticleFinderPayload} from "../modules/blog/models";
 import ArticleItem from "../modules/blog/components/blogRowOne";
+import MobileFooter from "../modules/common/components/mobileFooter";
+import MobileNavigation from "../modules/common/components/mobileNavigation";
 
 const Blog = () => {
     const router = useRouter()
@@ -43,8 +40,9 @@ const Blog = () => {
 
 
     return <div className={'homepage'}>
-        <Header/>
+            <Header/>
         <Navigation/>
+        <MobileNavigation/>
         <div className={'container mt-5'}>
             <div className={'row'}>
                 <h3>Nejnovější články</h3>
@@ -98,7 +96,8 @@ const Blog = () => {
                 </>
             </div>
         </div>
-        <Footer href={''} contact={''}/>
+           <Footer href={''} contact={''}/> 
+        <MobileFooter href={''} contact={''}/>
     </div>
 }
 

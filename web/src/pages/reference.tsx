@@ -1,14 +1,23 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import Navigation from '../modules/common/components/navigation';
 import Footer from "../modules/common/components/footer";
 import Header from "../modules/common/components/header";
-import {faAddressBook, faReply} from "@fortawesome/free-solid-svg-icons";
+import {faReply} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import MobileFooter from "../modules/common/components/mobileFooter";
+import MobileNavigation from "../modules/common/components/mobileNavigation";
 
 const Reference = () => {
+
+    let width = typeof window !== 'undefined' && window.innerWidth;
+    useEffect(() => {
+        width = typeof window !== 'undefined' && window.innerWidth;
+    }, [width]);
+
     return <div className={'homepage'}>
-        <Header/>
+            <Header/>
         <Navigation/>
+        <MobileNavigation/>
         <section className="gradient-custom">
             <div className="container  py-5">
                 <div className={'bg-white rounded-corners'}>
@@ -149,7 +158,8 @@ const Reference = () => {
                 </div>
             </div>
         </section>
-        <Footer href={''} contact={''}/>
+           <Footer href={''} contact={''}/> 
+        <MobileFooter href={''} contact={''}/>
     </div>
 }
 

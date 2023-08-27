@@ -1,23 +1,21 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import Navigation from '../modules/common/components/navigation';
 import Footer from "../modules/common/components/footer";
 import Header from "../modules/common/components/header";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {
-    faAddressBook, faBank,
-    faBowlFood, faEnvelope,
-    faGlassCheers, faGlobe, faParking, faPhone, faSink, faSkiing,
-    faSnowflake,
-    faSwimmingPool,
-    faTree,
-    faUmbrellaBeach, faWeightHanging,
-    faWifi
-} from "@fortawesome/free-solid-svg-icons";
+import {faPhone} from "@fortawesome/free-solid-svg-icons";
+import MobileFooter from "../modules/common/components/mobileFooter";
+import MobileNavigation from "../modules/common/components/mobileNavigation";
 
 const Contacts = () => {
+    let width = typeof window !== 'undefined' && window.innerWidth;
+    useEffect(() => {
+        width = typeof window !== 'undefined' && window.innerWidth;
+    }, [width]);
     return <div className={'homepage'}>
-        <Header/>
+            <Header/>
         <Navigation/>
+        <MobileNavigation/>
 
         <div className={'container pt-5 bg-white'}>
             <h1 className={'my-5'}>Hlavní kontakty</h1>
@@ -124,7 +122,8 @@ const Contacts = () => {
 
             </div>
             </div>
-        <Footer href={''} contact={''}/>
+           <Footer href={''} contact={''}/> 
+        <MobileFooter href={''} contact={''}/>
     </div>
 }
 

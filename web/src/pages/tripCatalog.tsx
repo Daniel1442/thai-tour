@@ -1,21 +1,24 @@
-import React, {useContext, useEffect} from "react";
+import React, {useEffect} from "react";
 import Navigation from '../modules/common/components/navigation';
 import Footer from "../modules/common/components/footer";
-import SidebarFilter from "../modules/catalog/components/sidebarFilter";
-import CatalogItem from "../modules/catalog/components/catalogItem";
 import Header from "../modules/common/components/header";
-import {PlaceContent, PlaceContext} from "../context/placeContext";
-import {useRouter} from "next/router";
-import {PlaceFinderPayload} from "../modules/homepage/models";
-import CatalogItemMobile from "../modules/catalog/components/catalogItemMobile";
 import PlaceTripCard from "../modules/travelCatalog/components/placeTripCard";
 import PlaceTripInfo from "../modules/travelCatalog/components/placeTripInfo";
+import MobileFooter from "src/modules/common/components/mobileFooter";
+import MobileNavigation from "../modules/common/components/mobileNavigation";
 
 const TripCatalog = () => {
 
+
+    let width = typeof window !== 'undefined' && window.innerWidth;
+    useEffect(() => {
+        width = typeof window !== 'undefined' && window.innerWidth;
+    }, [width]);
+
     return <div className={'homepage'}>
-        <Header/>
+            <Header/>
         <Navigation/>
+        <MobileNavigation/>
         <div className={'container'}>
             <h1 className={'mt-5'}>Výlety & aktivity v Thajsku</h1>
             <div className={'row'}>
@@ -63,7 +66,8 @@ const TripCatalog = () => {
 
             </div>
         </div>
-        <Footer href={''} contact={''}/>
+           <Footer href={''} contact={''}/> 
+        <MobileFooter href={''} contact={''}/>
     </div>
 }
 

@@ -1,28 +1,17 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useEffect} from "react";
 import Navigation from '../modules/common/components/navigation';
-import SearchBar from "../modules/homepage/components/searchBar";
-import Carousel from "../modules/homepage/components/carousel";
-import SuggestionItem from "../modules/homepage/components/suggestionItem";
-import SuggestionArticle from "../modules/homepage/components/suggestionArticle";
 import Footer from "../modules/common/components/footer";
-import InformationImageCard from "../modules/destination/components/informationImageCard";
-import DestinationSideBar from "../modules/destination/components/destinationSidebar";
-import AboutDestination from "../modules/destination/components/aboutDestination";
-import ImportantInfo from "../modules/destination/components/importantInfo";
 import Header from "../modules/common/components/header";
 import {useRouter} from "next/router";
-import {getDetail, getFavoritePlaces} from "../modules/homepage/action";
-import {PlaceDetail, PlaceRow} from "../modules/homepage/models";
-import {usePlaceContext} from "../hooks/usePlaceContext";
 import {PlaceContent, PlaceContext} from "../context/placeContext";
-import Loader from "../modules/common/components/loader";
 import BlogParagraph from "../modules/blog/components/blogParagraph";
 import BlogSidebar from "../modules/blog/components/blogSidebar";
 import AboutAuthor from "../modules/blog/components/aboutAuthor";
 import SuggestionList from "../modules/blog/components/suggestionList";
+import MobileFooter from "../modules/common/components/mobileFooter";
+import MobileNavigation from "../modules/common/components/mobileNavigation";
 
 const Article = () => {
-    let width = typeof window !== 'undefined' && window.innerWidth;
     const router = useRouter();
     const {id} = router.query;
 
@@ -32,6 +21,7 @@ const Article = () => {
     } = useContext(PlaceContext) as PlaceContent;
 
 
+    let width = typeof window !== 'undefined' && window.innerWidth;
     useEffect(() => {
         width = typeof window !== 'undefined' && window.innerWidth;
     }, [width]);
@@ -41,8 +31,9 @@ const Article = () => {
     }, [id]);
 
     return <div className={'homepage'}>
-        <Header/>
+            <Header/>
         <Navigation/>
+        <MobileNavigation/>
         <div className={'container'}>
             <div className={'row'}>
                 <div className={'col-lg-8 col-sm-12'}>
@@ -73,7 +64,8 @@ const Article = () => {
                 <SuggestionList img={'https://dcontent.inviacdn.net/shared/img/web-270x300/2023/8/3/m0/1815823.jpg'} text={'Stará Dubaj: Fascinující cesta do minulosti'} id={'3fdb3607-4031-4734-aea7-a5dd67dfb2b9'}/>
             </div>
         </div>
-        <Footer href={''} contact={''}/>
+           <Footer href={''} contact={''}/> 
+        <MobileFooter href={''} contact={''}/>
     </div>
 }
 

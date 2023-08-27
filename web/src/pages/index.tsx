@@ -9,6 +9,8 @@ import {useRouter} from "next/router";
 import Header from "../modules/common/components/header";
 import {PlaceRow} from "../modules/homepage/models";
 import {getFavoritePlaces} from "../modules/homepage/action";
+import MobileFooter from "../modules/common/components/mobileFooter";
+import MobileNavigation from "../modules/common/components/mobileNavigation";
 
 const Index = () => {
     const router = useRouter();
@@ -36,6 +38,7 @@ const Index = () => {
     return <div className={'homepage'}>
         <Header/>
         <Navigation/>
+        <MobileNavigation/>
         <div className="main__img pt-5 pb-5">
             <div className={'container'}>
                 <div className={'row mb-5'}>
@@ -49,11 +52,11 @@ const Index = () => {
         <div className={'container'}>
             <div className={'row mt-5 mb-5'}>
                 <h3 className={'mb-4 cursor-pointer'} onClick={() => redirectToCatalog()}>Vybrali jsme pro vás:</h3>
-                    {Object.entries(favoritePlace).map(([id, place]) => {
-                        return(
-                            <SuggestionItem place={place} key={id}/>
-                        )
-                    })}
+                {Object.entries(favoritePlace).map(([id, place]) => {
+                    return (
+                        <SuggestionItem place={place} key={id}/>
+                    )
+                })}
             </div>
 
             <div className={'row mt-5 mb-5'}>
@@ -65,6 +68,8 @@ const Index = () => {
             </div>
         </div>
         <Footer href={''} contact={''}/>
+        <MobileFooter href={''} contact={''}/>
+
     </div>
 }
 

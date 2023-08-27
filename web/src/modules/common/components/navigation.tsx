@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Dropdown from "./dropdown";
 import {useRouter} from "next/router";
 import DropdownPlaces from "./dropdownPlaces";
@@ -20,16 +20,11 @@ const Navigation: React.FC = () => {
 
     return (
 
-        <div className={'background-blue navigation'}>
+        <div className={'background-blue navigation desktop'}>
             <div className="container">
                 <nav className="navbar navbar-expand-lg navbar-light" style={{height: '60px'}} onClick={() => (setToggle(!toggle))}>
                     <div className="container-fluid">
                         <a className="navbar-brand cursor-pointer">
-                            <img
-                                onClick={() => redirectToHomepage()}
-                                className={'mobile'}
-                                src={"https://www.thaitour.cz/favicon.png"}
-                                alt="ThaiTour"/>
                             <img
                                 onClick={() => redirectToHomepage()}
                                 className={'desktop'}
