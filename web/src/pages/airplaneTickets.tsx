@@ -14,8 +14,15 @@ const AirPlaneTickets = () => {
             <Header/>
         <Navigation/>
         <MobileNavigation/>
-
-        <div className={'container pt-5'}>
+        <div className={'container'}>
+        <nav aria-label="breadcrumb">
+            <ol className="breadcrumb">
+                <li className="breadcrumb-item"><a href="/">Thai-tour</a></li>
+                <li className="breadcrumb-item active" aria-current="page">Letenky</li>
+            </ol>
+        </nav>
+        </div>
+        <div className={'container pt-3'}>
             <h1 className={'my-5'}>
                 Letenky do Thajska / Letenky Thajsko</h1>
             <div className={'row'}>

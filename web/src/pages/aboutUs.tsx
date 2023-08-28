@@ -31,7 +31,12 @@ const AboutUs = () => {
             <Header/>
         <Navigation/>
         <MobileNavigation/>
-
+        <nav aria-label="breadcrumb">
+            <ol className="breadcrumb">
+                <li className="breadcrumb-item"><a href="/">Thai-tour</a></li>
+                <li className="breadcrumb-item active" aria-current="page">O nás</li>
+            </ol>
+        </nav>
         <div className={'container pt-5'}>
             <div className={'aboutDestination p-2 bg-white text-left'} style={{borderRadius: '4px'}}>
                 <h1 className={'my-5'}>Thaitour.cz – Váš specialista na Thajsko a dovolenou v Thajsku</h1>

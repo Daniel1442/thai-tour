@@ -1,8 +1,8 @@
-import React, {useContext, useEffect, useRef, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {PlaceContent, PlaceContext} from "../../../context/placeContext";
 import {PlaceFinderPayload} from "../../homepage/models";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faAngleDown, faCaretRight, faCity, faGlobe, faSearch} from "@fortawesome/free-solid-svg-icons";
+import {faAngleDown, faCity, faGlobe, faSearch} from "@fortawesome/free-solid-svg-icons";
 
 
 const SidebarFilter: React.FC = () => {
@@ -50,26 +50,42 @@ const SidebarFilter: React.FC = () => {
                     </div>
                     {showType &&
                         <div className="entry-content mt-2">
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   type: 'HOTEL',
-                                   location: payload?.location
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Hotely & Resorty</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   type: 'APARTMENTS',
-                                   location: payload?.location
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Apartmány</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   type: 'VILLA',
-                                   location: payload?.location
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Vily</p>
-                            <p className={'font-black  cursor-pointer mb-0'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   type: 'HOUSE',
-                                   location: payload?.location
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Domy</p>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Hotely & Resorty
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Apartmány
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Vily
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Domy
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
                         </div>
                     }
                 </div>
@@ -85,102 +101,170 @@ const SidebarFilter: React.FC = () => {
                     </div>
                     {showLocation &&
                         <div className="entry-content mt-2">
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({location: null, type: null})}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Zobrazit
-                                vše</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   location: 'Bangkok a okolí',
-                                   type: payload?.type
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/>
-                                Bangkok a
-                                okolí</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   location: 'Pattaya a okolí',
-                                   type: payload?.type
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Pattaya a
-                                okolí</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   location: 'Koh Samui',
-                                   type: payload?.type
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Koh Samui</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   location: 'Phuket',
-                                   type: payload?.type
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Phuket</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   location: 'Phi Phi',
-                                   type: payload?.type
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Phi Phi</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   location: 'Koh Samet',
-                                   type: payload?.type
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Koh Samet</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   location: 'Krabi',
-                                   type: payload?.type
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Krabi</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   location: 'Hua Hin',
-                                   type: payload?.type
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Hua Hin</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   location: 'Koh Lanta',
-                                   type: payload?.type
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Koh Lanta</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   location: 'Koh Phangan',
-                                   type: payload?.type
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Koh Phangan</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   location: 'Koh Chang',
-                                   type: payload?.type
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Koh Chang</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   location: 'Koh Kood',
-                                   type: payload?.type
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Koh Kood</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   location: 'Khao Lak',
-                                   type: payload?.type
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Khao Lak</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   location: 'Koh Lipe',
-                                   type: payload?.type
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Koh Lipe</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   location: 'Koh Tao',
-                                   type: payload?.type
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Koh Tao</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   location: 'Koh Yao',
-                                   type: payload?.type
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Koh Yao</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   location: 'Chiang Mai',
-                                   type: payload?.type
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Chiang Mai</p>
-                            <p className={'font-black  cursor-pointer'} style={{fontSize: '14px'}}
-                               onClick={() => setFilter({
-                                   location: 'Chiang Rai',
-                                   type: payload?.type
-                               } as PlaceFinderPayload)}><FontAwesomeIcon icon={faCaretRight} className={'me-2'}/> Chiang Rai</p>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Bangkok a okolí
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Pattaya a okolí
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Koh Samui
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Phuket
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Phi Phi
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Koh Samet
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Krabi
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Hua Hin
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Koh Lanta
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Koh Phangan
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Koh Chang
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Koh Kood
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Khao Lak
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Koh Lipe
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div> <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                            <div>
+                                <input className="form-check-input" type="checkbox"/>
+                                <label className="form-check-label">
+                                    Koh Tao
+                                </label>
+                            </div>
+                            <small>21</small>
+                        </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Koh Yao
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Chiang Mai
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+                            <div className="form-check  d-flex" style={{justifyContent: 'space-between'}}>
+                                <div>
+                                    <input className="form-check-input" type="checkbox"/>
+                                    <label className="form-check-label">
+                                        Chiang Rai
+                                    </label>
+                                </div>
+                                <small>21</small>
+                            </div>
+
+
+
                         </div>
                     }
                 </div>
