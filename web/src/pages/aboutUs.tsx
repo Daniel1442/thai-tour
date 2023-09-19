@@ -1,11 +1,6 @@
 import React, {useContext, useEffect} from "react";
-import Navigation from '../modules/common/components/navigation';
-import Footer from "../modules/common/components/footer";
-import Header from "../modules/common/components/header";
 import {useRouter} from "next/router";
 import {PlaceContent, PlaceContext} from "../context/placeContext";
-import MobileFooter from "../modules/common/components/mobileFooter";
-import MobileNavigation from "../modules/common/components/mobileNavigation";
 
 const AboutUs = () => {
     let width = typeof window !== 'undefined' && window.innerWidth;
@@ -27,10 +22,7 @@ const AboutUs = () => {
         fetchPlace(id as string)
     }, [id]);
 
-    return <div className={'homepage'}>
-            <Header/>
-        <Navigation/>
-        <MobileNavigation/>
+    return <>
         <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
                 <li className="breadcrumb-item"><a href="/">Thai-tour</a></li>
@@ -418,9 +410,7 @@ const AboutUs = () => {
                 </div>
             </div>
         </div>
-           <Footer href={''} contact={''}/> 
-        <MobileFooter href={''} contact={''}/>
-    </div>
+    </>
 }
 
 export default AboutUs;

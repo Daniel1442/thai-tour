@@ -30,7 +30,7 @@ const SidebarFilter: React.FC = () => {
         }
     }, [width]);
     return (
-        <div className={'destinationSideBar background-white rounded p-3'}>
+        <div className={'destinationSideBar background-white rounded p-3 mobilePaddingColumn'}>
             <div className={'row'}>
                 <div className={'col-12 mt-3'}>
                     <label className="form-label color-black">Vyhledejte destinaci</label>

@@ -3,13 +3,12 @@ import InformationImageCard from "../modules/destination/components/informationI
 import {useRouter} from "next/router";
 import {PlaceContent, PlaceContext} from "../context/placeContext";
 import Loader from "../modules/common/components/loader";
-import DestinationHeading from "../modules/destination/components/destinationHeading";
-import DestinationSidebarNew from "../modules/destination/components/destinationSidebarNew";
-import DestinationNavbar from "../modules/destination/components/destinationNavbar";
-import AboutDestinationNew from "../modules/destination/components/aboutDestinationNew";
-import DestinationHeadingMobile from "../modules/destination/components/destinationHeadingMobile";
+import TripSidebar from "../modules/trip/components/tripSidebar";
+import AboutTrip from "../modules/trip/components/aboutTrip";
+import TripHeading from "../modules/trip/components/tripHeading";
+import TripHeadingMobile from "../modules/trip/components/tripHeadingMobile";
 
-const Destination = () => {
+const TripDetail = () => {
     let width = typeof window !== 'undefined' && window.innerWidth;
     const router = useRouter();
     const {id} = router.query;
@@ -34,28 +33,20 @@ const Destination = () => {
 
             <div className={'container pt-5'}>
                 <div className={'row'}>
-                    <DestinationHeading/>
-                    <DestinationHeadingMobile/>
+                    <TripHeading/>
+                    <TripHeadingMobile/>
                 </div>
                 <div className={'row'}>
                     <div className={'col-lg-9 col-sm-12'}>
                         <InformationImageCard/>
                     </div>
                     <div className={'col-lg-3 col-sm-12'}>
-                        <DestinationSidebarNew/>
+                        <TripSidebar/>
                     </div>
                 </div>
                 <div className={'row'}>
-                    <div className={'col-12 mobilePaddingColumn'}>
-                        <DestinationNavbar/>
-                    </div>
                     <div className={'col-12'}>
-                        {placeDescriptionType === 'ABOUT' &&
-                            <AboutDestinationNew    />
-                        }
-                        {placeDescriptionType === 'ROOMS' &&
-                            <>b</>
-                        }
+                       <AboutTrip/>
                     </div>
                 </div>
             </div> : <Loader text={'Počkejte prosím'}/>
@@ -64,4 +55,4 @@ const Destination = () => {
 
 }
 
-export default Destination;
+export default TripDetail;

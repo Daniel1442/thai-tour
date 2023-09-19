@@ -1,15 +1,10 @@
 import React, {useContext, useEffect} from "react";
-import Navigation from '../modules/common/components/navigation';
-import Footer from "../modules/common/components/footer";
-import Header from "../modules/common/components/header";
 import {useRouter} from "next/router";
 import {PlaceContent, PlaceContext} from "../context/placeContext";
 import BlogParagraph from "../modules/blog/components/blogParagraph";
 import BlogSidebar from "../modules/blog/components/blogSidebar";
 import AboutAuthor from "../modules/blog/components/aboutAuthor";
 import SuggestionList from "../modules/blog/components/suggestionList";
-import MobileFooter from "../modules/common/components/mobileFooter";
-import MobileNavigation from "../modules/common/components/mobileNavigation";
 
 const Article = () => {
     const router = useRouter();
@@ -30,11 +25,7 @@ const Article = () => {
         fetchBlog(id as string)
     }, [id]);
 
-    return <div className={'homepage'}>
-            <Header/>
-        <Navigation/>
-        <MobileNavigation/>
-        <div className={'container'}>
+    return <div className={'container'}>
             <div className={'row'}>
                 <div className={'col-lg-8 col-sm-12'}>
                     <div className={'row my-5 d-flex justify-content-center'}>
@@ -64,9 +55,6 @@ const Article = () => {
                 <SuggestionList img={'https://dcontent.inviacdn.net/shared/img/web-270x300/2023/8/3/m0/1815823.jpg'} text={'Stará Dubaj: Fascinující cesta do minulosti'} id={'3fdb3607-4031-4734-aea7-a5dd67dfb2b9'}/>
             </div>
         </div>
-           <Footer href={''} contact={''}/> 
-        <MobileFooter href={''} contact={''}/>
-    </div>
 }
 
 export default Article;

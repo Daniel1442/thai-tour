@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 
-const ThaiWeather = () => {
+const WhyThaiTour = () => {
 
     let width = typeof window !== 'undefined' && window.innerWidth;
     useEffect(() => {
@@ -12,4 +12,4 @@ const ThaiWeather = () => {
     </div>
 }
 
-export default ThaiWeather;
+export default WhyThaiTour;

@@ -1,26 +1,19 @@
 import React, {useEffect} from "react";
-import Navigation from '../modules/common/components/navigation';
-import Footer from "../modules/common/components/footer";
-import Header from "../modules/common/components/header";
-import MobileFooter from "../modules/common/components/mobileFooter";
-import MobileNavigation from "../modules/common/components/mobileNavigation";
 
 const AirPlaneTickets = () => {
     let width = typeof window !== 'undefined' && window.innerWidth;
     useEffect(() => {
         width = typeof window !== 'undefined' && window.innerWidth;
     }, [width]);
-    return <div className={'homepage'}>
-            <Header/>
-        <Navigation/>
-        <MobileNavigation/>
+
+    return <>
         <div className={'container'}>
-        <nav aria-label="breadcrumb">
-            <ol className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/">Thai-tour</a></li>
-                <li className="breadcrumb-item active" aria-current="page">Letenky</li>
-            </ol>
-        </nav>
+            <nav aria-label="breadcrumb">
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item"><a href="/">Thai-tour</a></li>
+                    <li className="breadcrumb-item active" aria-current="page">Letenky</li>
+                </ol>
+            </nav>
         </div>
         <div className={'container pt-3'}>
             <h1 className={'my-5'}>
@@ -35,9 +28,7 @@ const AirPlaneTickets = () => {
                 </div>
             </div>
         </div>
-           <Footer href={''} contact={''}/> 
-        <MobileFooter href={''} contact={''}/>
-    </div>
+    </>
 }
 
 export default AirPlaneTickets;

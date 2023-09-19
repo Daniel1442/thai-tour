@@ -1,12 +1,16 @@
-import React, {useRef, useState} from 'react';
+import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
     faBowlFood,
-    faGlassCheers, faParking, faSink, faSkiing,
+    faGlassCheers,
+    faParking,
+    faSink,
+    faSkiing,
     faSnowflake,
     faSwimmingPool,
     faTree,
-    faUmbrellaBeach, faWeightHanging,
+    faUmbrellaBeach,
+    faWeightHanging,
     faWifi
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -70,11 +74,11 @@ const DestinationParameter: React.FC = () => {
                                             color: '#00FFFF',
                                             padding: "4px 0px 0px 0px"
                                         }}/> Potápění a šnorchlování</p>
-                    <p><FontAwesomeIcon icon={faSkiing}
-                                        style={{
-                                            color: '#00FFFF',
-                                            padding: "4px 0px 0px 0px"
-                                        }}/> Vodní sporty</p>
+                        <p><FontAwesomeIcon icon={faSkiing}
+                                            style={{
+                                                color: '#00FFFF',
+                                                padding: "4px 0px 0px 0px"
+                                            }}/> Vodní sporty</p>
                 </div>
             </div>
         </div>

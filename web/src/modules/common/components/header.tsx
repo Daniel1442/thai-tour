@@ -1,16 +1,22 @@
 import React from 'react';
 import {faPhone} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {useRouter} from "next/router";
 
 const Header: React.FC = () => {
+    const router = useRouter();
 
+    const redirectToHomepage = () => {
+        router.push('/')
+    }
     return (
         <div className={'header desktop'} style={{height: '105px', backgroundColor: '#013e7a'}}>
             <div className={'container'}>
                 <div className={'row'}>
                     <div className={'col-4 d-flex justify-content-start'}>
                         <img
-                            className={'desktop'}
+                            onClick={() => redirectToHomepage()}
+                            className={'desktop cursor-pointer'}
                             src={"http://www.thaitour.cz/wp-content/themes/twentyten/images/logo.jpg"}
                             alt="ThaiTour" height={'100px'}/>
                         <b className={'font-white'} style={{marginTop: '69px', marginLeft: '10px'}}>Dovolená na

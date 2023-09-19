@@ -1,11 +1,6 @@
 import React, {useEffect} from "react";
-import Navigation from '../modules/common/components/navigation';
-import Footer from "../modules/common/components/footer";
-import Header from "../modules/common/components/header";
 import {faReply} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import MobileFooter from "../modules/common/components/mobileFooter";
-import MobileNavigation from "../modules/common/components/mobileNavigation";
 
 const Reference = () => {
 
@@ -14,11 +9,7 @@ const Reference = () => {
         width = typeof window !== 'undefined' && window.innerWidth;
     }, [width]);
 
-    return <div className={'homepage'}>
-            <Header/>
-        <Navigation/>
-        <MobileNavigation/>
-        <section className="gradient-custom">
+    return <section className="gradient-custom">
             <div className="container  py-5">
                 <div className={'bg-white rounded-corners'}>
                     <div className={'row'}>
@@ -158,9 +149,6 @@ const Reference = () => {
                 </div>
             </div>
         </section>
-           <Footer href={''} contact={''}/> 
-        <MobileFooter href={''} contact={''}/>
-    </div>
 }
 
 export default Reference;

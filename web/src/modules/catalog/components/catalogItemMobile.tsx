@@ -1,8 +1,11 @@
-import React, {useRef, useState} from 'react';
+import React from 'react';
 import StarRatings from "react-star-ratings";
 import {useRouter} from "next/router";
 import {PlaceRow} from "../../homepage/models";
 import UserReviewBadge from "../../homepage/components/userReviewBadge";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faUmbrellaBeach, faWifi} from "@fortawesome/free-solid-svg-icons";
+
 interface ComponentProps {
     place: PlaceRow
 }
@@ -33,7 +36,21 @@ const CatalogItemMobile: React.FC<ComponentProps> = ({place}) => {
                     <div className={'col-12 pt-3 text-muted'} style={{fontSize: '11px'}}>
                         {place && place.value}
                     </div>
-                    <br/>
+                    <div className={'col-12 mt-2'}><p style={{fontSize: '11px'}}>
+
+                        <FontAwesomeIcon icon={faWifi}
+                                         style={{
+                                             color: '#00FFFF',
+                                             padding: "4px 0px 0px 0px"
+                                         }}/> Internet/wifi
+                        <FontAwesomeIcon icon={faUmbrellaBeach}
+                                         style={{
+                                             color: '#00FFFF',
+                                             marginLeft: '16px',
+                                             padding: "4px 0px 0px 0px"
+                                         }}/> Pláž
+                    </p>
+                    </div>
                     <div className={'row mt-5 d-flex'}>
                         <div className={'col-12 d-flex justify-content-start'}>
                             <div className={'mt-2 me-5'}>

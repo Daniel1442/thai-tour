@@ -1,16 +1,11 @@
 import React, {useEffect, useState} from "react";
-import Navigation from '../modules/common/components/navigation';
 import SearchBar from "../modules/homepage/components/searchBar";
 import Carousel from "../modules/homepage/components/carousel";
 import SuggestionItem from "../modules/homepage/components/suggestionItem";
 import SuggestionArticle from "../modules/homepage/components/suggestionArticle";
-import Footer from "../modules/common/components/footer";
 import {useRouter} from "next/router";
-import Header from "../modules/common/components/header";
 import {PlaceRow} from "../modules/homepage/models";
 import {getFavoritePlaces} from "../modules/homepage/action";
-import MobileFooter from "../modules/common/components/mobileFooter";
-import MobileNavigation from "../modules/common/components/mobileNavigation";
 
 const Index = () => {
     const router = useRouter();
@@ -35,10 +30,7 @@ const Index = () => {
     }, []);
 
 
-    return <div className={'homepage'}>
-        <Header/>
-        <Navigation/>
-        <MobileNavigation/>
+    return<div>
         <div className="main__img pt-5 pb-5">
             <div className={'container'}>
                 <div className={'row mb-5'}>
@@ -67,9 +59,6 @@ const Index = () => {
                 <SuggestionArticle image={'http://www.thaitour.cz/wp-content/uploads/14.jpg'}/>
             </div>
         </div>
-        <Footer href={''} contact={''}/>
-        <MobileFooter href={''} contact={''}/>
-
     </div>
 }
 

@@ -1,13 +1,8 @@
 import React, {useContext, useEffect} from "react";
-import Navigation from '../modules/common/components/navigation';
-import Footer from "../modules/common/components/footer";
-import Header from "../modules/common/components/header";
 import {PlaceContent, PlaceContext} from "../context/placeContext";
 import {useRouter} from "next/router";
 import {ArticleFinderPayload} from "../modules/blog/models";
 import ArticleItem from "../modules/blog/components/blogRowOne";
-import MobileFooter from "../modules/common/components/mobileFooter";
-import MobileNavigation from "../modules/common/components/mobileNavigation";
 
 const Blog = () => {
     const router = useRouter()
@@ -39,11 +34,7 @@ const Blog = () => {
     }, [router]);
 
 
-    return <div className={'homepage'}>
-            <Header/>
-        <Navigation/>
-        <MobileNavigation/>
-        <div className={'container mt-5'}>
+    return <div className={'container mt-5'}>
             <div className={'row'}>
                 <h3>Nejnovější články</h3>
             </div>
@@ -96,9 +87,6 @@ const Blog = () => {
                 </>
             </div>
         </div>
-           <Footer href={''} contact={''}/> 
-        <MobileFooter href={''} contact={''}/>
-    </div>
 }
 
 export default Blog;

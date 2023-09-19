@@ -20,7 +20,7 @@ const Footer: React.FC<ContactProps> = ({href, contact}) => {
                     <div className={'row'}>
                         <div className={'col-lg-12 d-flex'}>
                             <h2>Spojte se s Thai Tour</h2>
-                            <ul className="list-unstyled d-flex justify-content-center footer-m">
+                            <ul className="list-unstyled d-flex justify-content-center footer-m" style={{marginTop: '5px'}}>
                                 <li className="ms-3"><a className="link-dark" href="#">
                                     <img src={'https://cdn-icons-png.flaticon.com/512/2168/2168336.png'}
                                          width={30}

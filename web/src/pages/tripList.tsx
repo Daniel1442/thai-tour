@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 
-const ThaiWeather = () => {
+const TripList = () => {
 
     let width = typeof window !== 'undefined' && window.innerWidth;
     useEffect(() => {
@@ -8,8 +8,11 @@ const ThaiWeather = () => {
     }, [width]);
 
     return <div className={'container pt-5'}>
-        WIP
+        <div className={'row'}>
+
+        </div>
     </div>
+
 }
 
-export default ThaiWeather;
+export default TripList;
