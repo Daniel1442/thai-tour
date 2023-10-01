@@ -1,7 +1,5 @@
-import React, {useContext, useRef, useState} from 'react';
-import {Card} from 'react-bootstrap';
+import React, {useContext} from 'react';
 import {PlaceContent, PlaceContext} from "../../../context/placeContext";
-import InformationCard from "./informationCard";
 import ImageGallery from "react-image-gallery";
 
 const InformationImageCard: React.FC = () => {
@@ -60,7 +58,7 @@ const InformationImageCard: React.FC = () => {
                                   showFullscreenButton={true} showPlayButton={false}/>
                 </div>
             </div>
-            <InformationCard/>
+
         </div>
     )
 }

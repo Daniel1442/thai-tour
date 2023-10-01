@@ -1,15 +1,15 @@
-import React, {useContext, useEffect, useState} from "react";
-import Navigation from '../modules/common/components/navigation';
-import Footer from "../modules/common/components/footer";
-import Header from "../modules/common/components/header";
+import React, {useEffect} from "react";
 import PlaceCardInfo from "../modules/common/components/placeCardInfo";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const LocalPlaceDescription = () => {
-    return <div className={'homepage'}>
-        <Header/>
-        <Navigation/>
 
-        <div className={'container pt-5'}>
+    let width = typeof window !== 'undefined' && window.innerWidth;
+    useEffect(() => {
+        width = typeof window !== 'undefined' && window.innerWidth;
+    }, [width]);
+
+    return <div className={'container pt-5'}>
             <div className={'aboutDestination p-2 bg-white text-left'} style={{borderRadius: '4px'}}>
                 <h1 className={'my-5'}>Thajsko – Popis lokalit</h1>
                 <div className={'row m-3'}>
@@ -25,7 +25,7 @@ const LocalPlaceDescription = () => {
                     <div className={'col-12 d-flex justify-content-start'}>
                         <div className={'row'}>
                             <div className={"col-12 d-flex justify-content-start"}>
-                                <img className={'w-100 h-100'}
+                                <LazyLoadImage  className={'w-100 h-100'}
                                      src={'http://www.thaitour.cz/wp-content/uploads/P%C5%99ehled-nov%C3%BD.jpg'}/>
                             </div>
                         </div>
@@ -149,12 +149,8 @@ const LocalPlaceDescription = () => {
                         'Golf Chiang Rai',
                         'Počasí Chiang Rai',
                         'Co navštívit v Chiang Rai']}/>
-
-
             </div>
         </div>
-        <Footer href={''} contact={''}/>
-    </div>
 }
 
 export default LocalPlaceDescription;

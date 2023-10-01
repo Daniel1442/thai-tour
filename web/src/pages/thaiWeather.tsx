@@ -1,17 +1,14 @@
-import React, {useContext, useEffect, useState} from "react";
-import Navigation from '../modules/common/components/navigation';
-import Footer from "../modules/common/components/footer";
-import Header from "../modules/common/components/header";
+import React, {useEffect} from "react";
 
 const ThaiWeather = () => {
-    return <div className={'homepage'}>
-        <Header/>
-        <Navigation/>
 
-        <div className={'container pt-5'}>
-            WIP
-        </div>
-        <Footer href={''} contact={''}/>
+    let width = typeof window !== 'undefined' && window.innerWidth;
+    useEffect(() => {
+        width = typeof window !== 'undefined' && window.innerWidth;
+    }, [width]);
+
+    return <div className={'container pt-5'}>
+        WIP
     </div>
 }
 

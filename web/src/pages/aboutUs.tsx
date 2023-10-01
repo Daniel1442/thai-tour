@@ -1,21 +1,6 @@
-import React, {useContext, useEffect, useState} from "react";
-import Navigation from '../modules/common/components/navigation';
-import SearchBar from "../modules/homepage/components/searchBar";
-import Carousel from "../modules/homepage/components/carousel";
-import SuggestionItem from "../modules/homepage/components/suggestionItem";
-import SuggestionArticle from "../modules/homepage/components/suggestionArticle";
-import Footer from "../modules/common/components/footer";
-import InformationImageCard from "../modules/destination/components/informationImageCard";
-import DestinationSideBar from "../modules/destination/components/destinationSidebar";
-import AboutDestination from "../modules/destination/components/aboutDestination";
-import ImportantInfo from "../modules/destination/components/importantInfo";
-import Header from "../modules/common/components/header";
+import React, {useContext, useEffect} from "react";
 import {useRouter} from "next/router";
-import {getDetail, getFavoritePlaces} from "../modules/homepage/action";
-import {PlaceDetail, PlaceRow} from "../modules/homepage/models";
-import {usePlaceContext} from "../hooks/usePlaceContext";
 import {PlaceContent, PlaceContext} from "../context/placeContext";
-import Loader from "../modules/common/components/loader";
 
 const AboutUs = () => {
     let width = typeof window !== 'undefined' && window.innerWidth;
@@ -37,16 +22,19 @@ const AboutUs = () => {
         fetchPlace(id as string)
     }, [id]);
 
-    return <div className={'homepage'}>
-        <Header/>
-        <Navigation/>
-
+    return <>
+        <nav aria-label="breadcrumb">
+            <ol className="breadcrumb">
+                <li className="breadcrumb-item"><a href="/">Thai-tour</a></li>
+                <li className="breadcrumb-item active" aria-current="page">O nás</li>
+            </ol>
+        </nav>
         <div className={'container pt-5'}>
             <div className={'aboutDestination p-2 bg-white text-left'} style={{borderRadius: '4px'}}>
                 <h1 className={'my-5'}>Thaitour.cz – Váš specialista na Thajsko a dovolenou v Thajsku</h1>
                 <div className={'row m-3'}>
                     <div className={'col-lg-2 col-sm-12'}>
-                        <img src={'http://www.thaitour.cz/wp-content/uploads/Mapa-hlavni-strana.jpg'}/>
+                        <LazyLoadImage  src={'http://www.thaitour.cz/wp-content/uploads/Mapa-hlavni-strana.jpg'}/>
                     </div>
                     <div className={'col-lg-8 col-sm-12 px-lg-5 d-flex justify-content-start'}>
                         <div className={'row'}>
@@ -103,7 +91,7 @@ const AboutUs = () => {
                         </div>
                     </div>
                     <div className={'col-2'}>
-                        {/*<img src={img.images.exchange}/>*/}
+                        {/*<LazyLoadImage  src={img.images.exchange}/>*/}
                     </div>
                 </div>
                 <div className={'row m-3'}>
@@ -422,8 +410,7 @@ const AboutUs = () => {
                 </div>
             </div>
         </div>
-        <Footer href={''} contact={''}/>
-    </div>
+    </>
 }
 
 export default AboutUs;

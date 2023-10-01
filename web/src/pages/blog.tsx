@@ -1,14 +1,6 @@
 import React, {useContext, useEffect} from "react";
-import Navigation from '../modules/common/components/navigation';
-import Footer from "../modules/common/components/footer";
-import SidebarFilter from "../modules/catalog/components/sidebarFilter";
-import CatalogItem from "../modules/catalog/components/catalogItem";
-import Header from "../modules/common/components/header";
 import {PlaceContent, PlaceContext} from "../context/placeContext";
 import {useRouter} from "next/router";
-import {PlaceFinderPayload} from "../modules/homepage/models";
-import CatalogItemMobile from "../modules/catalog/components/catalogItemMobile";
-import Button from "react-bootstrap/Button";
 import {ArticleFinderPayload} from "../modules/blog/models";
 import ArticleItem from "../modules/blog/components/blogRowOne";
 
@@ -42,10 +34,7 @@ const Blog = () => {
     }, [router]);
 
 
-    return <div className={'homepage'}>
-        <Header/>
-        <Navigation/>
-        <div className={'container mt-5'}>
+    return <div className={'container mt-5'}>
             <div className={'row'}>
                 <h3>Nejnovější články</h3>
             </div>
@@ -98,8 +87,6 @@ const Blog = () => {
                 </>
             </div>
         </div>
-        <Footer href={''} contact={''}/>
-    </div>
 }
 
 export default Blog;

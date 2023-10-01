@@ -1,7 +1,10 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Dropdown from "./dropdown";
 import {useRouter} from "next/router";
 import DropdownPlaces from "./dropdownPlaces";
+import {faHeart, faLock, faSearch} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import DropdownAboutUs from "./dropdownAboutUs";
 
 
 const Navigation: React.FC = () => {
@@ -20,37 +23,49 @@ const Navigation: React.FC = () => {
 
     return (
 
-        <div className={'background-blue navigation'}>
-            <div className="container">
-                <nav className="navbar navbar-expand-lg navbar-light" style={{height: '60px'}} onClick={() => (setToggle(!toggle))}>
-                    <div className="container-fluid">
-                        <a className="navbar-brand cursor-pointer">
-                            <img
-                                onClick={() => redirectToHomepage()}
-                                className={'mobile'}
-                                src={"https://www.thaitour.cz/favicon.png"}
-                                alt="ThaiTour"/>
-                            <img
-                                onClick={() => redirectToHomepage()}
-                                className={'desktop'}
-                                src={"http://www.thaitour.cz/wp-content/themes/twentyten/images/logo.jpg"}
-                                alt="ThaiTour"/>
-                        </a>
+        <div className={'background-blue navigation desktop'}>
+            <div className="container  px-0">
+                <nav className="navbar navbar-expand-lg navbar-light" style={{height: '60px'}}
+                     onClick={() => (setToggle(!toggle))}>
+                    <div className="container-fluid  px-0">
                         <button type="button" className="navbar-toggler" data-bs-toggle="collapse"
                                 data-bs-target="#navbarCollapse">
                             <span className="navbar-toggler-icon"></span>
                         </button>
-                        <div className={`collapse navbar-collapse mobileNavbar ${toggle ? 'show' : ''}`} id="navbarCollapse">
+                        <div className={`collapse navbar-collapse mobileNavbar ${toggle ? 'show' : ''}`}
+                             id="navbarCollapse d-flex" style={{justifyContent: 'space-between'}}>
                             <div className="navbar-nav">
-                                <a href="/aboutUs" className="nav-item nav-link font-white">O nás</a>
-                                <a href="/blog" className="nav-item nav-link font-white">Blog</a>
+                                <Dropdown name={'O thajsku'}/>
                                 <DropdownPlaces name={'Ubytování'}/>
                                 <a href="/airplaneTickets" className="nav-item nav-link font-white">Letenky</a>
                                 <a href="/transfer" className="nav-item nav-link font-white">Transfer</a>
                                 <a href="/tripCatalog" className="nav-item nav-link font-white">Výlety</a>
                                 <a href="/thaiGolf" className="nav-item nav-link font-white">Golf</a>
-                                <Dropdown name={'O thajsku'}/>
-                                <a href="/contacts" className="nav-item nav-link font-white">Kontakt</a>
+                                <a href="/blog" className="nav-item nav-link font-white">Novinky</a>
+                                <DropdownAboutUs name={'O nás'} link={'/aboutUs'}/>
+                            </div>
+                            <div className="navbar-text float-end row">
+                                <div className={'col-4'}>
+                                    <FontAwesomeIcon icon={faSearch}
+                                                     style={{
+                                                         color: '#ffffff',
+                                                         padding: "0px 16px 0px 0px"
+                                                     }}/>
+                                </div>
+                                <div className={'col-4'}>
+                                    <FontAwesomeIcon icon={faHeart}
+                                                     style={{
+                                                         color: '#ffffff',
+                                                         padding: "0px 16px 0px 0px"
+                                                     }}/>
+                                </div>
+                                <div className={'col-4'}>
+                                    <FontAwesomeIcon icon={faLock}
+                                                     style={{
+                                                         color: '#ffffff',
+                                                         padding: "0px 16px 0px 0px"
+                                                     }}/>
+                                </div>
                             </div>
                         </div>
                     </div>

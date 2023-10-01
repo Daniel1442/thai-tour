@@ -1,5 +1,5 @@
-import React, {useEffect, useRef, useState} from 'react';
-import Button from 'react-bootstrap/Button';
+import React, {useState} from 'react';
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 
 const Carousel: React.FC = () => {
@@ -23,7 +23,7 @@ const Carousel: React.FC = () => {
         <div id="carouselExampleIndicators" className="carousel slide carouselComponent" data-bs-ride="carousel">
             <div className="carousel-inner" style={{borderRadius: '15px'}}>
                 <div className="carousel-item active">
-                    <img src={images[index]} className="d-block w-100" alt="..."/>
+                    <LazyLoadImage  src={images[index]} className="d-block w-100" alt="..."/>
                 </div>
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"

@@ -1,6 +1,7 @@
-import React, {useContext, useEffect, useState} from "react";
-import { Alert } from "react-bootstrap";
+import React from "react";
+import {Alert} from "react-bootstrap";
 import {useRouter} from "next/router";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 interface BlogParagraphProps {
     image: string;
@@ -21,7 +22,7 @@ const BlogParagraph: React.FC<BlogParagraphProps> = ({image, articleHeading, art
                 <div className={'row'}>
                     <div className={'col-2 me-3'}>
 
-                <img src={'https://dcontent.inviacdn.net/shared/img/affil-450x300/2023/6/29/m0/1782861.jpg'} className={'me-3 rounded'} width={135} height={90} alt={''}/>
+                <LazyLoadImage  src={'https://dcontent.inviacdn.net/shared/img/affil-450x300/2023/6/29/m0/1782861.jpg'} className={'me-3 rounded'} width={135} height={90} alt={''}/>
                     </div>
                     <div className={'col-9'}>
                         <span style={{fontSize: '15px'}}>Čtěte také</span>
@@ -34,7 +35,7 @@ const BlogParagraph: React.FC<BlogParagraphProps> = ({image, articleHeading, art
             <h3>{articleHeading}</h3>
         </div>
         <div className={' col-sm-12 mt-2'}>
-            <img src={image} className={'imageFull'}/>
+            <LazyLoadImage  src={image} className={'imageFull'}/>
         </div>
         <div className={'col-sm-12 mt-2 mb-3'}>
             {index === 0 ? <b className={''}>

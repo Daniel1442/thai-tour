@@ -1,7 +1,6 @@
-import React, {useRef, useState} from 'react';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faIcons} from "@fortawesome/free-solid-svg-icons";
+import React from 'react';
 import {useRouter} from "next/router";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 
 interface ContactProps {
@@ -17,36 +16,36 @@ const Footer: React.FC<ContactProps> = ({href, contact}) => {
     }
     return (
         <>
-            <div className={'border-top pt-5'}>
+            <div className={'border-top pt-5 desktop'}>
                 <div className={'container'}>
                     <div className={'row'}>
                         <div className={'col-lg-12 d-flex'}>
                             <h2>Spojte se s Thai Tour</h2>
-                            <ul className="list-unstyled d-flex justify-content-center footer-m">
+                            <ul className="list-unstyled d-flex justify-content-center footer-m" style={{marginTop: '5px'}}>
                                 <li className="ms-3"><a className="link-dark" href="#">
-                                    <img src={'https://cdn-icons-png.flaticon.com/512/2168/2168336.png'}
+                                    <LazyLoadImage  src={'https://cdn-icons-png.flaticon.com/512/2168/2168336.png'}
                                          width={30}
                                          height={30}/>
 
                                 </a></li>
                                 <li className="ms-3"><a className="link-dark" href="#">
-                                    <img src={'https://cdn-icons-png.flaticon.com/512/3669/3669688.png'}
+                                    <LazyLoadImage  src={'https://cdn-icons-png.flaticon.com/512/3669/3669688.png'}
                                          width={30}
                                          height={30}/>
 
                                 </a></li>
                                 <li className="ms-3"><a className="link-dark" href="#">
-                                    <img src={'https://cdn-icons-png.flaticon.com/512/2168/2168281.png'}
+                                    <LazyLoadImage  src={'https://cdn-icons-png.flaticon.com/512/2168/2168281.png'}
                                          width={30}
                                          height={30}/>
                                 </a></li>
                                 <li className="ms-3"><a className="link-dark" href="#">
-                                    <img src={'https://cdn-icons-png.flaticon.com/512/1384/1384015.png'}
+                                    <LazyLoadImage  src={'https://cdn-icons-png.flaticon.com/512/1384/1384015.png'}
                                          width={30}
                                          height={30}/>
                                 </a></li>
                                 <li className="ms-3"><a className="link-dark" href="#">
-                                    <img src={'https://cdn-icons-png.flaticon.com/512/1384/1384014.png'}
+                                    <LazyLoadImage  src={'https://cdn-icons-png.flaticon.com/512/1384/1384014.png'}
                                          width={30}
                                          height={30}/>
                                 </a></li>
@@ -121,7 +120,7 @@ const Footer: React.FC<ContactProps> = ({href, contact}) => {
                 <div className={'container'}>
                     <div className={'row'}>
                         <div className={'col-12  d-flex justify-content-center'}>
-                            <img
+                            <LazyLoadImage 
                                 onClick={() => redirectToHomepage()}
                                 src={"https://www.thaitour.cz/favicon.png"}
                                 className={'me-3'}
