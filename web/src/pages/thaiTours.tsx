@@ -7,9 +7,7 @@ const ThaiTours = () => {
         width = typeof window !== 'undefined' && window.innerWidth;
     }, [width]);
 
-    return
-
-        <div className={'container pt-5'}>
+    return<div className={'container pt-5'}>
             WIP
         </div>
 
