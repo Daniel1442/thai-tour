@@ -1,6 +1,7 @@
 import React, {useContext, useEffect} from "react";
 import {useRouter} from "next/router";
 import {PlaceContent, PlaceContext} from "../context/placeContext";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const AboutUs = () => {
     let width = typeof window !== 'undefined' && window.innerWidth;
@@ -34,7 +35,7 @@ const AboutUs = () => {
                 <h1 className={'my-5'}>Thaitour.cz – Váš specialista na Thajsko a dovolenou v Thajsku</h1>
                 <div className={'row m-3'}>
                     <div className={'col-lg-2 col-sm-12'}>
-                        <LazyLoadImage  src={'http://www.thaitour.cz/wp-content/uploads/Mapa-hlavni-strana.jpg'}/>
+                        <LazyLoadImage src={'http://www.thaitour.cz/wp-content/uploads/Mapa-hlavni-strana.jpg'}/>
                     </div>
                     <div className={'col-lg-8 col-sm-12 px-lg-5 d-flex justify-content-start'}>
                         <div className={'row'}>
@@ -129,7 +130,8 @@ const AboutUs = () => {
                         </div>
 
                         <div className={"col-12 d-flex justify-content-start"}>
-                            <a className={'btn btn-small '} href={'/catalog'} style={{backgroundColor: '#e9f3fb'}}>On-line katalog</a>
+                            <a className={'btn btn-small '} href={'/catalog'} style={{backgroundColor: '#e9f3fb'}}>On-line
+                                katalog</a>
                         </div>
                     </div>
                     <div>
@@ -215,7 +217,8 @@ const AboutUs = () => {
                         </div>
 
                         <div className={"col-12 d-flex justify-content-start"}>
-                            <a className={'btn btn-small '} href={'/thaiRecommendation'} style={{backgroundColor: '#e9f3fb'}}>Popis
+                            <a className={'btn btn-small '} href={'/thaiRecommendation'}
+                               style={{backgroundColor: '#e9f3fb'}}>Popis
                                 lokalit</a>
                         </div>
                     </div>
@@ -364,14 +367,15 @@ const AboutUs = () => {
                                 ve
                                 Vašem životě!</p>
                         </div>
-\
+                        \
                         <div className={"col-12 d-flex justify-content-start"}>
-                            <a href={'/thaiTours'} className={'btn btn-small '} style={{backgroundColor: '#e9f3fb'}}>Výlety v
+                            <a href={'/thaiTours'} className={'btn btn-small '} style={{backgroundColor: '#e9f3fb'}}>Výlety
+                                v
                                 Thajsku</a>
                         </div>
                     </div>
                     <div className={'col-12'}>
-                        <div className={"mt-3 col-12 d-flex justify-content-start"} ><h5>Golf v Thajsku</h5>
+                        <div className={"mt-3 col-12 d-flex justify-content-start"}><h5>Golf v Thajsku</h5>
                         </div>
                         <div className={"col-12 d-flex justify-content-start"}>
                             <p>Hrajete golf? Pak si nesmíte nechat ujít golf v Thajsku! Thajsko nabízí ty
@@ -390,7 +394,8 @@ const AboutUs = () => {
                         </div>
 
                         <div className={"col-12 d-flex justify-content-start"}>
-                            <a href={'/thaiGolf'} className={'btn btn-small '} style={{backgroundColor: '#e9f3fb'}}>Golf v Thajsku</a>
+                            <a href={'/thaiGolf'} className={'btn btn-small '} style={{backgroundColor: '#e9f3fb'}}>Golf
+                                v Thajsku</a>
                         </div>
                     </div>
                     <div className={'col-12 mt-3'}>
