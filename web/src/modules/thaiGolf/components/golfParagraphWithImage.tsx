@@ -1,4 +1,5 @@
 import React from "react";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 interface ComponentProps {
     heading: string
@@ -13,7 +14,7 @@ const GolfParagraph: React.FC<ComponentProps> = ({heading, img, paragraph}) => {
                 {heading}
             </h5>
             <div className={'col-lg-2 col-sm-12'}>
-                <img src={img} alt={'golf_img'}/>
+                <LazyLoadImage  src={img} alt={'golf_img'}/>
             </div>
             <div className={'col-lg-9 col-sm-12 ms-4'}>
                 <p>

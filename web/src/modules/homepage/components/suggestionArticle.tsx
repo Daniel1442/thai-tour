@@ -1,5 +1,5 @@
-import React, {useRef, useState} from 'react';
-import Button from 'react-bootstrap/Button';
+import React from 'react';
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 interface ComponentProps {
     image: string
@@ -11,7 +11,7 @@ const SuggestionArticle: React.FC<ComponentProps> = ({image}) => {
         <div className={'suggestionItem col-lg-3 col-sm-12  d-flex justify-content-center'}>
 
             <div className="card cardInfo border-0">
-                <img
+                <LazyLoadImage 
                     src={image}
                     className="card-img-top" alt="..."/>
                 <div className="card-body mb-3">

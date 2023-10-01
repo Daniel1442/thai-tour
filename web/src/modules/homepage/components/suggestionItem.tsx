@@ -1,9 +1,9 @@
-import React, {useRef, useState} from 'react';
-import Button from 'react-bootstrap/Button';
+import React from 'react';
 import {useRouter} from "next/router";
 import StarRatings from "react-star-ratings";
 import {PlaceRow} from "../models";
 import UserReviewBadge from "./userReviewBadge";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 interface ComponentProps  {
   place: PlaceRow
@@ -17,7 +17,7 @@ const SuggestionItem: React.FC<ComponentProps> = ({place}) => {
     return (
         <div className={'col-lg-3 col-sm-12 d-flex justify-content-center suggestionItem'} onClick={(() => redirectToDetail(place.id as string))}>
             <div className="card cursor-pointer cardInfo border-0">
-                <img
+                <LazyLoadImage 
                     src="http://www.thaitour.cz/wp-content/uploads/Beachfront-Swimming-Pool_Bua-Fah-Restaurant-2-198x126.jpg"
                     className="card-img-top" alt="..."/>
                 <div className="card-body ">

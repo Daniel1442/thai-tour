@@ -1,6 +1,7 @@
 import {useRouter} from "next/router";
 import React from "react";
 import SidebarPlace from "./sidebarPlace";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const BlogSidebar = () => {
     const router = useRouter();
@@ -20,19 +21,19 @@ const BlogSidebar = () => {
         <div className={'col-12'}>
                 <ul className="list-unstyled d-flex justify-content-left footer-m">
                     <li className=""><a className="link-dark" href="#">
-                        <img src={'https://cdn-icons-png.flaticon.com/512/2168/2168336.png'}
+                        <LazyLoadImage  src={'https://cdn-icons-png.flaticon.com/512/2168/2168336.png'}
                              width={30}
                              height={30}/>
 
                     </a></li>
 
                     <li className="ms-3"><a className="link-dark" href="#">
-                        <img src={'https://cdn-icons-png.flaticon.com/512/2168/2168281.png'}
+                        <LazyLoadImage  src={'https://cdn-icons-png.flaticon.com/512/2168/2168281.png'}
                              width={30}
                              height={30}/>
                     </a></li>
                     <li className="ms-3"><a className="link-dark" href="#">
-                        <img src={'https://cdn-icons-png.flaticon.com/512/1384/1384015.png'}
+                        <LazyLoadImage  src={'https://cdn-icons-png.flaticon.com/512/1384/1384015.png'}
                              width={30}
                              height={30}/>
                     </a></li>

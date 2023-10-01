@@ -1,4 +1,5 @@
-import React, {useContext, useEffect, useState} from "react";
+import React from "react";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 interface BlogParagraphProps {
     name: string;
@@ -11,7 +12,7 @@ const AboutAuthor: React.FC<BlogParagraphProps> = ({name, dateOfRelease, tags, a
 
     return <div className={'row mb-5'}>
         <div className={'col-lg-1 ca'}>
-            <img src={authorImage} className={'rounded-circle'}/>
+            <LazyLoadImage  src={authorImage} className={'rounded-circle'}/>
         </div>
         <div className={'col-lg-4'}>
             <div className={'row mt-4'}>

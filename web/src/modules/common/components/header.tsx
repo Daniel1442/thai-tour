@@ -2,6 +2,7 @@ import React from 'react';
 import {faPhone} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useRouter} from "next/router";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const Header: React.FC = () => {
     const router = useRouter();
@@ -14,7 +15,7 @@ const Header: React.FC = () => {
             <div className={'container'}>
                 <div className={'row'}>
                     <div className={'col-4 d-flex justify-content-start'}>
-                        <img
+                        <LazyLoadImage 
                             onClick={() => redirectToHomepage()}
                             className={'desktop cursor-pointer'}
                             src={"http://www.thaitour.cz/wp-content/themes/twentyten/images/logo.jpg"}

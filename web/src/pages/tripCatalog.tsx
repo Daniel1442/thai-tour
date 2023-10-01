@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import PlaceTripCard from "../modules/travelCatalog/components/placeTripCard";
 import PlaceTripInfo from "../modules/travelCatalog/components/placeTripInfo";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const TripCatalog = () => {
 
@@ -43,7 +44,7 @@ const TripCatalog = () => {
         </div>
         <div className={'row'}>
             <div className={'col-lg-4 col-sm-0'}>
-                <img src={'http://www.thaitour.cz/wp-content/uploads/2013/10/vylety.jpg'}/>
+                <LazyLoadImage  src={'http://www.thaitour.cz/wp-content/uploads/2013/10/vylety.jpg'}/>
             </div>
             <div className={'col-lg-8 col-sm-12'}>
                 <PlaceTripInfo heading={'Bangkok'}

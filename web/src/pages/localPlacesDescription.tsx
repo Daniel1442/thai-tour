@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import PlaceCardInfo from "../modules/common/components/placeCardInfo";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const LocalPlaceDescription = () => {
 
@@ -24,7 +25,7 @@ const LocalPlaceDescription = () => {
                     <div className={'col-12 d-flex justify-content-start'}>
                         <div className={'row'}>
                             <div className={"col-12 d-flex justify-content-start"}>
-                                <img className={'w-100 h-100'}
+                                <LazyLoadImage  className={'w-100 h-100'}
                                      src={'http://www.thaitour.cz/wp-content/uploads/P%C5%99ehled-nov%C3%BD.jpg'}/>
                             </div>
                         </div>

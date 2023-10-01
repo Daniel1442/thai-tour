@@ -5,6 +5,7 @@ import {PlaceRow} from "../../homepage/models";
 import UserReviewBadge from "../../homepage/components/userReviewBadge";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUmbrellaBeach, faWifi} from "@fortawesome/free-solid-svg-icons";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 interface ComponentProps {
     place: PlaceRow
@@ -20,7 +21,7 @@ const CatalogItem: React.FC<ComponentProps> = ({place}) => {
              onClick={() => redirectToDetail(place && place.id)}>
             <div className={'row'}>
                 <div className={'col-4'}>
-                    <img src={place && place.image}/>
+                    <LazyLoadImage  src={place && place.image}/>
                 </div>
                 <div className={'col-8'}>
                     <div className={'col-12 mt-3'}>

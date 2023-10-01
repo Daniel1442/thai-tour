@@ -18,7 +18,7 @@ const InformationCard: React.FC = () => {
             {/*    {place.placeImageListList && Object.entries(place.placeImageListList).map(([id, image], index) => {*/}
             {/*        return(*/}
             {/*            <div className={`col-2 me-3 ${index === 0 ? 'p-0' : ''}`}>*/}
-            {/*                <img*/}
+            {/*                <LazyLoadImage */}
             {/*                    src={image.target}*/}
             {/*                    className="rounded" alt="..."/>*/}
             {/*            </div>*/}

@@ -1,6 +1,7 @@
 import React from 'react';
 import {useRouter} from "next/router";
 import MobileFooterDropdown from "./mobileFooterDropdown";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 
 interface ContactProps {
@@ -30,29 +31,29 @@ const MobileFooter: React.FC<ContactProps> = ({href, contact}) => {
                         <div className={'col-12 d-flex justify-content-center'}>
                             <ul className="list-unstyled d-flex justify-content-center footer-m">
                                 <li className="ms-3"><a className="link-dark" href="#">
-                                    <img src={'https://cdn-icons-png.flaticon.com/512/2168/2168336.png'}
+                                    <LazyLoadImage  src={'https://cdn-icons-png.flaticon.com/512/2168/2168336.png'}
                                          width={30}
                                          height={30}/>
 
                                 </a></li>
                                 <li className="ms-3"><a className="link-dark" href="#">
-                                    <img src={'https://cdn-icons-png.flaticon.com/512/3669/3669688.png'}
+                                    <LazyLoadImage  src={'https://cdn-icons-png.flaticon.com/512/3669/3669688.png'}
                                          width={30}
                                          height={30}/>
 
                                 </a></li>
                                 <li className="ms-3"><a className="link-dark" href="#">
-                                    <img src={'https://cdn-icons-png.flaticon.com/512/2168/2168281.png'}
+                                    <LazyLoadImage  src={'https://cdn-icons-png.flaticon.com/512/2168/2168281.png'}
                                          width={30}
                                          height={30}/>
                                 </a></li>
                                 <li className="ms-3"><a className="link-dark" href="#">
-                                    <img src={'https://cdn-icons-png.flaticon.com/512/1384/1384015.png'}
+                                    <LazyLoadImage  src={'https://cdn-icons-png.flaticon.com/512/1384/1384015.png'}
                                          width={30}
                                          height={30}/>
                                 </a></li>
                                 <li className="ms-3"><a className="link-dark" href="#">
-                                    <img src={'https://cdn-icons-png.flaticon.com/512/1384/1384014.png'}
+                                    <LazyLoadImage  src={'https://cdn-icons-png.flaticon.com/512/1384/1384014.png'}
                                          width={30}
                                          height={30}/>
                                 </a></li>
@@ -85,7 +86,7 @@ const MobileFooter: React.FC<ContactProps> = ({href, contact}) => {
                             <small>Copyright © 2023 Vodafone Czech Republic a.s.</small>
                         </div>
                         <div className={'col-2'}>
-                            <img
+                            <LazyLoadImage 
                                 onClick={() => redirectToHomepage()}
                                 // src={"https://www.thaitour.cz/favicon.png"}
                                 src={"http://www.thaitour.cz/wp-content/themes/twentyten/images/logo.jpg"}

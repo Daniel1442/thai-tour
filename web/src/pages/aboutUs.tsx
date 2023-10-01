@@ -34,7 +34,7 @@ const AboutUs = () => {
                 <h1 className={'my-5'}>Thaitour.cz – Váš specialista na Thajsko a dovolenou v Thajsku</h1>
                 <div className={'row m-3'}>
                     <div className={'col-lg-2 col-sm-12'}>
-                        <img src={'http://www.thaitour.cz/wp-content/uploads/Mapa-hlavni-strana.jpg'}/>
+                        <LazyLoadImage  src={'http://www.thaitour.cz/wp-content/uploads/Mapa-hlavni-strana.jpg'}/>
                     </div>
                     <div className={'col-lg-8 col-sm-12 px-lg-5 d-flex justify-content-start'}>
                         <div className={'row'}>
@@ -91,7 +91,7 @@ const AboutUs = () => {
                         </div>
                     </div>
                     <div className={'col-2'}>
-                        {/*<img src={img.images.exchange}/>*/}
+                        {/*<LazyLoadImage  src={img.images.exchange}/>*/}
                     </div>
                 </div>
                 <div className={'row m-3'}>

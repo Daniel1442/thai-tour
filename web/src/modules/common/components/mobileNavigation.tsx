@@ -4,6 +4,7 @@ import {useRouter} from "next/router";
 import DropdownPlaces from "./dropdownPlaces";
 import {faPhone} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 
 const MobileNavigation: React.FC = () => {
@@ -40,7 +41,7 @@ const MobileNavigation: React.FC = () => {
                                     </div>
                                 </div>
                                 <div  className={'me-5'}>
-                                    <img
+                                    <LazyLoadImage 
                                         onClick={() => redirectToHomepage()}
                                         height={'115px'}
                                         style={{zIndex:'1000', position:'relative'}}

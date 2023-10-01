@@ -1,4 +1,5 @@
 import React from "react";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 interface ComponentProps {
     heading: string
@@ -11,7 +12,7 @@ const Card: React.FC<ComponentProps> = ({heading, text, image, link}) => {
     return (
         <div className={'col-lg-4 col-sm-12 mt-3'}>
             <div className="card border-0" style={{width: "18rem"}}>
-                <img className="card-img-top"
+                <LazyLoadImage  className="card-img-top"
                      src={image}
                      alt="Card image cap"/>
                 <div className="card-body">

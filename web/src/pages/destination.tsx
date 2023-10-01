@@ -8,6 +8,7 @@ import DestinationSidebarNew from "../modules/destination/components/destination
 import DestinationNavbar from "../modules/destination/components/destinationNavbar";
 import AboutDestinationNew from "../modules/destination/components/aboutDestinationNew";
 import DestinationHeadingMobile from "../modules/destination/components/destinationHeadingMobile";
+import DestinationRoom from "../modules/destination/components/destinationRoom";
 
 const Destination = () => {
     let width = typeof window !== 'undefined' && window.innerWidth;
@@ -54,7 +55,7 @@ const Destination = () => {
                             <AboutDestinationNew    />
                         }
                         {placeDescriptionType === 'ROOMS' &&
-                            <>b</>
+                            <DestinationRoom/>
                         }
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import PlaceCardWithoutBullets from "../modules/common/components/placeCardWithoutBullets";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const Transfer = () => {
 
@@ -13,7 +14,7 @@ const Transfer = () => {
             Transfer</h1>
         <div className={'row'}>
             <div className={'col-12'}>
-                <img src="http://www.thaitour.cz/wp-content/uploads/2013/11/transfer.jpg" width={'100%'}/>
+                <LazyLoadImage src="http://www.thaitour.cz/wp-content/uploads/2013/11/transfer.jpg" width={'100%'}/>
             </div>
             <div className={'col-12'}>
                 <PlaceCardWithoutBullets

@@ -1,4 +1,5 @@
 import React, {useEffect} from "react";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const AirPlaneTickets = () => {
     let width = typeof window !== 'undefined' && window.innerWidth;
@@ -20,7 +21,7 @@ const AirPlaneTickets = () => {
                 Letenky do Thajska / Letenky Thajsko</h1>
             <div className={'row'}>
                 <div className={'col-12'}>
-                    <img src={'http://www.thaitour.cz/wp-content/uploads/2013/10/Letadlo.jpg'} width={'100%'}/>
+                    <LazyLoadImage  src={'http://www.thaitour.cz/wp-content/uploads/2013/10/Letadlo.jpg'} width={'100%'}/>
                 </div>
                 <div className={'col-12'}>
                     <iframe src={'https://letenky.kralovna.cz/booking/?idProdejce=4710&lang=cs-cz'} width={'100%'}

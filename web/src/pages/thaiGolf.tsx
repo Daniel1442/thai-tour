@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import PlaceTripCard from "../modules/travelCatalog/components/placeTripCard";
 import GolfParagraph from "../modules/thaiGolf/components/golfParagraphWithImage";
 import {Alert} from "react-bootstrap";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const ThaiGolf = () => {
 
@@ -15,7 +16,7 @@ const ThaiGolf = () => {
             Golf v exotickém Thajsku</h1>
         <div className={'row'}>
             <div className={'col-12'}>
-                <img src={'http://www.thaitour.cz/wp-content/uploads/2013/10/golf.jpg'} width={'100%'}/>
+                <LazyLoadImage  src={'http://www.thaitour.cz/wp-content/uploads/2013/10/golf.jpg'} width={'100%'}/>
             </div>
             <div className={'col-12'}>
                 <h3 className={'mt-5 mb-3'}>Golfové destinace v Thajsku</h3>

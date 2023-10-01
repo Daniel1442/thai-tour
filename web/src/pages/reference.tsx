@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import {faReply} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const Reference = () => {
 
@@ -38,7 +39,7 @@ const Reference = () => {
                                     <div className="row">
                                         <div className="col">
                                             <div className="d-flex flex-start">
-                                                <img className="rounded-circle shadow-1-strong me-3"
+                                                <LazyLoadImage  className="rounded-circle shadow-1-strong me-3"
                                                      src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
                                                      alt="avatar" width="65"
                                                      height="65"/>
@@ -77,7 +78,7 @@ const Reference = () => {
 
                                                     <div className="d-flex flex-start mt-4">
                                                         <a className="me-3" href="#">
-                                                            <img className="rounded-circle shadow-1-strong"
+                                                            <LazyLoadImage  className="rounded-circle shadow-1-strong"
                                                                  src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(11).webp"
                                                                  alt="avatar"
                                                                  width="65" height="65"/>
@@ -101,7 +102,7 @@ const Reference = () => {
                                             </div>
 
                                             <div className="d-flex flex-start mt-4">
-                                                <img className="rounded-circle shadow-1-strong me-3"
+                                                <LazyLoadImage  className="rounded-circle shadow-1-strong me-3"
                                                      src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(12).webp"
                                                      alt="avatar" width="65"
                                                      height="65"/>
