@@ -145,6 +145,7 @@ create table tag
 create table room
 (
     id         uuid         default public.uuid_generate_v4() not null,
+    place_id     uuid         default public.uuid_generate_v4() not null,
     name       varchar(255)                                   not null,
     capacity   integer,
     price      float                                          not null,
@@ -165,18 +166,6 @@ create table room_image
     created_by varchar(255)                                   not null,
     updated_at timestamp,
     updated_by varchar(255) default NULL:: character varying
-);
-
-create table place_room
-(
-    id            uuid         default public.uuid_generate_v4() not null,
-    place_id      uuid         default public.uuid_generate_v4() not null,
-    place_room_id uuid         default public.uuid_generate_v4() not null,
-    is_active     boolean      default true,
-    created_at    timestamp    default CURRENT_TIMESTAMP,
-    created_by    varchar(255)                                   not null,
-    updated_at    timestamp,
-    updated_by    varchar(255) default NULL:: character varying
 );
 
 create table place_room_parameter

@@ -1,5 +1,6 @@
 package com.thaitour.thaitourapi.domain.dto.catalog.place;
 
+import com.thaitour.thaitourapi.domain.dto.catalog.room.RoomRow;
 import com.thaitour.thaitourapi.domain.enums.AccommodationType;
 import com.thaitour.thaitourapi.domain.enums.PlaceContentType;
 import lombok.AllArgsConstructor;
@@ -36,16 +37,15 @@ public class PlaceDetail {
     private List<PlaceImageList> placeImageListList;
     private List<PlaceContent> placeContentsList;
     private List<PlaceParameters> placeParameterList;
+    private List<RoomRow> rooms;
 
     @Data
     @Builder
     @AllArgsConstructor
     @NoArgsConstructor
     public static class PlaceImageList {
-        private UUID id;
-        private String target;
-        private Integer priority;
-        private boolean isActive;
+        private String original;
+        private String thumbnail;
     }
 
     @Data

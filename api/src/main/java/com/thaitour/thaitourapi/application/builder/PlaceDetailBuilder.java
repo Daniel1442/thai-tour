@@ -4,7 +4,9 @@ import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceDetail;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceDetail.PlaceContent;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceDetail.PlaceImageList;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceDetail.PlaceParameters;
+import com.thaitour.thaitourapi.domain.dto.catalog.room.RoomRow;
 import com.thaitour.thaitourapi.domain.entity.Place;
+import com.thaitour.thaitourapi.domain.entity.Room;
 import com.thaitour.thaitourapi.domain.exception.ThaiTourException;
 import com.thaitour.thaitourapi.domain.repository.PlaceRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,8 +19,6 @@ import java.util.UUID;
 public class PlaceDetailBuilder {
 
     private final PlaceRepository placeRepository;
-
-    //    private final PlaceRepository parameterRepository;
     public PlaceDetail build(UUID placeId) {
 
         Place place = placeRepository.findById(placeId).orElseThrow(() -> new ThaiTourException("This place doesn't exist."));
@@ -29,11 +29,9 @@ public class PlaceDetailBuilder {
                 .name(place.getName())
                 .placeImageListList(place.getImages().stream()
                         .map(placeImage -> PlaceImageList.builder()
-                                .id(placeImage.getId())
-                                .target(placeImage.getTarget())
-                                .priority(placeImage.getPriority())
-                                .isActive(placeImage.getIsActive()
-                                ).build()).toList())
+                                .original(placeImage.getTarget())
+                                .thumbnail(placeImage.getTarget())
+                                .build()).toList())
                 .placeContentsList(place.getContents().stream()
                         .map(placeContent -> PlaceContent.builder()
                                 .id(placeContent.getId())
@@ -41,6 +39,21 @@ public class PlaceDetailBuilder {
                                 .type(placeContent.getContentType())
                                 .isActive(placeContent.getIsActive()
                                 ).build()).toList())
+                .placeParameterList(place.getParameters().stream()
+                        .map(placeParameters -> PlaceParameters.builder()
+                                .id(placeParameters.getId())
+                                .name(placeParameters.getParameterValue().getName())
+                                .tooltip(placeParameters.getParameterValue().getTooltip())
+                                .build()).toList())
+                .rooms(place.getRooms().stream()
+                        .map(placeRooms -> RoomRow.builder()
+                                .id(placeRooms.getId())
+                                .name(placeRooms.getName())
+                                .area(placeRooms.getArea())
+                                .bed(placeRooms.getBed())
+                                .capacity(placeRooms.getCapacity())
+                                .price(placeRooms.getPrice())
+                                .build()).toList())
                 .location(place.getLocation())
                 .address(place.getAddress())
                 .review(place.getReview())

@@ -23,6 +23,10 @@ public class Room {
     @Column(name = "id")
     private UUID id;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "place_id")
+    private Place place;
+
     @Column(name = "name", nullable = false, length = 255)
     private String name;
 

@@ -30,6 +30,10 @@ public class TripImage {
     @Column(name = "is_active", columnDefinition = "boolean default true", nullable = false)
     private Boolean isActive;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "trip_id", nullable = false)
+    private Trip trip;
+
     @Column(name = "target", length = 2555)
     private String target;
 

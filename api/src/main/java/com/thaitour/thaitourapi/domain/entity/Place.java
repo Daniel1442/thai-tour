@@ -2,14 +2,9 @@ package com.thaitour.thaitourapi.domain.entity;
 
 
 import com.thaitour.thaitourapi.domain.enums.AccommodationType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+
+import javax.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -45,6 +40,12 @@ public class Place {
 
     @OneToMany(mappedBy = "place")
     private List<PlaceImage> images;
+
+    @OneToMany(mappedBy = "place")
+    private List<Room> rooms;
+
+    @OneToMany(mappedBy = "place", fetch = FetchType.LAZY)
+    private List<PlaceParameter> parameters;
 
     @Column(name = "image")
     private String image;

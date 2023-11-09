@@ -28,6 +28,10 @@ public class TripContent {
     @Column(name = "trip_id", columnDefinition = "uuid", nullable = false)
     private UUID tripId;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "trip_id", nullable = false)
+    private Trip trip;
+
     @Column(name = "content_type", length = 255)
     @Enumerated(EnumType.STRING)
     private TripContentType contentType;

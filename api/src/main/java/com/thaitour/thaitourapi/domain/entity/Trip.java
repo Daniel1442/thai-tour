@@ -1,6 +1,7 @@
 package com.thaitour.thaitourapi.domain.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 import java.sql.Timestamp;
 import javax.persistence.*;
@@ -35,6 +36,12 @@ public class Trip {
 
     @Column(name = "capacity")
     private Integer capacity;
+
+    @OneToMany(mappedBy = "trip")
+    private List<TripContent> contents;
+
+    @OneToMany(mappedBy = "trip")
+    private List<TripImage> images;
 
     @Column(name = "price", nullable = false)
     private Float price;

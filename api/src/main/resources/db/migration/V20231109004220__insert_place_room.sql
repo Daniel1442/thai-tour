@@ -1,5 +1,0 @@
-insert into place_room (place_id, place_room_id, is_active, created_at,created_by, updated_at, updated_by) values ('cc65b1e2-7e75-4e6e-a657-faa49aa9bb83', 'a54ea78e-55f5-4e5f-802b-4d83f1079755',true,'2023-06-28 08:00:44.000000', 'ADMIN', null, null);
-insert into place_room (place_id, place_room_id, is_active, created_at,created_by, updated_at, updated_by) values ('cc65b1e2-7e75-4e6e-a657-faa49aa9bb83', 'ba6ed74b-94e6-46eb-ae0c-4e92f73f684d',true,'2023-06-28 08:00:44.000000', 'ADMIN', null, null);
-
-insert into place_room (place_id, place_room_id, is_active, created_at,created_by, updated_at, updated_by) values ('e9c8ec42-b619-47fc-a3f1-e61f50ba603b', 'cc05e434-92f3-446c-b43f-b86fabab3846',true,'2023-06-28 08:00:44.000000', 'ADMIN', null, null);
-insert into place_room (place_id, place_room_id, is_active, created_at,created_by, updated_at, updated_by) values ('e9c8ec42-b619-47fc-a3f1-e61f50ba603b', '4f144bc3-a67f-4e4e-87ff-acd6639fd107',true,'2023-06-28 08:00:44.000000', 'ADMIN', null, null);

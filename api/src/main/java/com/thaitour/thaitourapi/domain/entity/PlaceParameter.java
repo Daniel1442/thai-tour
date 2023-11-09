@@ -42,7 +42,7 @@ public class PlaceParameter {
     @JoinColumn(name = "parameter_id")
     private Parameter parameter;
 
-    @ManyToOne(targetEntity = Parameter.class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = ParameterValue.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "parameter_value_id")
     private ParameterValue parameterValue;
 
