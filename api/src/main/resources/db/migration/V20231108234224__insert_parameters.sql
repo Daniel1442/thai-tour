@@ -1,0 +1,10 @@
+INSERT INTO parameter (name, value_type, filter, assign_type, tooltip, hint,created_at,created_by, updated_at, updated_by) VALUES ('Cena', 'MULTISELECT',true,'PLACE', null, null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter (name, value_type, filter, assign_type, tooltip, hint,created_at,created_by, updated_at, updated_by) VALUES ('Hvězdičky', 'MULTISELECT',true,'PLACE', null, null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter (name, value_type, filter, assign_type, tooltip, hint,created_at,created_by, updated_at, updated_by) VALUES ('Populární', 'MULTISELECT',true,'PLACE', null, null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter (name, value_type, filter, assign_type, tooltip, hint,created_at,created_by, updated_at, updated_by) VALUES ('Typ ubytování', 'MULTISELECT',true,'PLACE', null, null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter (name, value_type, filter, assign_type, tooltip, hint,created_at,created_by, updated_at, updated_by) VALUES ('Hodnocení', 'MULTISELECT',true,'PLACE', null, null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter (name, value_type, filter, assign_type, tooltip, hint,created_at,created_by, updated_at, updated_by) VALUES ('Zařízení hotelu', 'MULTISELECT',true,'PLACE', null, null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter (name, value_type, filter, assign_type, tooltip, hint,created_at,created_by, updated_at, updated_by) VALUES ('Vybavení pokoje', 'MULTISELECT',true,'PLACE', null, null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter (name, value_type, filter, assign_type, tooltip, hint,created_at,created_by, updated_at, updated_by) VALUES ('Stravování', 'MULTISELECT',true,'PLACE', null, null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+
+INSERT INTO parameter (name, value_type, filter, assign_type, tooltip, hint,created_at,created_by, updated_at, updated_by) VALUES ('Vybavení pokoje', 'MULTISELECT',true,'ROOM', null, null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);

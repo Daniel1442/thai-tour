@@ -23,13 +23,29 @@ create table place
 
 create table parameter
 (
-    id         uuid      default public.uuid_generate_v4() not null,
-    name       varchar(255)                                not null,
-    tooltip    varchar(255),
-    created_at timestamp default CURRENT_TIMESTAMP,
-    created_by varchar(255)                                not null,
-    updated_at timestamp,
-    updated_by varchar(255)
+    id             uuid      default public.uuid_generate_v4() not null,
+    name           varchar(255)                                not null,
+    tooltip        varchar(255),
+    filter         boolean   default true,
+    assign_type    varchar(255),
+    value_type     varchar(255),
+    hint           varchar(255),
+    created_at     timestamp default CURRENT_TIMESTAMP,
+    created_by     varchar(255)                                not null,
+    updated_at     timestamp,
+    updated_by     varchar(255)
+);
+
+create table parameter_value
+(
+    id             uuid      default public.uuid_generate_v4() not null,
+    parameter_id   uuid      default public.uuid_generate_v4() not null,
+    name           varchar(255)                                not null,
+    tooltip        varchar(255),
+    created_at     timestamp default CURRENT_TIMESTAMP,
+    created_by     varchar(255)                                not null,
+    updated_at     timestamp,
+    updated_by     varchar(255)
 );
 
 create table place_content
@@ -45,17 +61,16 @@ create table place_content
     updated_by   varchar(255) default NULL:: character varying
 );
 
-
-
 create table place_parameter
 (
     id           uuid         default public.uuid_generate_v4() not null,
     place_id     uuid         default public.uuid_generate_v4() not null,
     parameter_id uuid         default public.uuid_generate_v4() not null,
-    created_at   timestamp    default CURRENT_TIMESTAMP,
-    created_by   varchar(255)                                   not null,
-    updated_at   timestamp,
-    updated_by   varchar(255) default NULL:: character varying
+    parameter_value_id uuid         default public.uuid_generate_v4() not null,
+    created_at    timestamp    default CURRENT_TIMESTAMP,
+    created_by    varchar(255)                                   not null,
+    updated_at    timestamp,
+    updated_by    varchar(255) default NULL:: character varying
 );
 
 create table place_image
@@ -71,14 +86,14 @@ create table place_image
     updated_by varchar(255) default NULL:: character varying
 );
 
-create table public.article_tag
+create table article_tag
 (
     article_id uuid default public.uuid_generate_v4() not null,
     tag_id     uuid default public.uuid_generate_v4() not null
 
 );
 
-create table public.article
+create table article
 (
     id              uuid         default public.uuid_generate_v4() not null,
     name            varchar(255)                                   not null,
@@ -91,7 +106,7 @@ create table public.article
     updated_by      varchar(255) default NULL:: character varying
 );
 
-create table public.article_content
+create table article_content
 (
     id              uuid         default public.uuid_generate_v4() not null,
     article_id      uuid         default public.uuid_generate_v4() not null,
@@ -104,7 +119,7 @@ create table public.article_content
     updated_by      varchar(255) default NULL:: character varying
 );
 
-create table public.article_images
+create table article_images
 (
     id         uuid         default public.uuid_generate_v4() not null,
     article_id uuid         default public.uuid_generate_v4() not null,
@@ -116,7 +131,7 @@ create table public.article_images
     updated_by varchar(255) default NULL:: character varying
 );
 
-create table public.tag
+create table tag
 (
     id         uuid         default public.uuid_generate_v4() not null,
     name       varchar(255)                                   not null,
@@ -127,7 +142,7 @@ create table public.tag
     updated_by varchar(255) default NULL:: character varying
 );
 
-create table public.room
+create table room
 (
     id         uuid         default public.uuid_generate_v4() not null,
     name       varchar(255)                                   not null,
@@ -140,7 +155,7 @@ create table public.room
     updated_by varchar(255) default NULL:: character varying
 );
 
-create table public.room_image
+create table room_image
 (
     id         uuid         default public.uuid_generate_v4() not null,
     room_id    uuid         default public.uuid_generate_v4() not null,
@@ -152,59 +167,53 @@ create table public.room_image
     updated_by varchar(255) default NULL:: character varying
 );
 
-create table public.place_room
+create table place_room
 (
     id            uuid         default public.uuid_generate_v4() not null,
     place_id      uuid         default public.uuid_generate_v4() not null,
     place_room_id uuid         default public.uuid_generate_v4() not null,
-    is_active  boolean      default true,
-    created_at timestamp default CURRENT_TIMESTAMP,
+    is_active     boolean      default true,
+    created_at    timestamp    default CURRENT_TIMESTAMP,
+    created_by    varchar(255)                                   not null,
+    updated_at    timestamp,
+    updated_by    varchar(255) default NULL:: character varying
+);
+
+create table place_room_parameter
+(
+    id           uuid default public.uuid_generate_v4() not null,
+    room_id           uuid default public.uuid_generate_v4() not null,
+    parameter_id uuid default public.uuid_generate_v4() not null,
+    parameter_value_id uuid         default public.uuid_generate_v4() not null,
+    created_at    timestamp    default CURRENT_TIMESTAMP,
     created_by    varchar(255)                                   not null,
     updated_at    timestamp,
     updated_by    varchar(255) default NULL:: character varying
 );
 
 
-create table public.place_room_parameter
+create table trip
 (
-    id         uuid      default public.uuid_generate_v4() not null,
-    name       varchar(255)                                not null,
-    tooltip    varchar(255),
-    created_at timestamp default CURRENT_TIMESTAMP,
-    created_by varchar(255)                                not null,
-    updated_at timestamp,
-    updated_by varchar(255)
-);
-
-create table public.room_parameter
-(
-    room_id           uuid default public.uuid_generate_v4() not null,
-    room_parameter_id uuid default public.uuid_generate_v4() not null,
-);
-
-
-create table public.trip
-(
-    id         uuid         default public.uuid_generate_v4() not null,
+    id             uuid      default public.uuid_generate_v4() not null,
     name       varchar(255)                                   not null,
     location   varchar(255)                                   not null,
     capacity   integer,
     price      float                                          not null,
     length     varchar(255),
     food       varchar(255),
-    where      varchar(255),
+    trip_location      varchar(255),
     trip_type  varchar(255),
     guide      varchar(255),
     included   varchar(255),
     reviews    varchar(255),
     is_active  boolean      default true,
-    created_at timestamp    default CURRENT_TIMESTAMP,
-    created_by varchar(255)                                   not null,
-    updated_at timestamp,
-    updated_by varchar(255) default NULL:: character varying
+    created_at    timestamp    default CURRENT_TIMESTAMP,
+    created_by    varchar(255)                                   not null,
+    updated_at    timestamp,
+    updated_by    varchar(255) default NULL:: character varying
 );
 
-create table public.trip_content
+create table trip_content
 (
     id           uuid         default public.uuid_generate_v4() not null,
     trip_id      uuid         default public.uuid_generate_v4() not null,
@@ -217,7 +226,7 @@ create table public.trip_content
     updated_by   varchar(255) default NULL:: character varying
 );
 
-create table public.trip_imager
+create table trip_image
 (
     id         uuid         default public.uuid_generate_v4() not null,
     trip_id    uuid         default public.uuid_generate_v4() not null,
@@ -230,8 +239,88 @@ create table public.trip_imager
     updated_by varchar(255) default NULL:: character varying
 );
 
+create table trip_parameter
+(
+    id           uuid         default public.uuid_generate_v4() not null,
+    trip_id     uuid         default public.uuid_generate_v4() not null,
+    parameter_id uuid         default public.uuid_generate_v4() not null,
+    parameter_value_id uuid         default public.uuid_generate_v4() not null,
+    created_at    timestamp    default CURRENT_TIMESTAMP,
+    created_by    varchar(255)                                   not null,
+    updated_at    timestamp,
+    updated_by    varchar(255) default NULL:: character varying
+);
 
 
 
+create table account
+(
+    id           uuid         default public.uuid_generate_v4() not null,
+    username       varchar(255)                                   not null,
+    password       varchar(255)                                   not null,
+    type       varchar(255)                                   not null,
+    is_active  boolean      default true,
+    created_at    timestamp    default CURRENT_TIMESTAMP,
+    created_by    varchar(255)                                   not null,
+    updated_at    timestamp,
+    updated_by    varchar(255) default NULL:: character varying
+);
+
+create table role
+(
+    id           uuid         default public.uuid_generate_v4() not null,
+    name       varchar(255)                                   not null,
+    code       varchar(255)                                   ,
+    system       varchar(255)                                 ,
+    is_active  boolean      default true,
+    created_at    timestamp    default CURRENT_TIMESTAMP,
+    created_by    varchar(255)                                   not null,
+    updated_at    timestamp,
+    updated_by    varchar(255) default NULL:: character varying
+);
 
 
+create table account_role
+(
+    id           uuid         default public.uuid_generate_v4() not null,
+    account_id     uuid         default public.uuid_generate_v4() not null,
+    role_id uuid         default public.uuid_generate_v4() not null
+);
+
+create table customer
+(
+    id           uuid         default public.uuid_generate_v4() not null,
+    address       varchar(255)                                   not null,
+    ico       varchar(255)                                   ,
+    dic       varchar(255)                                 ,
+    identificator       varchar(255)                                 ,
+    type       varchar(255)                                   ,
+    is_active  boolean      default true,
+    created_at    timestamp    default CURRENT_TIMESTAMP,
+    created_by    varchar(255)                                   not null,
+    updated_at    timestamp,
+    updated_by    varchar(255) default NULL:: character varying
+);
+
+create table customer_account
+(
+    id           uuid         default public.uuid_generate_v4() not null,
+    account_id     uuid         default public.uuid_generate_v4() not null,
+    customer_id uuid         default public.uuid_generate_v4() not null,
+    is_active  boolean      default true,
+    created_at    timestamp    default CURRENT_TIMESTAMP,
+    created_by    varchar(255)                                   not null,
+    updated_at    timestamp,
+    updated_by    varchar(255) default NULL:: character varying
+);
+
+create table customer_favorite
+(
+    id           uuid         default public.uuid_generate_v4() not null,
+    resource_id     uuid         default public.uuid_generate_v4() not null,
+    customer_id uuid         default public.uuid_generate_v4() not null,
+    is_active  boolean      default true,
+    type       varchar(255)                                   ,
+    created_at    timestamp    default  CURRENT_TIMESTAMP,
+    created_by    varchar(255)                                   not null
+);

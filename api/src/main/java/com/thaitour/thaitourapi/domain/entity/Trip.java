@@ -18,11 +18,14 @@ import org.hibernate.annotations.GenericGenerator;
 @ToString(of = {"id"})
 public class Trip {
 
+
     @Id
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Column(columnDefinition = "uuid", updatable = false, nullable = false)
+    @GeneratedValue
+    @Column(name = "id")
     private UUID id;
+
+    @Column(name = "image")
+    private String image;
 
     @Column(name = "name", length = 255, nullable = false)
     private String name;
@@ -42,8 +45,8 @@ public class Trip {
     @Column(name = "food", length = 255)
     private String food;
 
-    @Column(name = "where", length = 255)
-    private String where;
+    @Column(name = "trip_location", length = 255)
+    private String tripLocation;
 
     @Column(name = "trip_type", length = 255)
     private String tripType;

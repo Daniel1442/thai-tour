@@ -1,44 +1,49 @@
 package com.thaitour.thaitourapi.domain.entity;
 
+import com.thaitour.thaitourapi.domain.enums.ParameterAssingType;
+import com.thaitour.thaitourapi.domain.enums.ParameterValueType;
 import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import static javax.persistence.FetchType.LAZY;
+
 @Entity
-@Table(name = "place_room_parameter")
+@Table(name = "parameter_value")
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 @ToString(of = {"id"})
-public class PlaceRoomParameter {
+public class ParameterValue {
 
     @Id
     @GeneratedValue
     @Column(name = "id")
     private UUID id;
 
-    @Column(name = "name", nullable = false, length = 255)
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "tooltip", length = 255)
+    @Column(name = "tooltip")
     private String tooltip;
 
-    @Column(name = "created_at", nullable = false)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = LAZY)
+    @JoinColumn(name = "parameter_id")
+    private Parameter parameter;
+
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    @Column(name = "created_by", nullable = false, length = 255)
+    @Column(name = "created_by")
     private String createdBy;
 
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @Column(name = "updated_by", length = 255)
+    @Column(name = "updated_by")
     private String updatedBy;
 }
-

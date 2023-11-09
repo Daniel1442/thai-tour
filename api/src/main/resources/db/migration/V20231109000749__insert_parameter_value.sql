@@ -1,0 +1,68 @@
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('890b60f5-109f-48b8-81a9-3615fa00da69', '0 Kč – 1300 Kč', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('890b60f5-109f-48b8-81a9-3615fa00da69', '1300 Kč – 2500 Kč za noc', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('890b60f5-109f-48b8-81a9-3615fa00da69', '2500 Kč – 3800 Kč za noc', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('890b60f5-109f-48b8-81a9-3615fa00da69', '3800 Kč – 5000 Kč za noc', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('890b60f5-109f-48b8-81a9-3615fa00da69', '5000 Kč + za noc', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('592fc8b8-06d0-459b-861f-942c7b726108', '1*', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('592fc8b8-06d0-459b-861f-942c7b726108', '2*', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('592fc8b8-06d0-459b-861f-942c7b726108', '3*', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('592fc8b8-06d0-459b-861f-942c7b726108', '4*', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('592fc8b8-06d0-459b-861f-942c7b726108', '5*', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('4bf8c13c-c0f1-4b63-b273-b9125e4d6034', 'Snídaně v ceně', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('4bf8c13c-c0f1-4b63-b273-b9125e4d6034', 'U pláže', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('4bf8c13c-c0f1-4b63-b273-b9125e4d6034', 'Bazén', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('4bf8c13c-c0f1-4b63-b273-b9125e4d6034', 'Wi-Fi zdarma', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('4bf8c13c-c0f1-4b63-b273-b9125e4d6034', 'Bungalov', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('4bf8c13c-c0f1-4b63-b273-b9125e4d6034', 'Vhodné pro děti', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('4bf8c13c-c0f1-4b63-b273-b9125e4d6034', 'Klidná lokalita', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('4bf8c13c-c0f1-4b63-b273-b9125e4d6034', 'Parkoviště', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('4bf8c13c-c0f1-4b63-b273-b9125e4d6034', 'Sportovní aktivity', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('4bf8c13c-c0f1-4b63-b273-b9125e4d6034', 'Nákupy', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('4bf8c13c-c0f1-4b63-b273-b9125e4d6034', 'Od 18 let', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('176177e5-a1af-445c-8fc2-977f7760cf50', 'Rezorty a hotely', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('176177e5-a1af-445c-8fc2-977f7760cf50', 'Bungalovy a chaty', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('176177e5-a1af-445c-8fc2-977f7760cf50', 'Vily', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('176177e5-a1af-445c-8fc2-977f7760cf50', 'Apartmány', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('176177e5-a1af-445c-8fc2-977f7760cf50', 'Domy', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('07e2c9e0-3b18-4bf0-8faa-24b129e49ff8', 'Velmi dobré 8 a více', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('07e2c9e0-3b18-4bf0-8faa-24b129e49ff8', 'Dobré 7 a více', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('07e2c9e0-3b18-4bf0-8faa-24b129e49ff8', 'Dostačující', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('3fc260a8-5823-4af6-ba4c-193191d8a761', 'Wi-Fi zdarma', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('3fc260a8-5823-4af6-ba4c-193191d8a761', 'Parkoviště', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('3fc260a8-5823-4af6-ba4c-193191d8a761', 'Fitness centrum', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('3fc260a8-5823-4af6-ba4c-193191d8a761', 'Bazén', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('3fc260a8-5823-4af6-ba4c-193191d8a761', 'Wellness & Spa', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('3fc260a8-5823-4af6-ba4c-193191d8a761', 'Rodinný pokoj', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('3fc260a8-5823-4af6-ba4c-193191d8a761', 'Bezbariérové', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('3fc260a8-5823-4af6-ba4c-193191d8a761', 'Restaurace', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('3fc260a8-5823-4af6-ba4c-193191d8a761', 'Bar', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('3fc260a8-5823-4af6-ba4c-193191d8a761', 'Pokojová služba', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('8d4ea7b4-80a4-49b4-90c0-43218ed1ec9f', 'TV', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('8d4ea7b4-80a4-49b4-90c0-43218ed1ec9f', 'Klimatizace', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('8d4ea7b4-80a4-49b4-90c0-43218ed1ec9f', 'Balkón/Terasa', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('8d4ea7b4-80a4-49b4-90c0-43218ed1ec9f', 'Výhled na moře', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('8d4ea7b4-80a4-49b4-90c0-43218ed1ec9f', 'Trezor', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('8d4ea7b4-80a4-49b4-90c0-43218ed1ec9f', 'Vana', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('8d4ea7b4-80a4-49b4-90c0-43218ed1ec9f', 'Kávový a čajový servis', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('8d4ea7b4-80a4-49b4-90c0-43218ed1ec9f', 'Kuchyň', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('a17109f1-566e-441e-9531-8871259de08b', 'TV', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('a17109f1-566e-441e-9531-8871259de08b', 'Klimatizace', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('a17109f1-566e-441e-9531-8871259de08b', 'Balkón/Terasa', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('a17109f1-566e-441e-9531-8871259de08b', 'Výhled na moře', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('a17109f1-566e-441e-9531-8871259de08b', 'Trezor', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('a17109f1-566e-441e-9531-8871259de08b', 'Vana', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('a17109f1-566e-441e-9531-8871259de08b', 'Kávový a čajový servis', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('a17109f1-566e-441e-9531-8871259de08b', 'Kuchyň', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('22c5ac1f-e3de-4d88-b110-956be7a34c90', 'Snídaně v ceně', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('22c5ac1f-e3de-4d88-b110-956be7a34c90', 'Polopenze', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('22c5ac1f-e3de-4d88-b110-956be7a34c90', 'Plná penze', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('22c5ac1f-e3de-4d88-b110-956be7a34c90', 'All inclusive', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);
+INSERT INTO parameter_value (parameter_id, name, tooltip,created_at,created_by, updated_at, updated_by) VALUES ('22c5ac1f-e3de-4d88-b110-956be7a34c90', 'Vlastní stravování', null,'2023-06-29 07:59:01.000000', 'ADMIN', null, null);

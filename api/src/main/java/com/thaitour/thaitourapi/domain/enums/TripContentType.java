@@ -5,8 +5,9 @@ import lombok.Getter;
 
 @AllArgsConstructor
 public enum TripContentType {
-    LONG_DESCRIPTION("LONG_DESCRIPTION"),
-    IMPORTANT_INFO("IMPORTANT_INFO");
+    DESCRIPTION("DESCRIPTION"),
+    IMPORTANT_INFO("IMPORTANT_INFO"),
+    NOTE("NOTE");
 
     @Getter
     private final String type;

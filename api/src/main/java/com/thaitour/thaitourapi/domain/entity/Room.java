@@ -26,6 +26,12 @@ public class Room {
     @Column(name = "name", nullable = false, length = 255)
     private String name;
 
+    @Column(name = "area", nullable = false, length = 255)
+    private String area;
+
+    @Column(name = "bed", nullable = false, length = 255)
+    private String bed;
+
     @Column(name = "capacity")
     private Integer capacity;
 

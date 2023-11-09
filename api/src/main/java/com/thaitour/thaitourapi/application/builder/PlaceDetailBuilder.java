@@ -46,7 +46,6 @@ public class PlaceDetailBuilder {
                 .review(place.getReview())
                 .isActive(place.getIsActive())
                 .type(place.getAccommodationType())
-                .value(place.getValue())
                 .createdBy(place.getCreatedBy())
                 .createdAt(place.getCreatedAt())
                 .updatedBy(place.getUpdatedBy())

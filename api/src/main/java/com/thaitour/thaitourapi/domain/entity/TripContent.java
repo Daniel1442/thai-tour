@@ -19,16 +19,17 @@ import java.util.UUID;
 @ToString(of = {"id"})
 public class TripContent {
 
+
     @Id
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Column(columnDefinition = "uuid", updatable = false, nullable = false)
+    @GeneratedValue
+    @Column(name = "id")
     private UUID id;
 
     @Column(name = "trip_id", columnDefinition = "uuid", nullable = false)
     private UUID tripId;
 
     @Column(name = "content_type", length = 255)
+    @Enumerated(EnumType.STRING)
     private TripContentType contentType;
 
     @Column(name = "value", columnDefinition = "text", nullable = false)

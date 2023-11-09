@@ -8,7 +8,7 @@ import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name = "room_parameter")
+@Table(name = "place_room_parameter")
 @Data
 @Builder
 @AllArgsConstructor
@@ -27,8 +27,12 @@ public class RoomParameter {
     private Room room;
 
     @ManyToOne(targetEntity = Parameter.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "place_room_parameter_id")
+    @JoinColumn(name = "parameter_id")
     private Parameter parameter;
+
+    @ManyToOne(targetEntity = Parameter.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "parameter_value_id")
+    private ParameterValue parameterValue;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;

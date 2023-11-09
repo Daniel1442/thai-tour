@@ -44,9 +44,6 @@ public class Place {
     private List<PlaceContent> contents;
 
     @OneToMany(mappedBy = "place")
-    private List<PlaceParameter> parameters;
-
-    @OneToMany(mappedBy = "place")
     private List<PlaceImage> images;
 
     @Column(name = "image")
@@ -54,8 +51,6 @@ public class Place {
 
     @Column(name = "location")
     private String location;
-    @Column(name = "value")
-    private String value    ;
     @Column(name = "address")
     private String address;
 

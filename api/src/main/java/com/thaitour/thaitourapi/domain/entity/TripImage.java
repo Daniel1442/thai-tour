@@ -18,10 +18,10 @@ import java.util.UUID;
 @ToString(of = {"id"})
 public class TripImage {
 
+
     @Id
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Column(columnDefinition = "uuid", updatable = false, nullable = false)
+    @GeneratedValue
+    @Column(name = "id")
     private UUID id;
 
     @Column(name = "trip_id", columnDefinition = "uuid", nullable = false)
