@@ -31,6 +31,12 @@ public class ParameterValue {
     @Column(name = "tooltip")
     private String tooltip;
 
+    @Column(name = "icon")
+    private String icon;
+
+    @Column(name = "show_on_detail")
+    private Boolean showOnDetail;
+
     @ManyToOne(cascade = CascadeType.ALL, fetch = LAZY)
     @JoinColumn(name = "parameter_id")
     private Parameter parameter;

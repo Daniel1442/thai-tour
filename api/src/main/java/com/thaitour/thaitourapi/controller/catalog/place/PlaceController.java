@@ -32,12 +32,11 @@ public class PlaceController {
     private final PlaceDetailBuilder placeDetailBuilder;
 
     @PostMapping("/finder")
-    public Response<Page<PlaceRow>> getPlaceList(
-            @RequestBody PlaceFinderPayload payload,
-            Pageable pageable
+    public Response<List<PlaceRow>> getPlaceList(
+            @RequestBody PlaceFinderPayload payload
     ) {
         try {
-            return new Response<>(true, placeFinder.findPlace(payload,pageable), null);
+            return new Response<>(true, placeFinder.findFilterPlace(payload), null);
         } catch (ThaiTourException e) {
             FlashMessageHelper.addMessage(FlashMessageHelper.fromException(e));
         }

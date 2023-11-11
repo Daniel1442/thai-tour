@@ -29,7 +29,7 @@ public class TripContent {
     private UUID tripId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "trip_id", nullable = false)
+    @JoinColumn(name = "trip_id", insertable = false, updatable = false)
     private Trip trip;
 
     @Column(name = "content_type", length = 255)

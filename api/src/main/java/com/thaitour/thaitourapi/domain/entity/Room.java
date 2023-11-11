@@ -6,6 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -44,6 +45,9 @@ public class Room {
 
     @Column(name = "is_active", columnDefinition = "boolean default true", nullable = false)
     private Boolean isActive;
+
+    @OneToMany(mappedBy = "room", fetch = FetchType.LAZY)
+    private List<RoomParameter> parameters;
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;

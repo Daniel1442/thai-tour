@@ -41,6 +41,8 @@ create table parameter_value
     id             uuid      default public.uuid_generate_v4() not null,
     parameter_id   uuid      default public.uuid_generate_v4() not null,
     name           varchar(255)                                not null,
+    show_on_detail    boolean      default false not null,
+    icon           varchar(255)                                ,
     tooltip        varchar(255),
     created_at     timestamp default CURRENT_TIMESTAMP,
     created_by     varchar(255)                                not null,

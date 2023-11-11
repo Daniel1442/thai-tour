@@ -66,6 +66,8 @@ public class PlaceDetail {
     @NoArgsConstructor
     public static class PlaceParameters {
         private String name;
+        private String icon;
+        private Boolean showOnDetail;
         private String tooltip;
         private UUID id;
     }

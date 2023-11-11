@@ -22,7 +22,7 @@ public class RoomParameter {
     @Column(name = "id")
     private UUID id;
 
-    @ManyToOne(targetEntity = Place.class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = Room.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "room_id")
     private Room room;
 
@@ -30,7 +30,7 @@ public class RoomParameter {
     @JoinColumn(name = "parameter_id")
     private Parameter parameter;
 
-    @ManyToOne(targetEntity = Parameter.class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = ParameterValue.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "parameter_value_id")
     private ParameterValue parameterValue;
 

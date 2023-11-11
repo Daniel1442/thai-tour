@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -14,5 +15,13 @@ import java.util.UUID;
 public class RawPlaceParameter {
     private UUID id;
     private String name;
-    private String tooltip;
+    private List<RawPlaceParameterValue> parameterValueList;
+    @Data
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class RawPlaceParameterValue {
+        private UUID id;
+        private String name;
+    }
 }

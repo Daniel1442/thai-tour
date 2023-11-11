@@ -31,7 +31,7 @@ public class TripImage {
     private Boolean isActive;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "trip_id", nullable = false)
+    @JoinColumn(name = "trip_id",  insertable = false, updatable = false)
     private Trip trip;
 
     @Column(name = "target", length = 2555)

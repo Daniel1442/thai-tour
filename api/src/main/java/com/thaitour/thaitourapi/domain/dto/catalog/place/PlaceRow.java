@@ -7,23 +7,31 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class    PlaceRow {
+public class PlaceRow {
     private UUID id;
     private String name;
     private String image;
     private String location;
     private AccommodationType type;
-    private String value;
     private String address;
     private Integer review;
     private Boolean isActive;
-    private Date updatedAt;
-    private String updatedBy;
-    private Date createdAt;
-    private String createdBy;
+    private List<ParameterValues> parameterValuesList;
+
+    @Data
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class ParameterValues {
+        private String parameterName;
+        private String icon;
+        private Boolean showOnDetail;
+        private String tooltip;
+    }
 }

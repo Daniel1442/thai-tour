@@ -1,6 +1,7 @@
-package com.thaitour.thaitourapi.controller.catalog.place;
+package com.thaitour.thaitourapi.controller.catalog.parameter;
 
 import com.thaitour.thaitourapi.application.builder.PlaceDetailBuilder;
+import com.thaitour.thaitourapi.application.finder.ParameterFinder;
 import com.thaitour.thaitourapi.application.finder.PlaceFinder;
 import com.thaitour.thaitourapi.application.helper.FlashMessageHelper;
 import com.thaitour.thaitourapi.domain.dto.Response;
@@ -21,12 +22,12 @@ import java.util.UUID;
 @RequestMapping("/api/v1/catalog/parameters")
 public class ParameterController {
 
-    private final PlaceFinder placeFinder;
+    private final ParameterFinder parameterFinder;
 
-    @GetMapping("/{placeId}")
-    public Response<List<PlaceParameterRow>> getPlaceParameters(@PathVariable UUID placeId) {
+    @GetMapping("/list")
+    public Response<List<PlaceParameterRow>> getPlaceParameters() {
         try {
-            return new Response<>(true, placeFinder.findPlaceParameter(placeId), null);
+            return new Response<>(true, parameterFinder.findAll(), null);
         } catch (ThaiTourException e) {
             FlashMessageHelper.addMessage(FlashMessageHelper.fromException(e));
             return new Response<>(false, null, FlashMessageHelper.getMessages());
