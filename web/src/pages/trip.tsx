@@ -8,7 +8,7 @@ import AboutTrip from "../modules/trip/components/aboutTrip";
 import TripHeading from "../modules/trip/components/tripHeading";
 import TripHeadingMobile from "../modules/trip/components/tripHeadingMobile";
 
-const TripDetail = () => {
+const Trip = () => {
     let width = typeof window !== 'undefined' && window.innerWidth;
     const router = useRouter();
     const {id} = router.query;
@@ -55,4 +55,4 @@ const TripDetail = () => {
 
 }
 
-export default TripDetail;
+export default Trip;

@@ -1,5 +1,6 @@
 import React from "react";
 import {Card} from "react-bootstrap";
+import {useRouter} from "next/router";
 
 interface ComponentProps {
     heading: string
@@ -7,8 +8,15 @@ interface ComponentProps {
 }
 
 const PlaceTripCard: React.FC<ComponentProps> = ({heading, img}) => {
+
+    const router = useRouter();
+
+    const redirectToDetail = () => {
+        router.push(`/trip`)
+    }
+
     return (
-        <div className={'col-lg-3 col-sm-12'}>
+        <div className={'col-lg-3 col-sm-12'} onClick={() =>redirectToDetail()}>
             <Card style={{width: '18rem'}} className={'border-0 mb-5 cardShadow cursor-pointer'}>
                 <Card.Img src={img} style={{borderRadius: '4px 4px 0px 0px'}}/>
                 {/*<Card.Body>*/}
