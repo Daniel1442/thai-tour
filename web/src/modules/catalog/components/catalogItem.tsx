@@ -59,7 +59,7 @@ const CatalogItem: React.FC<ComponentProps> = ({place}) => {
                             <UserReviewBadge review={place.review}/>
                         </div>
                         <div className={'col-6 d-flex justify-content-end'}>
-                            <b className={'font-red me-4 mt-2'}> 1   200 Kč za os.</b>
+                            <b className={'font-red me-4 mt-2'}> 1 200 Kč za os.</b>
                             <button className={'btn btn-sm background-yellow rounded-corners font-white me-3 ms-3'}
                                     style={{
                                         width: '70px',
