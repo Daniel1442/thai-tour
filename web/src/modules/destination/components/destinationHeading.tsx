@@ -40,7 +40,7 @@ const DestinationHeading: React.FC = () => {
             </div>
             <div className={'col-12 d-flex justify-content-start'}>
                 <p>
-                    {place && place.address} (<a href={'#'}>Zobrazit na mapě</a>)</p>
+                    {place && place.address} (<a href={'/map'}>Zobrazit na mapě</a>)</p>
             </div>
 
         </div>
