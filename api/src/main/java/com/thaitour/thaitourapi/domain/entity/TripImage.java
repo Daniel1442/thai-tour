@@ -24,14 +24,11 @@ public class TripImage {
     @Column(name = "id")
     private UUID id;
 
-    @Column(name = "trip_id", columnDefinition = "uuid", nullable = false)
-    private UUID tripId;
-
     @Column(name = "is_active", columnDefinition = "boolean default true", nullable = false)
     private Boolean isActive;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "trip_id",  insertable = false, updatable = false)
+    @JoinColumn(name = "trip_id")
     private Trip trip;
 
     @Column(name = "target", length = 2555)

@@ -27,7 +27,6 @@ public class PlaceDetail {
     private String location;
     private AccommodationType type;
     private String address;
-    private String value;
     private Integer review;
     private Boolean isActive;
     private LocalDateTime updatedAt;

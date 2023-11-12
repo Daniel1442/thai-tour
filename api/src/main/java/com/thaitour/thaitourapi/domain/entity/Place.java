@@ -61,6 +61,9 @@ public class Place {
     @Column(name = "is_favorite")
     private Boolean isFavorite;
 
+    @Column(name = "price")
+    private Float price;
+
     @Column(name = "is_active")
     private Boolean isActive;
 

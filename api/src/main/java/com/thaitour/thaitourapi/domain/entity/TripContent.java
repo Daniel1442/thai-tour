@@ -25,11 +25,8 @@ public class TripContent {
     @Column(name = "id")
     private UUID id;
 
-    @Column(name = "trip_id", columnDefinition = "uuid", nullable = false)
-    private UUID tripId;
-
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "trip_id", insertable = false, updatable = false)
+    @JoinColumn(name = "trip_id")
     private Trip trip;
 
     @Column(name = "content_type", length = 255)

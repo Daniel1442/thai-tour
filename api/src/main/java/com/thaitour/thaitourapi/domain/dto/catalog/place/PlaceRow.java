@@ -20,6 +20,7 @@ public class PlaceRow {
     private String location;
     private AccommodationType type;
     private String address;
+    private Float price;
     private Integer review;
     private Boolean isActive;
     private List<ParameterValues> parameterValuesList;

@@ -45,6 +45,7 @@ public class PlaceDetailBuilder {
                                 .icon(placeParameters.getParameterValue().getIcon())
                                 .name(placeParameters.getParameterValue().getName())
                                 .tooltip(placeParameters.getParameterValue().getTooltip())
+                                .showOnDetail(placeParameters.getParameterValue().getShowOnDetail())
                                 .build()).toList())
                 .rooms(place.getRooms().stream()
                         .map(placeRooms -> RoomRow.builder()
