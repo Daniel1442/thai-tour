@@ -5,20 +5,12 @@ import com.thaitour.thaitourapi.application.finder.PlaceFinder;
 import com.thaitour.thaitourapi.application.helper.FlashMessageHelper;
 import com.thaitour.thaitourapi.domain.dto.FlashMessage;
 import com.thaitour.thaitourapi.domain.dto.Response;
-import com.thaitour.thaitourapi.domain.dto.catalog.parameter.PlaceParameterRow;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceDetail;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceFinderPayload;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceRow;
 import com.thaitour.thaitourapi.domain.exception.ThaiTourException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -32,7 +24,7 @@ public class PlaceController {
     private final PlaceDetailBuilder placeDetailBuilder;
 
     @PostMapping("/finder")
-    public Response<List<PlaceRow>> getPlaceList(
+    public Response<List<PlaceDetail>> getPlaceList(
             @RequestBody PlaceFinderPayload payload
     ) {
         try {
@@ -43,7 +35,7 @@ public class PlaceController {
 
         List<FlashMessage> errors = FlashMessageHelper.getMessages();
 
-        return new Response<>(errors.size() == 0, null, errors);
+        return new Response<>(errors.isEmpty(), null, errors);
     }
 
     @GetMapping("/{placeId}")

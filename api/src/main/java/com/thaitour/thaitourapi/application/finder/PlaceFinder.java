@@ -1,17 +1,19 @@
 package com.thaitour.thaitourapi.application.finder;
 
+import com.thaitour.thaitourapi.application.builder.PlaceDetailBuilder;
 import com.thaitour.thaitourapi.application.mapper.RawPlaceMapper;
+import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceDetail;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceFinderPayload;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceRow;
 import com.thaitour.thaitourapi.domain.entity.Place;
+import com.thaitour.thaitourapi.domain.repository.PlaceParameterRepository;
 import com.thaitour.thaitourapi.domain.repository.PlaceRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -21,14 +23,28 @@ public class PlaceFinder {
 
 
     private final RawPlaceMapper rawPlaceMapper;
+    private final PlaceDetailBuilder detailBuilder;
     private final PlaceRepository placeRepository;
+    private final PlaceParameterRepository placeParameterRepository;
 
 
     @Transactional(readOnly = true)
-    public List<PlaceRow> findFilterPlace(PlaceFinderPayload payload) {
-        return payload.getParameterValuesList().stream()
-                .map(placeRepository::filterPlaces)
-                .collect(Collectors.toList());
+    public List<PlaceDetail> findFilterPlace(PlaceFinderPayload payload) {
+        List<UUID> placeIds = new ArrayList<>();
+        List<PlaceDetail> places = new ArrayList<PlaceDetail>();
+        for (int i = 0; i < payload.getParameterValuesList().size(); i++) {
+            placeIds.add(placeParameterRepository.findPlaceId(payload.getParameterValuesList().get(i)));
+        }
+        Set<UUID> set = new HashSet<>(placeIds);
+        placeIds.clear();
+        placeIds.addAll(set);
+
+        for (int i = 0; i < placeIds.size(); i++) {
+            detailBuilder.build(placeIds.get(i));
+            places.add(detailBuilder.build(placeIds.get(i)));
+        }
+
+        return places;
     }
 
     @Transactional(readOnly = true)

@@ -4,6 +4,7 @@ import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceRow;
 import com.thaitour.thaitourapi.domain.dto.dao.catalog.RawPlace;
 import com.thaitour.thaitourapi.domain.entity.Place;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 
 @Mapper
