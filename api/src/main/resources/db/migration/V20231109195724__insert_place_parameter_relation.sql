@@ -51,7 +51,7 @@ insert into place_parameter (place_id, parameter_id, parameter_value_id, created
 values ('e9c8ec42-b619-47fc-a3f1-e61f50ba603b', '890b60f5-109f-48b8-81a9-3615fa00da69', '2c46a433-346c-48a3-80b4-e0848399d641', '2023-06-28 08:00:44.000000', 'ADMIN', null, null);
 
 insert into place_parameter (place_id, parameter_id, parameter_value_id, created_at, created_by, updated_at, updated_by)
-values ('e9c8ec42-b619-47fc-a3f1-e61f50ba603b', '890b60f5-109f-48b8-81a9-3615fa00da69', 'cd2a1b6f-4e26-4364-b55a-6ad39ee503b6', '2023-06-28 08:00:44.000000', 'ADMIN', null, null);
+values ('e9c8ec42-b619-47fc-a3f1-e61f50ba603b', '890b60f5-109f-48b8-81a9-3615fa00da69', '12bfd1d0-72f3-4216-b5a3-4c5e6b23c16d', '2023-06-28 08:00:44.000000', 'ADMIN', null, null);
 
 insert into place_parameter (place_id, parameter_id, parameter_value_id, created_at, created_by, updated_at, updated_by)
 values ('e9c8ec42-b619-47fc-a3f1-e61f50ba603b', '592fc8b8-06d0-459b-861f-942c7b726108', 'f5cd18b7-dd91-46d4-a10a-153ce9256ce2', '2023-06-28 08:00:44.000000', 'ADMIN', null, null);
