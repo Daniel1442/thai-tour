@@ -49,6 +49,9 @@ public class Room {
     @OneToMany(mappedBy = "room", fetch = FetchType.LAZY)
     private List<RoomParameter> parameters;
 
+    @OneToMany(mappedBy = "room", fetch = FetchType.LAZY)
+    private List<RoomImage> roomImages;
+
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 

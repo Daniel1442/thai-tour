@@ -19,6 +19,7 @@ public class RoomRow {
     private Integer capacity;
     private Float price;
     private List<RoomParameters> roomParameters;
+    private List<RoomImages> roomImages;
 
 
     @Data
@@ -30,5 +31,14 @@ public class RoomRow {
         private String icon;
         private String tooltip;
         private UUID id;
+    }
+
+    @Data
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class RoomImages {
+        private String original;
+        private String thumbnail;
     }
 }

@@ -23,8 +23,9 @@ public class RoomImage {
     @Column(name = "id")
     private UUID id;
 
-    @Column(name = "room_id", columnDefinition = "uuid", nullable = false)
-    private UUID roomId;
+    @ManyToOne(targetEntity = Room.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "room_id")
+    private Room room;
 
     @Column(name = "value", columnDefinition = "text")
     private String value;
