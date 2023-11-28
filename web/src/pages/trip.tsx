@@ -1,12 +1,12 @@
 import React, {useContext, useEffect} from "react";
 import InformationImageCard from "../modules/destination/components/informationImageCard";
 import {useRouter} from "next/router";
-import {PlaceContent, PlaceContext} from "../context/placeContext";
 import Loader from "../modules/common/components/loader";
 import TripSidebar from "../modules/trip/components/tripSidebar";
 import AboutTrip from "../modules/trip/components/aboutTrip";
 import TripHeading from "../modules/trip/components/tripHeading";
 import TripHeadingMobile from "../modules/trip/components/tripHeadingMobile";
+import {TripContent, TripContext} from "../context/tripContext";
 
 const Trip = () => {
     let width = typeof window !== 'undefined' && window.innerWidth;
@@ -14,10 +14,9 @@ const Trip = () => {
     const {id} = router.query;
 
     const {
-        place,
-        fetchPlace,
-        placeDescriptionType
-    } = useContext(PlaceContext) as PlaceContent;
+        trip,
+        fetchTrip
+    } = useContext(TripContext) as TripContent;
 
 
     useEffect(() => {
@@ -25,11 +24,11 @@ const Trip = () => {
     }, [width]);
 
     useEffect(() => {
-        fetchPlace(id as string)
+        fetchTrip(id as string)
     }, [id]);
 
     return <>
-        {place ?
+        {trip ?
 
             <div className={'container pt-5'}>
                 <div className={'row'}>

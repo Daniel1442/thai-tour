@@ -1,10 +1,10 @@
 import React, {useContext, useEffect} from "react";
 import {useRouter} from "next/router";
-import {PlaceContent, PlaceContext} from "../context/placeContext";
 import BlogParagraph from "../modules/blog/components/blogParagraph";
 import BlogSidebar from "../modules/blog/components/blogSidebar";
 import AboutAuthor from "../modules/blog/components/aboutAuthor";
 import SuggestionList from "../modules/blog/components/suggestionList";
+import {ArticleContent, ArticleContext} from "../context/blogContext";
 
 const Article = () => {
     const router = useRouter();
@@ -13,7 +13,7 @@ const Article = () => {
     const {
         article,
         fetchBlog
-    } = useContext(PlaceContext) as PlaceContent;
+    } = useContext(ArticleContext) as ArticleContent
 
 
     let width = typeof window !== 'undefined' && window.innerWidth;

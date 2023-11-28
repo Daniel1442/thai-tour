@@ -32,7 +32,6 @@ const Destination = () => {
 
     return <>
         {place ?
-
             <div className={'container pt-5'}>
                 <div className={'row'}>
                     <DestinationHeading/>
@@ -52,7 +51,7 @@ const Destination = () => {
                     </div>
                     <div className={'col-12'}>
                         {placeDescriptionType === 'ABOUT' &&
-                            <AboutDestinationNew    />
+                            <AboutDestinationNew/>
                         }
                         {placeDescriptionType === 'ROOMS' &&
                             <DestinationRoom/>

@@ -12,6 +12,8 @@ const Catalog = () => {
     const {
         placeList,
         filterPlaceF,
+        parameters,
+        fetchParameters,
         payload
     } = useContext(PlaceContext) as PlaceContent;
 
@@ -21,22 +23,26 @@ const Catalog = () => {
     }, [width]);
 
     useEffect(() => {
+        fetchParameters();
+    }, [router]);
+
+    useEffect(() => {
         if (payload == null) {
-            filterPlaceF({location: null, type: null})
+            filterPlaceF({} as PlaceFinderPayload)
         } else {
             filterPlaceF(payload as PlaceFinderPayload)
         }
-    }, [router]);
+    }, [router,payload]);
 
 
     return <div className={'container mt-5'}>
             <div className={'row'}>
                 <div className={'col-lg-3 col-sm-12 m-lg-3 m-sm-0'}>
-                    <SidebarFilter/>
+                    <SidebarFilter params={parameters}/>
                 </div>
 
                 <div className={'col-lg-8 col-sm-12'}>
-                    {placeList.length > 0 ? Object.entries(placeList).map(([id, place]) => {
+                    {placeList && placeList.length > 0 ? Object.entries(placeList).map(([id, place]) => {
                         return (
                             width > 768 ?
                                 <CatalogItem place={place} key={id}/>

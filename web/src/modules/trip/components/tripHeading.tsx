@@ -1,21 +1,21 @@
 import React, {useContext} from 'react';
-import {PlaceContent, PlaceContext} from "../../../context/placeContext";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHeart} from "@fortawesome/free-solid-svg-icons";
+import {TripContent, TripContext} from "../../../context/tripContext";
 
 
 const TripHeading: React.FC = () => {
     const {
-        place,
-        fetchPlace
-    } = useContext(PlaceContext) as PlaceContent;
+        trip,
+        fetchTrip
+    } = useContext(TripContext) as TripContent;
 
     return (
         <div className={'col-lg-12 desktop'}>
             <div className={'row'}>
 
                 <div className={'col-lg-7 col-sm-10 d-flex justify-content-start'}>
-                    <h2 className={'me-2 detailHeding'}>Damnoen Saduak Plovoucí trh & River</h2>
+                    <h2 className={'me-2 detailHeding'}>{trip.name}</h2>
                 </div>
                 <div className={'col-lg-2 d-flex justify-content-start'}>
 
@@ -30,7 +30,7 @@ const TripHeading: React.FC = () => {
                 </div>
             </div>
             <div className={'col-12 d-flex justify-content-start'}>
-                <p>Výlety Khao Lak, Thajsko</p>
+                <p>Výlety {trip.location}</p>
             </div>
 
         </div>

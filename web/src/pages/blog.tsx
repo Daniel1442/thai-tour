@@ -1,8 +1,8 @@
 import React, {useContext, useEffect} from "react";
-import {PlaceContent, PlaceContext} from "../context/placeContext";
 import {useRouter} from "next/router";
 import {ArticleFinderPayload} from "../modules/blog/models";
 import ArticleItem from "../modules/blog/components/blogRowOne";
+import {ArticleContent, ArticleContext} from "../context/blogContext";
 
 const Blog = () => {
     const router = useRouter()
@@ -12,7 +12,7 @@ const Blog = () => {
         payloadBlog,
         setPayloadBlog,
         articleList
-    } = useContext(PlaceContext) as PlaceContent;
+    } = useContext(ArticleContext) as ArticleContent;
 
     let width = typeof window !== 'undefined' && window.innerWidth;
     useEffect(() => {

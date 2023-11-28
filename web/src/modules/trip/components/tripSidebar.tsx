@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {PlaceContent, PlaceContext} from "../../../context/placeContext";
+import {TripContent, TripContext} from "../../../context/tripContext";
 
 const customStyles = {
     content: {
@@ -29,9 +29,9 @@ const customStylesFomr = {
 };
 const TripSidebar: React.FC = () => {
     const {
-        place,
-        fetchPlace
-    } = useContext(PlaceContext) as PlaceContent;
+        trip,
+        fetchTrip
+    } = useContext(TripContext) as TripContent;
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
     function openModal() {
@@ -58,31 +58,31 @@ const TripSidebar: React.FC = () => {
         <div className={'destinationSideBar'}>
             <div className={'row'}>
                 <div className={'col-12 mt-5 '}>
-                    <h3 className={'font-yellow'}>od 1500,- Kč/osoba </h3>
+                    <h3 className={'font-yellow'}>od {trip.price},- Kč/osoba </h3>
                 </div>
                 <div className={'col-12 '}>
-                    <b className={''}>Délka výletu:</b> <>8 hod.</>
+                    <b className={''}>Délka výletu:</b> <>{trip.length}</>
                 </div>
                 <div className={'col-12 '}>
-                    <b className={''}>Strava:</b> <>oběd</>
+                    <b className={''}>Strava:</b> <>{trip.food}</>
                 </div>
                 <div className={'col-12 '}>
                     <b className={''}>Kdy:</b> <>denně</>
                 </div>
                 <div className={'col-12 '}>
-                    <b className={''}>Typ výletu:</b> <>soukromý/skupinový</>
+                    <b className={''}>Typ výletu:</b> <>{trip.tripType}</>
                 </div>
                 <div className={'col-12 '}>
-                    <b className={''}>Lokalita:</b> <>Bangkok</>
+                    <b className={''}>Lokalita:</b> <>{trip.tripLocation}</>
                 </div>
                 <div className={'col-12 '}>
                     <b className={''}>ODjezd:</b> <>8:00 hod.</>
                 </div>
                 <div className={'col-12 '}>
-                    <b className={''}>Průvodce:</b> <>Ang., Něm., Rus.</>
+                    <b className={''}>Průvodce:</b> <>{trip.guide}.</>
                 </div>
                 <div className={'col-12 '}>
-                    <b className={''}>V ceně:</b> <>transfer, vstupy</>
+                    <b className={''}>V ceně:</b> <>{trip.included}</>
                 </div>
 
                 <div className={'col-12 mt-5 mobilePaddingColumn'}>

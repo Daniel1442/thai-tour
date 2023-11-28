@@ -1,103 +1,86 @@
 import React from 'react';
 import ImageGallery from "react-image-gallery";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBathtub, faBed, faHouse, faSnowflake, faTv, faUmbrellaBeach, faWifi} from "@fortawesome/free-solid-svg-icons";
+import {faIcons} from "@fortawesome/free-solid-svg-icons";
+import {ImageList, Parameters} from "../../homepage/models";
+import Loader from "../../common/components/loader";
 
-const RoomCard: React.FC = () => {
-    const images = [
-        {
-            original: "https://picsum.photos/id/1015/1000/600/",
-            thumbnail: "https://picsum.photos/id/1015/250/150/",
-        },
-        {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        },
-        {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        },
-        {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        },
-        {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        },
-        {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        }, {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        }, {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        }, {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        }, {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        }, {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        }
-    ];
-    return (
-        <div className={'col-lg-5 col-sm-12'}>
+interface RoomCardProps {
+    name: string;
+    listOfRoomParams: Parameters[]
+    listOfRoomImages: ImageList[]
+}
+
+const RoomCard: React.FC<RoomCardProps> = ({name,listOfRoomParams,listOfRoomImages}) => {
+
+        const images = [
+            {
+                original: "https://picsum.photos/id/1015/1000/600/",
+                thumbnail: "https://picsum.photos/id/1015/250/150/",
+            },
+            {
+                original: "https://picsum.photos/id/1019/1000/600/",
+                thumbnail: "https://picsum.photos/id/1019/250/150/",
+            },
+            {
+                original: "https://picsum.photos/id/1019/1000/600/",
+                thumbnail: "https://picsum.photos/id/1019/250/150/",
+            },
+            {
+                original: "https://picsum.photos/id/1019/1000/600/",
+                thumbnail: "https://picsum.photos/id/1019/250/150/",
+            },
+            {
+                original: "https://picsum.photos/id/1019/1000/600/",
+                thumbnail: "https://picsum.photos/id/1019/250/150/",
+            },
+            {
+                original: "https://picsum.photos/id/1019/1000/600/",
+                thumbnail: "https://picsum.photos/id/1019/250/150/",
+            }, {
+                original: "https://picsum.photos/id/1019/1000/600/",
+                thumbnail: "https://picsum.photos/id/1019/250/150/",
+            }, {
+                original: "https://picsum.photos/id/1019/1000/600/",
+                thumbnail: "https://picsum.photos/id/1019/250/150/",
+            }, {
+                original: "https://picsum.photos/id/1019/1000/600/",
+                thumbnail: "https://picsum.photos/id/1019/250/150/",
+            }, {
+                original: "https://picsum.photos/id/1019/1000/600/",
+                thumbnail: "https://picsum.photos/id/1019/250/150/",
+            }, {
+                original: "https://picsum.photos/id/1019/1000/600/",
+                thumbnail: "https://picsum.photos/id/1019/250/150/",
+            }
+        ];
+
+        return (
+        <div className={'col-lg-5 col-sm-12 mb-3'}>
             <div className={'row'}>
                 <div className={'col-12'}>
-                   <b>Apartmá Sunset</b>
+                    <b>{name}</b>
                 </div>
                 <div className={'col-12'}>
-                    <ImageGallery items={images} showNav={true} showThumbnails={true} infinite={true}
-                                  showFullscreenButton={false} showPlayButton={false}/>
+                    <ImageGallery items={listOfRoomImages.length > 0 ? listOfRoomImages : images} showNav={true} showThumbnails={true} infinite={true}
+                                  showFullscreenButton={false} showPlayButton={false} lazyLoad={true} onImageLoad={() => {
+                        return <Loader text={'Načítání...'}/>
+                    }}/>
                 </div>
                 <div className={'col-12'}>
-
-                    <FontAwesomeIcon icon={faWifi}
-                                     style={{
-                                         color: '#00FFFF',
-                                         padding: "4px 0px 0px 0px"
-                                     }}/> Internet/wifi
-                    <FontAwesomeIcon icon={faUmbrellaBeach}
-                                     style={{
-                                         color: '#00FFFF',
-                                         marginLeft: '16px',
-                                         padding: "4px 0px 0px 0px"
-                                     }}/> Pláž
-                    <br className={'mobile'}/>
-                    <FontAwesomeIcon icon={faBed}
-                                     style={{
-                                         color: '#00FFFF',
-                                         padding: "4px 0px 0px 0px"
-                                     }}/> 1 velká manželská postel
-                    <br  className={'mobile'}/>
-                    <FontAwesomeIcon icon={faTv}
-                                     style={{
-                                         color: '#00FFFF',
-                                         padding: "4px 0px 0px 0px"
-                                     }}/> TV
-                    <FontAwesomeIcon icon={faSnowflake}
-                                     style={{
-                                         color: '#00FFFF',
-                                         marginLeft: '16px',
-                                         padding: "4px 0px 0px 0px"
-                                     }}/> Klimatizace
-                    <br  className={'mobile'}   />
-                    <FontAwesomeIcon icon={faBathtub}
-                                     style={{
-                                         color: '#00FFFF',
-                                         padding: "4px 0px 0px 0px"
-                                     }}/> Vířivá vana
-                    <FontAwesomeIcon icon={faHouse}
-                                     style={{
-                                         color: '#00FFFF',
-                                         marginLeft: '16px',
-                                         padding: "4px 0px 0px 0px"
-                                     }}/> 44m2
+                    {listOfRoomParams && listOfRoomParams.length > 0 && listOfRoomParams.map((parameter, index) => {
+                        return (
+                            <>
+                                <FontAwesomeIcon icon={faIcons}
+                                                 style={{
+                                                     color: '#00FFFF',
+                                                     padding: "4px 0px 0px 0px"
+                                                 }}/> {parameter.name}
+                                {index % 2 !== 0 && <br className={'mobile'}/>}
+                            </>
+                        )
+                    })
+                    }
                 </div>
             </div>
         </div>

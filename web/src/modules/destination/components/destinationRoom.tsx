@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Alert} from "react-bootstrap";
 import RoomCard from "./roomCard";
 import RoomLimit from "./roomLimit";
 import RoomPrice from "./roomPrice";
+import {PlaceContent, PlaceContext} from "../../../context/placeContext";
 
 const DestinationRoom: React.FC = () => {
+    const {
+        place
+    } = useContext(PlaceContext) as PlaceContent;
     return (
         <>
-            <div className={'row mt-5 mb-3  '}>
+            <div className={'row mt-5 mb-3 '}>
                 <div className={'col-lg-12 text-left mb'}>
                     <h3 className={'font-blue'}>Typ pokojů</h3>
                     <Alert variant={'success'}>
@@ -33,12 +37,13 @@ const DestinationRoom: React.FC = () => {
                 <div className={'col-3 ms-3'}>
                     <h5 className={'font-black'}>Cena</h5>
                 </div>
-                {
-                    <>
-                        <RoomCard/>
-                        <RoomLimit/>
-                        <RoomPrice/>
+                {place && place.rooms && place.rooms.length > 0 && place.rooms.map((room, index) => {
+                    return <>
+                        <RoomCard name={room.name} listOfRoomParams={room.roomParameters} listOfRoomImages={room.roomImages}/>
+                        <RoomLimit limit={room.capacity}/>
+                        <RoomPrice price={room.price}/>
                     </>
+                    })
                 }
             </div>
         </>

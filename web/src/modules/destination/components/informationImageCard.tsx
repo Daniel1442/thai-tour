@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import {PlaceContent, PlaceContext} from "../../../context/placeContext";
 import ImageGallery from "react-image-gallery";
+import {TripContent, TripContext} from "../../../context/tripContext";
 
 const InformationImageCard: React.FC = () => {
     const {
@@ -8,53 +9,18 @@ const InformationImageCard: React.FC = () => {
         fetchPlace
     } = useContext(PlaceContext) as PlaceContent;
 
+    const {
+        trip,
+        fetchTrip
+    } = useContext(TripContext) as TripContent;
 
-    const images = [
-        {
-            original: "https://picsum.photos/id/1015/1000/600/",
-            thumbnail: "https://picsum.photos/id/1015/250/150/",
-        },
-        {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        },
-        {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        },
-        {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        },
-        {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        },
-        {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        }, {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        }, {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        }, {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        }, {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        }, {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        }
-    ];
+
+
     return (
         <div className={'informationImageCard'}>
             <div className={'row my-3'}>
                 <div className={'col-12'}>
-                    <ImageGallery items={images} showNav={true} showThumbnails={true} infinite={true}
+                    <ImageGallery items={place && place.placeImageListList &&  place.placeImageListList.length > 0 ? place.placeImageListList: trip && trip.tripImageListList && trip.tripImageListList.length > 0 ? trip.tripImageListList : []} showNav={true} showThumbnails={true} infinite={true}
                                   showFullscreenButton={true} showPlayButton={false}/>
                 </div>
             </div>

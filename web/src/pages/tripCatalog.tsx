@@ -1,7 +1,9 @@
-import React, {useEffect} from "react";
+import React, {useContext, useEffect} from "react";
 import PlaceTripCard from "../modules/travelCatalog/components/placeTripCard";
 import PlaceTripInfo from "../modules/travelCatalog/components/placeTripInfo";
 import {LazyLoadImage} from "react-lazy-load-image-component";
+import {useRouter} from "next/router";
+import {TripContent, TripContext} from "../context/tripContext";
 
 const TripCatalog = () => {
 
@@ -11,36 +13,26 @@ const TripCatalog = () => {
         width = typeof window !== 'undefined' && window.innerWidth;
     }, [width]);
 
+    const router = useRouter()
+
+    const {
+        tripList,
+        filterTripF
+    } = useContext(TripContext) as TripContent;
+
+    useEffect(() => {
+        filterTripF()
+    }, [router]);
+
     return (<div className={'container'}>
         <h1 className={'mt-5'}>Výlety & aktivity v Thajsku</h1>
         <div className={'row'}>
             <div className={'col-12'}>
                 <h3 className={'mt-5 mb-3'}>Destinace pro výlety v Thajsku</h3>
             </div>
-            <PlaceTripCard heading={'Bangkok'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/vylet_bangkok.jpg'}/>
-            <PlaceTripCard heading={'Pattaya'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/vylet_pattaya.jpg'}/>
-            <PlaceTripCard heading={'Koh Samui'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/vylet_koh_samui.jpg'}/>
-            <PlaceTripCard heading={'Khao Lak'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/vylet_khao_lak.jpg'}/>
-            <PlaceTripCard heading={'Phuket'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/vylet_phuket.jpg'}/>
-            <PlaceTripCard heading={'Krabi'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/vylet_krabi.jpg'}/>
-            <PlaceTripCard heading={'Hua Hin'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/vylet_hua_hin.jpg'}/>
-            <PlaceTripCard heading={'Koh Chang'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/vylet_koh_chang.jpg'}/>
-            <PlaceTripCard heading={'Koh Lanta'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/vylet_koh_lanta.jpg'}/>
-            <PlaceTripCard heading={'Chiang Mai'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/vylet_chiang_mai.jpg'}/>
-            <PlaceTripCard heading={'Chiang Rai'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/vylet_chiang_rai.jpg'}/>
-            <PlaceTripCard heading={'Zobrazit vše'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/vylet_vse.jpg'}/>
+
+            {tripList && tripList.map((trip) => { return <PlaceTripCard trip={trip}/>})}
+
         </div>
         <div className={'row'}>
             <div className={'col-lg-4 col-sm-0'}>

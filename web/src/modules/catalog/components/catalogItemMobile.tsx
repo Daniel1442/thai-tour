@@ -1,19 +1,30 @@
 import React from 'react';
 import StarRatings from "react-star-ratings";
 import {useRouter} from "next/router";
-import {PlaceRow} from "../../homepage/models";
+import {PlaceDetail} from "../../homepage/models";
 import UserReviewBadge from "../../homepage/components/userReviewBadge";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUmbrellaBeach, faWifi} from "@fortawesome/free-solid-svg-icons";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 
 interface ComponentProps {
-    place: PlaceRow
+    place: PlaceDetail
 }
 const CatalogItemMobile: React.FC<ComponentProps> = ({place}) => {
     const router = useRouter();
     const redirectToDetail = (placeId: string) => {
         router.push(`/destination?id=${placeId}`)
+    }
+
+    const findLowestPrice = () => {
+        let lowestPrice = Number.MAX_SAFE_INTEGER;
+        place && place.rooms && place.rooms.length > 0 ? place.rooms.forEach((room, index) => {
+            if (lowestPrice > room.price) {
+                lowestPrice = room.price;
+            }
+        }) : null;
+
+        return lowestPrice
     }
     return (
         <div className={'catalogItem background-white mt-3 rounded-corners'}>
@@ -35,7 +46,11 @@ const CatalogItemMobile: React.FC<ComponentProps> = ({place}) => {
                             {place.address}</p>
                     </div>
                     <div className={'col-12 pt-3 text-muted'} style={{fontSize: '11px'}}>
-                        {place && place.value}
+                        {place && place.placeContentsList && place.placeContentsList.map((placeContents) => {
+                            if (placeContents.type === 'LOCATION')
+                                return <>{placeContents.value}</>
+                            else return;
+                        })}
                     </div>
                     <div className={'col-12 mt-2'}><p style={{fontSize: '11px'}}>
 
@@ -57,7 +72,7 @@ const CatalogItemMobile: React.FC<ComponentProps> = ({place}) => {
                             <div className={'mt-2 me-5'}>
                                 <UserReviewBadge review={place.review}/>
                             </div>
-                            <b className={'font-red ms-5 mt-2'}> od 1 200 Kč za os.</b>
+                            <b className={'font-red ms-5 mt-2'}> od {findLowestPrice} Kč za os.</b>
                             <button className={'btn btn-sm background-yellow rounded-corners font-white ms-2'} style={{    width: '70px',
                                 height: '30px',
                                 marginTop: '4px'}}

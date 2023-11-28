@@ -15,11 +15,9 @@ export interface PlaceRow {
 }
 
 
-export interface PlaceImageList {
-    id: string;
-    target: string
-    priority: number
-    isActive: boolean
+export interface ImageList {
+    thumbnail: string;
+    original: string;
 }
 
 export interface PlaceContent {
@@ -29,30 +27,37 @@ export interface PlaceContent {
     isActive: boolean
 }
 
-export interface PlaceParameters {
+export interface Parameters {
     id: string;
+    icon: string;
+    showOnDetail: boolean;
     tooltip: string
     name: string
 }
+export interface RoomRow {
+    id: string;
+    name: string
+    area: string
+    bed: string
+    capacity: number
+    price: number
+    roomParameters: Parameters[]
+    roomImages: ImageList[]
+}
 
 export interface PlaceDetail {
-
     id: string;
     name: string;
     image: string;
     location: string;
     type: string;
     address: string;
-    value: string;
     review: number;
     isActive: boolean;
-    updatedAt: Date;
-    updatedBy: string;
-    createdAt: Date;
-    createdBy: string;
-    placeImageListList: PlaceImageList[];
+    placeImageListList: ImageList[];
     placeContentsList: PlaceContent[];
-    placeParameterList: PlaceParameters[];
+    placeParameterList: Parameters[];
+    rooms: RoomRow[];
 
 }
 
@@ -83,6 +88,65 @@ export const placeOptions: readonly PlaceOption[] = [
 ];
 
 export interface PlaceFinderPayload {
-    location: string | null;
-    type: string | null;
+    parameterValuesList: [];
 }
+
+export interface TripRow {
+    id: string;
+    image: string;
+    name: string;
+    location: string;
+    capacity: number;
+    price: number;
+    length: string;
+    food: string;
+    tripLocation: string;
+    tripType: string;
+    guide: string;
+    included: string;
+    reviews: string;
+    isActive: boolean;
+}
+
+export interface TripDetail {
+    id: string;
+    name: string;
+    image: string;
+    location: string;
+    capacity: number;
+    price: number;
+    length: string;
+    food: string;
+    included: string;
+    tripLocation: string;
+    tripType: string;
+    guide: string;
+    reviews: string;
+    isActive: boolean;
+    tripImageListList: TripImageList[];
+    tripContentsList: TripContent[];
+}
+
+interface TripImageList {
+    original: string;
+    thumbnail: string;
+}
+
+interface TripContent {
+    isActive: boolean;
+    type: string;
+    value: string;
+    id: string;
+}
+
+export interface PlaceParameters {
+    id: string;
+    name: string;
+    parameterValueList: PlaceParameterValue[];
+}
+
+export interface PlaceParameterValue {
+    id: string;
+    name: string;
+}
+

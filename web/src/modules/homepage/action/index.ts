@@ -16,3 +16,9 @@ export const filterPlace = (payload: PlaceFinderPayload) => {
     return axios.post(API_CONFIG.GET_PLACE_LIST(), payload)
         .then(response => response.data)
 }
+
+
+export const getFilterParameters = () => {
+    return axios.get(API_CONFIG.GET_PLACE_PARAMETER())
+        .then(response => response.data)
+}

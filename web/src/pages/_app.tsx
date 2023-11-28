@@ -7,6 +7,8 @@ import Navigation from "../modules/common/components/navigation";
 import MobileNavigation from "../modules/common/components/mobileNavigation";
 import MobileFooter from "../modules/common/components/mobileFooter";
 import Footer from "../modules/common/components/footer";
+import ArticleContextProvider from "../context/blogContext";
+import TripContextProvider from "../context/tripContext";
 
 type AppProps<P = any> = {
     pageProps: P;
@@ -14,14 +16,18 @@ type AppProps<P = any> = {
 export default function App({Component, pageProps}: AppProps): JSX.Element {
     return (<React.Fragment>
         <PlaceContextProvider>
-            <div className={'homepage'}>
-                <Header/>
-                <Navigation/>
-                <MobileNavigation/>
-                <Component {...pageProps as ReactNode}/>
-                <Footer href={''} contact={''}/>
-                <MobileFooter href={''} contact={''}/>
-            </div>
+            <ArticleContextProvider>
+            <TripContextProvider>
+                <div className={'homepage'}>
+                    <Header/>
+                    <Navigation/>
+                    <MobileNavigation/>
+                    <Component {...pageProps as ReactNode}/>
+                    <Footer href={''} contact={''}/>
+                    <MobileFooter href={''} contact={''}/>
+                </div>
+            </TripContextProvider>
+            </ArticleContextProvider>
         </PlaceContextProvider>
     </React.Fragment>)
 }
