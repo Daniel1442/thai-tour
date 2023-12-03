@@ -32,9 +32,14 @@ public class PlaceFinder {
     public List<PlaceDetail> findFilterPlace(PlaceFinderPayload payload) {
         List<UUID> placeIds = new ArrayList<>();
         List<PlaceDetail> places = new ArrayList<PlaceDetail>();
-        for (int i = 0; i < payload.getParameterValuesList().size(); i++) {
-            placeIds.add(placeParameterRepository.findPlaceId(payload.getParameterValuesList().get(i)));
+        if (payload.getParameterValuesList() != null) {
+            for (int i = 0; i < payload.getParameterValuesList().size(); i++) {
+                placeIds.add(placeParameterRepository.findPlaceId(payload.getParameterValuesList().get(i)));
+            }
+        } else {
+            placeIds = placeRepository.findAll().stream().map(Place::getId).collect(Collectors.toList());
         }
+
         Set<UUID> set = new HashSet<>(placeIds);
         placeIds.clear();
         placeIds.addAll(set);
@@ -51,11 +56,11 @@ public class PlaceFinder {
     public List<PlaceRow> findFavoritePlace() {
         List<Place> favoritePlaceEntities = placeRepository.findFavoritePlaces();
 
-        if (Objects.isNull(favoritePlaceEntities)){
+        if (Objects.isNull(favoritePlaceEntities)) {
             return null;
         }
 
-        return  favoritePlaceEntities.stream().map(rawPlaceMapper::toPlaceDto).toList();
+        return favoritePlaceEntities.stream().map(rawPlaceMapper::toPlaceDto).toList();
 
     }
 }
