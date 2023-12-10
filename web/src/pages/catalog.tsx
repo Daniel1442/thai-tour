@@ -27,9 +27,11 @@ const Catalog = () => {
     }, [router]);
 
     useEffect(() => {
+        console.log(payload)
         if (payload == null) {
             filterPlaceF({} as PlaceFinderPayload)
         } else {
+            console.log(payload)
             filterPlaceF(payload as PlaceFinderPayload)
         }
     }, [router,payload]);

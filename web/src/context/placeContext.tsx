@@ -2,6 +2,7 @@ import * as React from 'react';
 import {createContext, useEffect, useState} from 'react';
 import {filterPlace, getDetail, getFilterParameters} from '../modules/homepage/action';
 import {PlaceDetail, PlaceFinderPayload, PlaceParameters} from "../modules/homepage/models";
+import {useRouter} from "next/router";
 
 
 export type PlaceContent = {
@@ -10,8 +11,8 @@ export type PlaceContent = {
     fetchParameters: () => void
     parameters: PlaceParameters[]
     filterPlaceF: (payload: PlaceFinderPayload) => void
-    payload: PlaceFinderPayload | undefined
-    setPayload: (payload: PlaceFinderPayload) => void
+    payload: PlaceFinderPayload
+    setPayload: (payload: any) => void
     placeDescriptionType : string,
     setPlaceDescriptionType: (type: string) => void
     placeList: PlaceDetail[]
@@ -21,8 +22,10 @@ export const PlaceContext = createContext<PlaceContent | null>(null);
 
 const PlaceContextProvider: React.FC<React.ReactNode> = ({children}) => {
 
+    const router = useRouter();
+
     const [place, setPlace] = useState<PlaceDetail>({} as PlaceDetail)
-    const [payload, setPayload] = useState<PlaceFinderPayload>({"parameterValuesList": []})
+    const [payload, setPayload] = useState<PlaceFinderPayload>({} as PlaceFinderPayload)
     const [placeList, setPlaceList] = useState<PlaceDetail[]>([]);
     const [parameters, setParameterList] =  useState<PlaceParameters[]>([]);
     const [placeDescriptionType, setPlaceDescriptionType] = useState<string>('ABOUT');
@@ -35,8 +38,8 @@ const PlaceContextProvider: React.FC<React.ReactNode> = ({children}) => {
     }
 
     useEffect(() => {
-        console.log(payload)
-    }, [payload]);
+        setPayload({"parameterValuesList": []})
+    }, [router]);
 
     const fetchParameters = () => {
         getFilterParameters().then((params: any) => {
@@ -48,7 +51,8 @@ const PlaceContextProvider: React.FC<React.ReactNode> = ({children}) => {
 
     const filterPlaceF = (payload: PlaceFinderPayload) => {
         filterPlace(payload as PlaceFinderPayload).then((place: any) => {
-            setPlaceList(place.result.content)
+            console.log(place.result)
+            setPlaceList(place.result)
         }).catch((err: string) => {
             console.log(err)
         })

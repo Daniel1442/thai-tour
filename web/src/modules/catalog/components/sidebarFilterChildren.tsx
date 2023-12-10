@@ -15,17 +15,32 @@ const SidebarFilterChildren: React.FC<ComponentProps> = ({childrenParam}) => {
         setPayload
     } = useContext(PlaceContext) as PlaceContent;
 
+    const removeValueFromPayload = (valueToRemove: string): void => {
+        setPayload((prevPayload: any) => {
+            const updatedList = prevPayload.parameterValuesList.filter((value: any) => value !== valueToRemove);
+            return {
+                ...prevPayload,
+                parameterValuesList: updatedList,
+            };
+        });
+    };
+
+    const addValueFromPayload = (valueToAdd: string): void => {
+        setPayload((prevPayload: any) => {
+            let updatedList = [...prevPayload.parameterValuesList, valueToAdd];
+            return {
+                ...prevPayload,
+                parameterValuesList: updatedList,
+            };
+        })
+    };
+
+
     const filterClick = (e: any) => {
         if (e.target.checked) {
-            console.log(payload)
-            // @ts-ignore
-            payload?.parameterValuesList.push(childrenParam.id as string);
-            setPayload(payload as PlaceFinderPayload);
-            console.log(payload)
+            addValueFromPayload(childrenParam.id as string);
         } else {
-            // @ts-ignore
-            payload?.parameterValuesList.splice(payload?.parameterValuesList.indexOf(childrenParam.id), 1)
-            setPayload(payload as PlaceFinderPayload);
+            removeValueFromPayload(childrenParam.id as string);
         }
 
     }
