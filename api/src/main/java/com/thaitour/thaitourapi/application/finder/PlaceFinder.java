@@ -32,7 +32,7 @@ public class PlaceFinder {
     public List<PlaceDetail> findFilterPlace(PlaceFinderPayload payload) {
         List<UUID> placeIds = new ArrayList<>();
         List<PlaceDetail> places = new ArrayList<PlaceDetail>();
-        if (payload.getParameterValuesList() != null) {
+        if (payload.getParameterValuesList() != null || payload.getParameterValuesList().isEmpty()) {
             for (int i = 0; i < payload.getParameterValuesList().size(); i++) {
                 placeIds.add(placeParameterRepository.findPlaceId(payload.getParameterValuesList().get(i)));
             }
