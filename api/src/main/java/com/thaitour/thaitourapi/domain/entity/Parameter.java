@@ -37,6 +37,9 @@ public class Parameter {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "priority")
+    private Integer priority;
+
     @Column(name = "tooltip")
     private String tooltip;
 

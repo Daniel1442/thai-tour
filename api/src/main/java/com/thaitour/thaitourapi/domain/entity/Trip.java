@@ -52,6 +52,12 @@ public class Trip {
     @Column(name = "food", length = 255)
     private String food;
 
+    @Column(name = "trip_repetition", length = 255)
+    private String tripRepetition;
+
+    @Column(name = "trip_start", length = 255)
+    private String tripStart;
+
     @Column(name = "trip_location", length = 255)
     private String tripLocation;
 

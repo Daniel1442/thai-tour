@@ -24,6 +24,8 @@ public class TripDetail {
     private String length;
     private String food;
     private String included;
+    private String tripRepetitions;
+    private String tripStart;
     private String tripLocation;
     private String tripType;
     private String guide;
@@ -53,6 +55,7 @@ public class TripDetail {
     public static class TripContent {
         private Boolean isActive;
         private TripContentType type;
+        private Integer priority;
         private String value;
         private UUID id;
     }

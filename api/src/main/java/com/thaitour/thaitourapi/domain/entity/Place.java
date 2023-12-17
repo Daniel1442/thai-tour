@@ -50,8 +50,18 @@ public class Place {
     @Column(name = "image")
     private String image;
 
+    @Column(name = "food")
+    private String food;
+
     @Column(name = "location")
     private String location;
+
+    @Column(name = "latitude")
+    private Float latitude;
+
+    @Column(name = "longitude")
+    private Float longitude;
+
     @Column(name = "address")
     private String address;
 

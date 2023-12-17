@@ -44,9 +44,9 @@ public class PlaceFinder {
         placeIds.clear();
         placeIds.addAll(set);
 
-        for (int i = 0; i < placeIds.size(); i++) {
-            detailBuilder.build(placeIds.get(i));
-            places.add(detailBuilder.build(placeIds.get(i)));
+        for (UUID placeId : placeIds) {
+            detailBuilder.build(placeId);
+            places.add(detailBuilder.build(placeId));
         }
 
         return places;

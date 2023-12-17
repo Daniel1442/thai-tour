@@ -1,5 +1,6 @@
 package com.thaitour.thaitourapi.application.builder;
 
+import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceDetail;
 import com.thaitour.thaitourapi.domain.dto.catalog.trip.TripDetail;
 import com.thaitour.thaitourapi.domain.entity.Trip;
 import com.thaitour.thaitourapi.domain.exception.ThaiTourException;
@@ -7,7 +8,10 @@ import com.thaitour.thaitourapi.domain.repository.TripRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.UUID;
+import java.util.stream.Collectors;
+
 @RequiredArgsConstructor
 @Service
 public class TripDetailBuilder {
@@ -31,8 +35,7 @@ public class TripDetailBuilder {
                                 .value(tripContent.getValue())
                                 .type(tripContent.getContentType())
                                 .isActive(tripContent.getIsActive()
-                                ).build()).toList())
-
+                                ).build()).sorted(Comparator.comparing(TripDetail.TripContent::getPriority)).collect(Collectors.toList()))
                 .guide(trip.getGuide())
                 .location(trip.getLocation())
                 .capacity(trip.getCapacity())
@@ -40,6 +43,8 @@ public class TripDetailBuilder {
                 .length(trip.getLength())
                 .food(trip.getFood())
                 .tripType(trip.getTripType())
+                .tripStart(trip.getTripStart())
+                .tripRepetitions(trip.getTripRepetition())
                 .tripLocation(trip.getGuide())
                 .included(trip.getGuide())
                 .reviews(trip.getGuide())

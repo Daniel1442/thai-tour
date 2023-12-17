@@ -28,6 +28,9 @@ public class ParameterValue {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "priority")
+    private Integer priority;
+
     @Column(name = "tooltip")
     private String tooltip;
 

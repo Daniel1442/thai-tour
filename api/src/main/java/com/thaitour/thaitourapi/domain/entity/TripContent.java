@@ -29,6 +29,9 @@ public class TripContent {
     @JoinColumn(name = "trip_id")
     private Trip trip;
 
+    @Column(name = "priority")
+    private Integer priority;
+
     @Column(name = "content_type", length = 255)
     @Enumerated(EnumType.STRING)
     private TripContentType contentType;

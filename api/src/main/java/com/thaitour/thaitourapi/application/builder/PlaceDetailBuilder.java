@@ -12,7 +12,9 @@ import com.thaitour.thaitourapi.domain.repository.PlaceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -27,6 +29,8 @@ public class PlaceDetailBuilder {
                 .id(placeId)
                 .image(place.getImage())
                 .name(place.getName())
+                .latitude(place.getLatitude())
+                .longitude(place.getLongitude())
                 .placeImageListList(place.getImages().stream()
                         .map(placeImage -> PlaceImageList.builder()
                                 .original(placeImage.getTarget())
@@ -35,10 +39,11 @@ public class PlaceDetailBuilder {
                 .placeContentsList(place.getContents().stream()
                         .map(placeContent -> PlaceContent.builder()
                                 .id(placeContent.getId())
+                                .priority(placeContent.getPriority())
                                 .value(placeContent.getValue())
                                 .type(placeContent.getContentType())
                                 .isActive(placeContent.getIsActive()
-                                ).build()).toList())
+                                ).build()).sorted(Comparator.comparing(PlaceContent::getPriority)).collect(Collectors.toList()))
                 .placeParameterList(place.getParameters().stream()
                         .map(placeParameters -> PlaceParameters.builder()
                                 .id(placeParameters.getId())
@@ -71,6 +76,7 @@ public class PlaceDetailBuilder {
                         ).toList())
                 .location(place.getLocation())
                 .address(place.getAddress())
+                .food(place.getFood())
                 .review(place.getReview())
                 .isActive(place.getIsActive())
                 .type(place.getAccommodationType())

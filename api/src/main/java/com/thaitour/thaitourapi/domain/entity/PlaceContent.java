@@ -39,6 +39,9 @@ public class PlaceContent {
     @JoinColumn(name = "place_id")
     private Place place;
 
+    @Column(name = "priority")
+    private Integer priority;
+
     @Column(name = "content_type")
     @Enumerated(EnumType.STRING)
     private PlaceContentType contentType;

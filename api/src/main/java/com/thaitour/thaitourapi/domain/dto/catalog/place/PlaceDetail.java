@@ -25,6 +25,9 @@ public class PlaceDetail {
     private String name;
     private String image;
     private String location;
+    private Float longitude;
+    private Float latitude;
+    private String food;
     private AccommodationType type;
     private String address;
     private Integer review;
@@ -54,6 +57,7 @@ public class PlaceDetail {
     public static class PlaceContent {
         private Boolean isActive;
         private PlaceContentType type;
+        private Integer priority;
         private String value;
         private UUID id;
 
