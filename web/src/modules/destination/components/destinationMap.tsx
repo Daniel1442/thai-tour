@@ -1,23 +1,21 @@
-import React, {useEffect} from 'react';
-import {useRouter} from "next/router";
+import React, {useContext, useEffect} from 'react'
+import {PlaceContent, PlaceContext} from "../../../context/placeContext";
 
-const LeafletMap: React.FC = () => {
+const DestinationMap: React.FC = () => {
 
-    const router = useRouter();
-    let long = router.query.long
-    let lat = router.query.lat
-    let name = router.query.name
-
-
+    const {
+        place,
+        fetchPlace
+    } = useContext(PlaceContext) as PlaceContent;
 
     useEffect(() => {
         // Check if window is defined to ensure we are on the client side
-        if (typeof window !== 'undefined' && long && lat) {
+        if (typeof window !== 'undefined' && place) {
             const L = require('leaflet');
             require('leaflet/dist/leaflet.css');
 
             // Create a Leaflet map
-            const map = L.map('map').setView([lat, long], 15);
+            const map = L.map('map').setView([place.latitude, place.longitude], 15);
             var century21icon = L.icon({
                 iconUrl: 'http://leafletjs.com/examples/custom-icons/leaf-green.png',
                 shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png',
@@ -27,11 +25,14 @@ const LeafletMap: React.FC = () => {
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
             // Add a marker
-            L.marker([lat, long], {icon: century21icon}).addTo(map).bindPopup(name).openPopup();
+            L.marker([place.latitude, place.longitude], {icon: century21icon}).addTo(map).bindPopup(place.name).openPopup();
         }
-    }, [router]);
-
-    return <div id="map" style={{ height: '600px' }} />;
+    }, [place]);
+    return (
+        <div>
+            <div id="map" style={{ height: '600px' }} />
+        </div>
+    );
 };
 
-export default LeafletMap;
+export default DestinationMap

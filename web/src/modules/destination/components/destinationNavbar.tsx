@@ -22,7 +22,7 @@ const DestinationNavbar: React.FC = () => {
                               className={`font-white ${placeDescriptionType === 'ROOMS' ? 'active' : ''}`}>Typ
                         pokoje</Nav.Link>
                     <Nav.Link onClick={() => setPlaceDescriptionType('MAP')}
-                              className={`font-white ${placeDescriptionType === 'MAP' ? 'active' : ''}`} href="#pricing">Oblast
+                              className={`font-white ${placeDescriptionType === 'MAP' ? 'active' : ''}`} href="#map">Oblast
                         a mapa</Nav.Link>
                     <Nav.Link onClick={() => setPlaceDescriptionType('REVIEW')}
                               className={`font-white ${placeDescriptionType === 'REVIEW' ? 'active' : ''}`} href="#x">Recenze

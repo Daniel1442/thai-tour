@@ -1,6 +1,6 @@
 import axios from "axios";
 import API_CONFIG from "../../../lib/api/config";
-import {PlaceFinderPayload} from "../models";
+import {PlaceFinderPayload, ReservationPayload} from "../models";
 
 export const getFavoritePlaces = () => {
     return axios.get(API_CONFIG.FAVORITE_PLACES())
@@ -21,4 +21,9 @@ export const filterPlace = (payload: PlaceFinderPayload) => {
 export const getFilterParameters = () => {
     return axios.get(API_CONFIG.GET_PLACE_PARAMETER())
         .then(response => response.data)
+}
+
+    export const sendReservation = (payload: ReservationPayload) => {
+        return axios.post(API_CONFIG.GET_PLACE_RESERVATION(), payload)
+            .then(response => response.data)
 }

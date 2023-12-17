@@ -50,6 +50,9 @@ export interface PlaceDetail {
     name: string;
     image: string;
     location: string;
+    latitude: number;
+    longitude: number;
+    food: string
     type: string;
     address: string;
     review: number;
@@ -118,6 +121,8 @@ export interface TripDetail {
     length: string;
     food: string;
     included: string;
+    tripStart: string;
+    tripRepetitions: string;
     tripLocation: string;
     tripType: string;
     guide: string;
@@ -148,5 +153,11 @@ export interface PlaceParameters {
 export interface PlaceParameterValue {
     id: string;
     name: string;
+}
+
+export interface ReservationPayload {
+    email: string;
+    subject: string;
+    text: string;
 }
 

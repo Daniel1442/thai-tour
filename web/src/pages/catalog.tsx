@@ -39,7 +39,7 @@ const Catalog = () => {
 
     return <div className={'container mt-5'}>
             <div className={'row'}>
-                <div className={'col-lg-3 col-sm-12 m-lg-3 m-sm-0'}>
+                <div className={'col-lg-3 col-sm-12 mx-3 mb-3 mt-0  m-sm-0'}>
                     <SidebarFilter params={parameters}/>
                 </div>
 

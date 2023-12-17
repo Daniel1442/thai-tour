@@ -67,7 +67,7 @@ const RoomCard: React.FC<RoomCardProps> = ({name,listOfRoomParams,listOfRoomImag
                         return <Loader text={'Načítání...'}/>
                     }}/>
                 </div>
-                <div className={'col-12'}>
+                <div className={'col-12 mt-2'}>
                     {listOfRoomParams && listOfRoomParams.length > 0 && listOfRoomParams.map((parameter, index) => {
                         return (
                             <>

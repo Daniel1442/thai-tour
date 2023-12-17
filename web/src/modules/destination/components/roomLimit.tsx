@@ -9,7 +9,7 @@ interface RoomLimitProps {
 const RoomLimit: React.FC<RoomLimitProps> = ({limit}) => {
 
     return (
-        <div className={'col-lg-2'}>
+        <div className={'col-lg-2 room-limit'}>
             {[...Array(limit)].map((e, i) => {
                 return <FontAwesomeIcon icon={faPerson}
                                         style={{

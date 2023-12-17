@@ -9,6 +9,8 @@ import DestinationNavbar from "../modules/destination/components/destinationNavb
 import AboutDestinationNew from "../modules/destination/components/aboutDestinationNew";
 import DestinationHeadingMobile from "../modules/destination/components/destinationHeadingMobile";
 import DestinationRoom from "../modules/destination/components/destinationRoom";
+import DestinationMap from "../modules/destination/components/destinationMap";
+import DestinationWeather from "../modules/destination/components/destinationWeather";
 
 const Destination = () => {
     let width = typeof window !== 'undefined' && window.innerWidth;
@@ -56,6 +58,13 @@ const Destination = () => {
                         {placeDescriptionType === 'ROOMS' &&
                             <DestinationRoom/>
                         }
+                        {placeDescriptionType === 'MAP' &&
+                            <DestinationMap/>
+                        }
+                        {placeDescriptionType === 'WEATHER' &&
+                            <DestinationWeather/>
+                        }
+
                     </div>
                 </div>
             </div> : <Loader text={'Počkejte prosím'}/>

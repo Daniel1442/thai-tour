@@ -1,5 +1,8 @@
 import React, {useContext, useState} from 'react';
 import {TripContent, TripContext} from "../../../context/tripContext";
+import {faInfoCircle} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Tooltip as ReactTooltip} from "react-tooltip";
 
 const customStyles = {
     content: {
@@ -57,32 +60,38 @@ const TripSidebar: React.FC = () => {
     return (
         <div className={'destinationSideBar'}>
             <div className={'row'}>
-                <div className={'col-12 mt-5 '}>
-                    <h3 className={'font-yellow'}>od {trip.price},- Kč/osoba </h3>
+                <div className={'col-12 mt-5 '} data-tooltip-id={'about-price'}>
+                    <h3 className={'font-yellow'}>od {trip.price},- Kč/osoba <small><FontAwesomeIcon icon={faInfoCircle}
+                                                                                                     style={{
+                                                                                                         color: '#FFD700',
+                                                                                                         width: '10px',
+                                                                                                         height: '10px',
+                                                                                                         padding: "0px 0px 20px 0px",
+                                                                                                     }}/></small></h3>
                 </div>
-                <div className={'col-12 '}>
-                    <b className={''}>Délka výletu:</b> <>{trip.length}</>
+                <div className={'col-12 mt-3'}>
+                    <b className={''}>Délka výletu:</b> <>{trip.length ? trip.length : 'Neuvedeno'}</>
                 </div>
-                <div className={'col-12 '}>
-                    <b className={''}>Strava:</b> <>{trip.food}</>
+                <div className={'col-12 mt-3'}>
+                    <b className={''}>Strava:</b> <>{trip.food ? trip.food : 'Neuvedeno'}</>
                 </div>
-                <div className={'col-12 '}>
-                    <b className={''}>Kdy:</b> <>denně</>
+                <div className={'col-12 mt-3'}>
+                    <b className={''}>Kdy:</b> <>{trip.tripRepetitions ? trip.tripRepetitions : 'Neuvedeno'}</>
                 </div>
-                <div className={'col-12 '}>
-                    <b className={''}>Typ výletu:</b> <>{trip.tripType}</>
+                <div className={'col-12 mt-3'}>
+                    <b className={''}>Typ výletu:</b> <>{trip.tripType ? trip.tripType : 'Neuvedeno'}</>
                 </div>
-                <div className={'col-12 '}>
-                    <b className={''}>Lokalita:</b> <>{trip.tripLocation}</>
+                <div className={'col-12 mt-3'}>
+                    <b className={''}>Lokalita:</b> <>{trip.tripLocation ? trip.tripLocation : 'Neuvedeno'}</>
                 </div>
-                <div className={'col-12 '}>
-                    <b className={''}>ODjezd:</b> <>8:00 hod.</>
+                <div className={'col-12 mt-3'}>
+                    <b className={''}>Odjezd:</b> <>{trip.tripStart ? trip.tripStart : 'Neuvedeno'}</>
                 </div>
-                <div className={'col-12 '}>
-                    <b className={''}>Průvodce:</b> <>{trip.guide}.</>
+                <div className={'col-12 mt-3'}>
+                    <b className={''}>Průvodce:</b> <>{trip.guide ? trip.guide : 'Neuvedeno'}.</>
                 </div>
-                <div className={'col-12 '}>
-                    <b className={''}>V ceně:</b> <>{trip.included}</>
+                <div className={'col-12 mt-3'}>
+                    <b className={''}>V ceně:</b> <>{trip.included ? trip.included : 'Neuvedeno'}</>
                 </div>
 
                 <div className={'col-12 mt-5 mobilePaddingColumn'}>
@@ -93,7 +102,14 @@ const TripSidebar: React.FC = () => {
                 </div>
 
             </div>
+            <ReactTooltip
+                id="about-price"
+                place="top"
+                variant="warning"
+                content="Cena je na vyžádání a odvíjí se dle termínu, počtu osob a aktuálního kurzu."
+            />
         </div>
+
     )
 }
 export default TripSidebar;

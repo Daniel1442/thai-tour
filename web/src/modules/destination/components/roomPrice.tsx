@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from "react-bootstrap/Button";
 
 export interface RoomPriceProps {
     price: number;
@@ -8,8 +7,8 @@ export interface RoomPriceProps {
 const RoomPrice: React.FC<RoomPriceProps> = ({price}) => {
 
     return (
-        <div className={'col-lg-3'}>
-            <Button className={'font-white background-blue'}>od {price} Kč za osobu</Button>
+        <div className={'col-lg-3 room-price'}>
+            <button className={'btn font-white background-yellow'}>od {price} Kč za osobu</button>
         </div>
     )
 }
