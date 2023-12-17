@@ -1,6 +1,17 @@
 server:
   port: '8080'
 spring:
+  mail:
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: 'true'
+          auth: 'true'
+    host: 'smtp.gmail.com'
+    username: 'daniel.jantulik@gmail.com'
+    password: 'jboa gvfo fqid mnxb'
+    port: '587'
   security:
     user:
       name: admin

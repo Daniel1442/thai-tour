@@ -3,11 +3,13 @@ package com.thaitour.thaitourapi.controller.catalog.place;
 import com.thaitour.thaitourapi.application.builder.PlaceDetailBuilder;
 import com.thaitour.thaitourapi.application.finder.PlaceFinder;
 import com.thaitour.thaitourapi.application.helper.FlashMessageHelper;
+import com.thaitour.thaitourapi.application.service.EmailSenderService;
 import com.thaitour.thaitourapi.domain.dto.FlashMessage;
 import com.thaitour.thaitourapi.domain.dto.Response;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceDetail;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceFinderPayload;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceRow;
+import com.thaitour.thaitourapi.domain.dto.catalog.place.ReservationPayload;
 import com.thaitour.thaitourapi.domain.exception.ThaiTourException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +24,7 @@ public class PlaceController {
 
     private final PlaceFinder placeFinder;
     private final PlaceDetailBuilder placeDetailBuilder;
+    private final EmailSenderService emailSenderService;
 
     @PostMapping("/finder")
     public Response<List<PlaceDetail>> getPlaceList(
@@ -29,6 +32,22 @@ public class PlaceController {
     ) {
         try {
             return new Response<>(true, placeFinder.findFilterPlace(payload), null);
+        } catch (ThaiTourException e) {
+            FlashMessageHelper.addMessage(FlashMessageHelper.fromException(e));
+        }
+
+        List<FlashMessage> errors = FlashMessageHelper.getMessages();
+
+        return new Response<>(errors.isEmpty(), null, errors);
+    }
+
+
+    @PostMapping("/resevation")
+    public Response<Void> createResevation(
+            @RequestBody ReservationPayload payload
+    ) {
+        try {
+            emailSenderService.sendSimpleEmail(payload);
         } catch (ThaiTourException e) {
             FlashMessageHelper.addMessage(FlashMessageHelper.fromException(e));
         }
