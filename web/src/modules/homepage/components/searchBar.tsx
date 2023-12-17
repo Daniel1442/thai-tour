@@ -1,14 +1,11 @@
-import React, {useContext, useRef, useState} from 'react';
-import Button from 'react-bootstrap/Button';
+import React, {useContext} from 'react';
+
 import {PlaceContent, PlaceContext} from "../../../context/placeContext";
 import {useRouter} from "next/router";
 import {PlaceFinderPayload} from "../models";
 import SearchBarInput from "./searchBarInput";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCalendarDay, faGlobe} from "@fortawesome/free-solid-svg-icons";
-import FormDatePicker from "../../common/components/formDatePicker";
-import {initDate} from "../../common/helper/dateHelper";
-
 
 
 const SearchBar: React.FC = () => {

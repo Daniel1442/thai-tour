@@ -3,6 +3,7 @@ import PlaceTripCard from "../modules/travelCatalog/components/placeTripCard";
 import GolfParagraph from "../modules/thaiGolf/components/golfParagraphWithImage";
 import {Alert} from "react-bootstrap";
 import {LazyLoadImage} from "react-lazy-load-image-component";
+import {TripRow} from "../modules/homepage/models";
 
 const ThaiGolf = () => {
 
@@ -21,22 +22,15 @@ const ThaiGolf = () => {
             <div className={'col-12'}>
                 <h3 className={'mt-5 mb-3'}>Golfové destinace v Thajsku</h3>
             </div>
-            <PlaceTripCard heading={'Bangkok'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/golf_bangkok.jpg'}/>
-            <PlaceTripCard heading={'Pattaya'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/golf_pattaya.jpg'}/>
-            <PlaceTripCard heading={'Hua Hin'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/golf_hua_hin.jpg'}/>
-            <PlaceTripCard heading={'Chiang Mai'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/golf_chiang_mai.jpg'}/>
-            <PlaceTripCard heading={'Phuket'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/golf_phuket.jpg'}/>
-            <PlaceTripCard heading={'Koh Samui'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/golf_koh_samui.jpg'}/>
-            <PlaceTripCard heading={'Chiang Rai'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/golf_chiang_rai.jpg'}/>
-            <PlaceTripCard heading={'Zobrazit vše'}
-                           img={'http://www.thaitour.cz/wp-content/themes/twentyten/images/golf_vse.jpg'}/>
+            <PlaceTripCard trip={{} as TripRow}/>
+            <PlaceTripCard trip={{} as TripRow}/>
+            <PlaceTripCard trip={{} as TripRow}/>
+            <PlaceTripCard trip={{} as TripRow}/>
+            <PlaceTripCard trip={{} as TripRow}/>
+            <PlaceTripCard trip={{} as TripRow}/>
+            <PlaceTripCard trip={{} as TripRow}/>
+            <PlaceTripCard trip={{} as TripRow}/>
+
         </div>
         <GolfParagraph
             paragraph={'Thajsko je fascinující turistická destinace a v současné době si získalo výbornou pověst k prožití exotické dovolené s golfem, a to díky svým skvělým a moderním golfovým hřištím, thajské pohostinnosti, nadstandartním službám, kulturou této země či díky tropickému podnebí, díky kterému zde můžete hrát golf po celý rok!\n' +
