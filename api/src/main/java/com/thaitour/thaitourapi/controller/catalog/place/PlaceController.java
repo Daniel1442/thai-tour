@@ -7,6 +7,7 @@ import com.thaitour.thaitourapi.application.service.EmailSenderService;
 import com.thaitour.thaitourapi.application.service.PlaceService;
 import com.thaitour.thaitourapi.domain.dto.FlashMessage;
 import com.thaitour.thaitourapi.domain.dto.Response;
+import com.thaitour.thaitourapi.domain.dto.catalog.customer.CustomerFavoriteDto;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.FavoritePlaceFinderPayload;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.FavoritePlacePayload;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceDetail;
@@ -98,6 +99,16 @@ public class PlaceController {
 
     @PostMapping("/favorite")
     public Response<List<PlaceRow>> getFavoritePlaces(@RequestBody FavoritePlaceFinderPayload payload) {
+        try {
+            return new Response<>(true, placeFinder.findCustomerFavoritePlace(payload), null);
+        } catch (ThaiTourException e) {
+            FlashMessageHelper.addMessage(FlashMessageHelper.fromException(e));
+            return new Response<>(false, null, FlashMessageHelper.getMessages());
+        }
+    }
+
+    @PostMapping("/is-customer-favorite")
+    public Response<CustomerFavoriteDto> isCustomerFavorite(@RequestBody FavoritePlacePayload payload) {
         try {
             return new Response<>(true, placeFinder.findCustomerFavoritePlace(payload), null);
         } catch (ThaiTourException e) {

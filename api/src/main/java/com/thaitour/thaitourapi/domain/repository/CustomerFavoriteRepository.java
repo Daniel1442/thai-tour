@@ -11,4 +11,6 @@ public interface CustomerFavoriteRepository extends JpaRepository<CustomerFavori
     CustomerFavorite findOneByResourceIdAndCustomerIdAndType(UUID resourceId, UUID customerId, CustomerFavoriteType customerFavoriteType);
     CustomerFavorite deleteOneByResourceIdAndCustomerIdAndType(UUID resourceId, UUID customerId, CustomerFavoriteType customerFavoriteType);
 
+
+
 }
