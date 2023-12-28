@@ -2,6 +2,7 @@ package com.thaitour.thaitourapi.application.finder;
 
 import com.thaitour.thaitourapi.application.builder.PlaceDetailBuilder;
 import com.thaitour.thaitourapi.application.mapper.RawPlaceMapper;
+import com.thaitour.thaitourapi.domain.dto.catalog.place.FavoritePlaceFinderPayload;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceDetail;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceFinderPayload;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceRow;
@@ -55,6 +56,19 @@ public class PlaceFinder {
     @Transactional(readOnly = true)
     public List<PlaceRow> findFavoritePlace() {
         List<Place> favoritePlaceEntities = placeRepository.findFavoritePlaces();
+
+        if (Objects.isNull(favoritePlaceEntities)) {
+            return null;
+        }
+
+        return favoritePlaceEntities.stream().map(rawPlaceMapper::toPlaceDto).toList();
+
+    }
+
+
+    @Transactional(readOnly = true)
+    public List<PlaceRow> findCustomerFavoritePlace(FavoritePlaceFinderPayload payload) {
+        List<Place> favoritePlaceEntities = placeRepository.findCustomerFavoritePlaces(payload.getCustomerId(), payload.getType());
 
         if (Objects.isNull(favoritePlaceEntities)) {
             return null;

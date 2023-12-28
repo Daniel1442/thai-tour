@@ -25,21 +25,24 @@ public class Customer {
     @Column(name = "id")
     private UUID id;
 
-    @Column(name = "address")
-    private String address;
-
-    @Column(name = "ico")
-    private String ico;
-
-    @Column(name = "dic")
-    private String dic;
-
     @Column(name = "type")
     @Enumerated(EnumType.STRING)
     private CustomerType type;
 
-    @Column(name = "identificator")
-    private String identificator;
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "surname")
+    private String surname;
+
+    @Column(name = "lastname")
+    private String lastname;
+
+    @Column(name = "username")
+    private String username;
+
+    @Column(name = "email")
+    private String email;
 
     @Column(name = "is_active")
     private Boolean isActive;

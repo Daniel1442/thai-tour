@@ -4,8 +4,11 @@ import com.thaitour.thaitourapi.application.builder.PlaceDetailBuilder;
 import com.thaitour.thaitourapi.application.finder.PlaceFinder;
 import com.thaitour.thaitourapi.application.helper.FlashMessageHelper;
 import com.thaitour.thaitourapi.application.service.EmailSenderService;
+import com.thaitour.thaitourapi.application.service.PlaceService;
 import com.thaitour.thaitourapi.domain.dto.FlashMessage;
 import com.thaitour.thaitourapi.domain.dto.Response;
+import com.thaitour.thaitourapi.domain.dto.catalog.place.FavoritePlaceFinderPayload;
+import com.thaitour.thaitourapi.domain.dto.catalog.place.FavoritePlacePayload;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceDetail;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceFinderPayload;
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceRow;
@@ -25,6 +28,7 @@ public class PlaceController {
     private final PlaceFinder placeFinder;
     private final PlaceDetailBuilder placeDetailBuilder;
     private final EmailSenderService emailSenderService;
+    private final PlaceService placeService;
 
     @PostMapping("/finder")
     public Response<List<PlaceDetail>> getPlaceList(
@@ -78,4 +82,28 @@ public class PlaceController {
             return new Response<>(false, null, FlashMessageHelper.getMessages());
         }
     }
+
+    @PostMapping("/toggle-favorite")
+    public Response<Void> toggleFavorite(@RequestBody FavoritePlacePayload payload) {
+        try {
+            placeService.toggleFavorite(payload);
+        } catch (ThaiTourException e) {
+            FlashMessageHelper.addMessage(FlashMessageHelper.fromException(e));
+        }
+
+        List<FlashMessage> errors = FlashMessageHelper.getMessages();
+
+        return new Response<>(errors.isEmpty(), null, errors);
+    }
+
+    @PostMapping("/favorite")
+    public Response<List<PlaceRow>> getFavoritePlaces(@RequestBody FavoritePlaceFinderPayload payload) {
+        try {
+            return new Response<>(true, placeFinder.findCustomerFavoritePlace(payload), null);
+        } catch (ThaiTourException e) {
+            FlashMessageHelper.addMessage(FlashMessageHelper.fromException(e));
+            return new Response<>(false, null, FlashMessageHelper.getMessages());
+        }
+    }
+
 }

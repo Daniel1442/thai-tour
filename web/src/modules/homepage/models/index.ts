@@ -161,3 +161,16 @@ export interface ReservationPayload {
     text: string;
 }
 
+
+export interface FavoritePlacePayload {
+    resourceId: string;
+    customerId: string;
+    type: string;
+}
+
+
+export interface FavoriteFinderPlacePayload {
+    customerId: string;
+    type: string;
+}
+

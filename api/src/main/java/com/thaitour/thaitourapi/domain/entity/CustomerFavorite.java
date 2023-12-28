@@ -25,9 +25,6 @@ public class CustomerFavorite {
     @Column(name = "resource_id")
     private UUID resourceId;
 
-    @Column(name = "customer_id", insertable = false, updatable = false)
-    private UUID customerId;
-
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id")
     private Customer customer;
