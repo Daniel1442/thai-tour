@@ -39,3 +39,8 @@ export const customerFavoritePlaces = (payload: FavoriteFinderPlacePayload) => {
     return axios.post(API_CONFIG.CUSTOMER_FAVORITE_PLACE(), payload)
         .then(response => response.data)
 }
+
+export const isFavoritePlaces = (payload: FavoritePlacePayload) => {
+    return axios.post(API_CONFIG.IS_PLACE_FAVORITE_BY_CUSTOMER(), payload)
+        .then(response => response.data)
+}

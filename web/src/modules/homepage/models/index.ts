@@ -14,6 +14,21 @@ export interface PlaceRow {
     createdBy: string
 }
 
+export interface PlaceFavoriteRow {
+    id: string;
+    name: string
+    image: string
+    location: string
+    address: string
+    review: number
+    price: number
+    isActive: boolean
+    updatedAt: Date | null
+    createdAt: Date | null
+    updatedBy: string
+    createdBy: string
+}
+
 
 export interface ImageList {
     thumbnail: string;

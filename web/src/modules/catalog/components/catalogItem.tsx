@@ -6,6 +6,7 @@ import UserReviewBadge from "../../homepage/components/userReviewBadge";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUmbrellaBeach, faWifi} from "@fortawesome/free-solid-svg-icons";
 import {LazyLoadImage} from "react-lazy-load-image-component";
+import HearthIcon from "../../common/components/heartIcon";
 
 interface ComponentProps {
     place: PlaceDetail
@@ -28,22 +29,30 @@ const CatalogItem: React.FC<ComponentProps> = ({place}) => {
     }
 
     return (
-        <div className={'catalogItem background-white mt-3 rounded-corners cursor-pointer'}
-             onClick={() => redirectToDetail(place && place.id)}>
+        <div className={'catalogItem background-white mt-3 rounded-corners cursor-pointer'}>
             <div className={'row'}>
                 <div className={'col-4'}>
-                    <LazyLoadImage  src={place && place.image}/>
+                    <LazyLoadImage src={place && place.image}/>
                 </div>
                 <div className={'col-8'}>
                     <div className={'col-12 mt-3'}>
-                        <h5 className="card-title card-link mb-1"> {place.name} <StarRatings
-                            rating={place.review}
-                            starRatedColor="gold"
-                            numberOfStars={5}
-                            name='rating'
-                            starDimension="15px"
-                            starSpacing="0px"
-                        /></h5>
+                        <div className={'d-flex justify-content-between '}>
+                            <div>
+
+                            <h5 className="card-title card-link mb-1"> {place.name} <StarRatings
+                                rating={place.review}
+                                starRatedColor="gold"
+                                numberOfStars={5}
+                                name='rating'
+                                starDimension="15px"
+                                starSpacing="0px"
+                            />
+                            </h5>
+                            </div>
+                            <div>
+                                <HearthIcon placeId={place.id}/>
+                            </div>
+                        </div>
                         <p className="card-text" style={{fontSize: '11px'}}>
                             {place.address}</p>
                     </div>

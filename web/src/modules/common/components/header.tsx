@@ -1,35 +1,12 @@
 import React from 'react';
-import {faPhone, faSignIn} from "@fortawesome/free-solid-svg-icons";
+import {faPhone} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useRouter} from "next/router";
 import {LazyLoadImage} from "react-lazy-load-image-component";
-import Modal from "react-modal";
 
-const customStyles = {
-    content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        border: '1px solid #EDEDED',
-        boxShadow: '0 0 50px #ccc',
-        borderRadius: '4px',
-        transform: 'translate(-50%, -50%)',
-        zIndex: 9999
-    },
-};
+
 const Header: React.FC = () => {
     const router = useRouter();
-
-
-    const [modalIsOpen, setIsOpen] = React.useState(false);
-    function openModal() {
-        setIsOpen(true);
-    }
-    function closeModal() {
-        setIsOpen(false);
-    }
     const redirectToHomepage = () => {
         router.push('/')
     }
@@ -61,27 +38,10 @@ const Header: React.FC = () => {
                                                          padding: "0px 16px 0px 0px"
                                                      }}/>777 666 234</h3>
                             </div>
-                            <div className={'col-12 text-end'}>
-                                <h3>
-                                <FontAwesomeIcon icon={faSignIn}
-                                                 style={{
-                                                     color: '#ffffff',
-                                                     padding: "0px 16px 0px 0px"
-                                                 }}/>Příhlásit se</h3>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                style={customStyles}
-            >
-                <div className={'container'}>
-                    <b>Příhlášení k ůčtu</b>
-                </div>
-            </Modal>
         </div>
     )
 

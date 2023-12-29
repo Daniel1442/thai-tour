@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import {PlaceContent, PlaceContext} from "../../../context/placeContext";
 import StarRatings from "react-star-ratings";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faHeart} from "@fortawesome/free-solid-svg-icons";
+import {useLocalStorage} from "../../../hooks/useLocalStorage";
+import HearthIcon from "../../common/components/heartIcon";
 
 
 const DestinationHeading: React.FC = () => {
@@ -10,6 +10,8 @@ const DestinationHeading: React.FC = () => {
         place,
         fetchPlace
     } = useContext(PlaceContext) as PlaceContent;
+
+    const [registry, setRegistryStore] = useLocalStorage("LOGIN_DATA", [])
 
     return (
         <div className={'col-lg-12 desktop'}>
@@ -29,18 +31,17 @@ const DestinationHeading: React.FC = () => {
                 <div className={'col-lg-2 d-flex justify-content-start'}>
 
                 </div>
-                <div className={'col-lg-3 col-sm-2 d-flex justify-content-end'}>
-                    <FontAwesomeIcon icon={faHeart}
-                                     style={{
-                                         color: '#808080',
-                                         cursor: 'pointer',
-                                         padding: "0px 16px 0px 0px"
-                                     }}/>
-                </div>
+                    {registry.userId  &&
+                        <div className={'col-lg-3 col-sm-2 d-flex justify-content-end'}>
+                            <HearthIcon placeId={place.id}/>
+                        </div>
+                    }
             </div>
             <div className={'col-12 d-flex justify-content-start'}>
                 <p>
-                    {place && place.address} (<a href={`/map?lat=${place && place.latitude}&long=${place && place.longitude}&name=${place.name}`}>Zobrazit na mapě</a>)</p>
+                    {place && place.address} (<a
+                    href={`/map?lat=${place && place.latitude}&long=${place && place.longitude}&name=${place.name}`}>Zobrazit
+                    na mapě</a>)</p>
             </div>
 
         </div>

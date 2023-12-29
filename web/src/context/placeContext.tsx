@@ -1,7 +1,13 @@
 import * as React from 'react';
 import {createContext, useEffect, useState} from 'react';
-import {filterPlace, getDetail, getFilterParameters} from '../modules/homepage/action';
-import {PlaceDetail, PlaceFinderPayload, PlaceParameters} from "../modules/homepage/models";
+import {customerFavoritePlaces, filterPlace, getDetail, getFilterParameters} from '../modules/homepage/action';
+import {
+    FavoriteFinderPlacePayload,
+    PlaceDetail,
+    PlaceFinderPayload,
+    PlaceParameters,
+    PlaceRow
+} from "../modules/homepage/models";
 import {useRouter} from "next/router";
 
 
@@ -16,6 +22,8 @@ export type PlaceContent = {
     placeDescriptionType : string,
     setPlaceDescriptionType: (type: string) => void
     placeList: PlaceDetail[]
+    placeFavoriteList: PlaceRow[]
+    filterFavoritePlaceF: (payload: FavoriteFinderPlacePayload) => void
 }
 export const PlaceContext = createContext<PlaceContent | null>(null);
 
@@ -27,6 +35,7 @@ const PlaceContextProvider: React.FC<React.ReactNode> = ({children}) => {
     const [place, setPlace] = useState<PlaceDetail>({} as PlaceDetail)
     const [payload, setPayload] = useState<PlaceFinderPayload>({} as PlaceFinderPayload)
     const [placeList, setPlaceList] = useState<PlaceDetail[]>([]);
+    const [placeFavoriteList, setPlaceFavoriteList] = useState<PlaceRow[]>([]);
     const [parameters, setParameterList] =  useState<PlaceParameters[]>([]);
     const [placeDescriptionType, setPlaceDescriptionType] = useState<string>('ABOUT');
     const fetchPlace = (id: string) => {
@@ -58,6 +67,14 @@ const PlaceContextProvider: React.FC<React.ReactNode> = ({children}) => {
         })
     }
 
+    const filterFavoritePlaceF = (payload: FavoriteFinderPlacePayload) => {
+        customerFavoritePlaces(payload as FavoriteFinderPlacePayload).then((place: any) => {
+            setPlaceFavoriteList(place.result);
+        }).catch((err: string) => {
+            console.log(err)
+        })
+    }
+
     return <PlaceContext.Provider value={{
         place,
         placeDescriptionType,
@@ -68,7 +85,9 @@ const PlaceContextProvider: React.FC<React.ReactNode> = ({children}) => {
         filterPlaceF,
         payload,
         setPayload,
-        placeList
+        placeList,
+        placeFavoriteList,
+        filterFavoritePlaceF,
     }}> {children}</PlaceContext.Provider>
 }
 

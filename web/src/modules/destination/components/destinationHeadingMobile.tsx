@@ -1,8 +1,11 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {PlaceContent, PlaceContext} from "../../../context/placeContext";
 import StarRatings from "react-star-ratings";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHeart} from "@fortawesome/free-solid-svg-icons";
+import {isFavoritePlaces, toggleFavorite} from "../../homepage/action";
+import {useLocalStorage} from "../../../hooks/useLocalStorage";
+import {FavoritePlacePayload} from "../../homepage/models";
 
 
 const DestinationHeadingMobile: React.FC = () => {
@@ -10,6 +13,41 @@ const DestinationHeadingMobile: React.FC = () => {
         place,
         fetchPlace
     } = useContext(PlaceContext) as PlaceContent;
+
+    const [registry, setRegistryStore] = useLocalStorage("LOGIN_DATA", [])
+    const [payload, setPayload] = useState({} as FavoritePlacePayload)
+    const [icon, setIcon] = useState<boolean>(false)
+
+
+    const toggleFavoritePlace = () => {
+        setPayload({customerId: registry.userId, resourceId: place && place.id, type: "PLACE"})
+        toggleFavorite(payload).then(response => {
+            isFavoritePlaces(payload).then(response => {
+                if (response.result && response.result.isActive) {
+                    setIcon(true)
+                } else {
+                    setIcon(false);
+                }
+            })
+        }).catch((error) => {
+            console.error(error)
+        })
+    }
+
+    useEffect(() => {
+        if (registry.userId) {
+            setPayload({customerId: registry.userId, resourceId: place && place.id, type: "PLACE"})
+            isFavoritePlaces(payload).then(response => {
+                if (response.result && response.result.isActive) {
+                        setIcon(true)
+                } else {
+                    setIcon(false);
+                }
+            })
+        } else {
+            setIcon(false);
+        }
+    }, [registry]);
 
     return (
         <div className={'col-lg-12 mobile'}>
