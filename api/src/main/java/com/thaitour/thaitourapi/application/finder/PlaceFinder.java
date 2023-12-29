@@ -34,11 +34,13 @@ public class PlaceFinder {
     public List<PlaceDetail> findFilterPlace(PlaceFinderPayload payload) {
         List<UUID> placeIds = new ArrayList<>();
         List<PlaceDetail> places = new ArrayList<PlaceDetail>();
-        if (payload.getParameterValuesList() != null || payload.getParameterValuesList().isEmpty()) {
+        System.out.println(payload.getParameterValuesList().size() == 0);
+        System.out.println(payload.getParameterValuesList().size());
+        if (payload.getParameterValuesList() != null && payload.getParameterValuesList().size() > 0) {
             for (int i = 0; i < payload.getParameterValuesList().size(); i++) {
                 placeIds.add(placeParameterRepository.findPlaceId(payload.getParameterValuesList().get(i)));
             }
-        } else {
+        } else if (payload.getParameterValuesList().size() == 0) {
             placeIds = placeRepository.findAll().stream().map(Place::getId).collect(Collectors.toList());
         }
 
