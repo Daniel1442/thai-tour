@@ -1,6 +1,5 @@
 package com.thaitour.thaitourapi.domain.dto.catalog.parameter;
 
-import com.thaitour.thaitourapi.domain.dto.dao.catalog.RawPlaceParameter;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,16 +12,16 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class PlaceParameterRow {
+public class ParameterRow {
 
     private UUID id;
     private String name;
-    private List<PlaceParameterValue> parameterValueList;
+    private List<ParameterValue> parameterValueList;
     @Data
     @Builder
     @AllArgsConstructor
     @NoArgsConstructor
-    public static class PlaceParameterValue {
+    public static class ParameterValue {
         private UUID id;
         private String name;
     }

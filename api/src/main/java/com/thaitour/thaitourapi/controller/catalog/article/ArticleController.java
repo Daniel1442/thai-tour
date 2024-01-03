@@ -8,7 +8,6 @@ import com.thaitour.thaitourapi.domain.dto.Response;
 import com.thaitour.thaitourapi.domain.dto.catalog.article.ArticleDetail;
 import com.thaitour.thaitourapi.domain.dto.catalog.article.ArticleFinderPayload;
 import com.thaitour.thaitourapi.domain.dto.catalog.article.ArticleRow;
-import com.thaitour.thaitourapi.domain.dto.catalog.parameter.PlaceParameterRow;
 import com.thaitour.thaitourapi.domain.exception.ThaiTourException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

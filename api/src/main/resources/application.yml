@@ -18,9 +18,9 @@ spring:
       password: admin
       roles: manager
   datasource:
-    jdbc-url: 'jdbc:postgresql://thai_tour/postgres?currentSchema=public&sslmode=disable'
+    jdbc-url: 'jdbc:postgresql://localhost:5432/postgres'
     username: postgres
-    password: new_password
+    password: root
   jpa:
     hibernate:
       ddl-auto: validate
@@ -30,7 +30,7 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
   flyway:
-    enabled: false
+    enabled: true
     baseline-on-migrate: true
   autoconfigure:
     exclude:

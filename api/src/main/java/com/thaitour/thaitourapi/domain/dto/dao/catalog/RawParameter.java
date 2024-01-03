@@ -12,15 +12,15 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RawPlaceParameter {
+public class RawParameter {
     private UUID id;
     private String name;
-    private List<RawPlaceParameterValue> parameterValueList;
+    private List<RawParameterValue> parameterValueList;
     @Data
     @Builder
     @AllArgsConstructor
     @NoArgsConstructor
-    public static class RawPlaceParameterValue {
+    public static class RawParameterValue {
         private UUID id;
         private String name;
     }

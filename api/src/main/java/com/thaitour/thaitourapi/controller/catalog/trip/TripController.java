@@ -5,6 +5,7 @@ import com.thaitour.thaitourapi.application.finder.TripFinder;
 import com.thaitour.thaitourapi.application.helper.FlashMessageHelper;
 import com.thaitour.thaitourapi.domain.dto.Response;
 import com.thaitour.thaitourapi.domain.dto.catalog.trip.TripDetail;
+import com.thaitour.thaitourapi.domain.dto.catalog.trip.TripParameter;
 import com.thaitour.thaitourapi.domain.dto.catalog.trip.TripRow;
 import com.thaitour.thaitourapi.domain.exception.ThaiTourException;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -35,6 +37,15 @@ public class TripController  {
         }
     }
 
+    @GetMapping("/trip-cities")
+    public Response<List<TripParameter>> tripParamList() {
+        try {
+            return new Response<>(true, tripFinder.findTripParams(), null);
+        } catch (ThaiTourException e) {
+            FlashMessageHelper.addMessage(FlashMessageHelper.fromException(e));
+            return new Response<>(false, null, FlashMessageHelper.getMessages());
+        }
+    }
 
     @GetMapping("/{tripId}")
     public Response<TripDetail> getTripDetail(@PathVariable UUID tripId) {

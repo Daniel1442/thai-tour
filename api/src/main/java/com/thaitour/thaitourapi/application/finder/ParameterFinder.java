@@ -2,8 +2,8 @@ package com.thaitour.thaitourapi.application.finder;
 
 import com.thaitour.thaitourapi.application.mapper.RawParameterMapper;
 import com.thaitour.thaitourapi.domain.dao.ParameterDao;
-import com.thaitour.thaitourapi.domain.dto.catalog.parameter.PlaceParameterRow;
-import com.thaitour.thaitourapi.domain.dto.dao.catalog.RawPlaceParameter;
+import com.thaitour.thaitourapi.domain.dto.catalog.parameter.ParameterRow;
+import com.thaitour.thaitourapi.domain.dto.dao.catalog.RawParameter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -20,11 +20,20 @@ public class ParameterFinder {
     private final RawParameterMapper rawParameterMapper;
 
     @Transactional(readOnly = true)
-    public List<PlaceParameterRow> findAll() {
-        List<RawPlaceParameter> entities = parameterDao.findAll();
+    public List<ParameterRow> findAllPlaceParameters() {
+        List<RawParameter> entities = parameterDao.findAllParametersForPlaces();
 
 
         return (entities.stream()
-        ).map(rawParameterMapper::toPlaceParameterRow).toList();
+        ).map(rawParameterMapper::toParameterRow).toList();
+    }
+
+    @Transactional(readOnly = true)
+    public List<ParameterRow> findAllTripParameters() {
+        List<RawParameter> entities = parameterDao.findAllParametersForTrip();
+
+
+        return (entities.stream()
+        ).map(rawParameterMapper::toParameterRow).toList();
     }
 }
