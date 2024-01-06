@@ -4,6 +4,5 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public enum ParameterAssingType {
-
-    PLACE, TRIP, ROOM
+    PLACE, TRIP, ROOM, GOLF
 }

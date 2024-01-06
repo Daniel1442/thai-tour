@@ -1,10 +1,8 @@
 package com.thaitour.thaitourapi.domain.dao;
 
 import com.thaitour.thaitourapi.domain.dao.mapper.RawPlaceParameterDataMapper;
-import com.thaitour.thaitourapi.domain.dto.catalog.trip.TripParameter;
-import com.thaitour.thaitourapi.domain.dto.dao.catalog.RawArticle;
+import com.thaitour.thaitourapi.domain.dto.dao.catalog.RawListParameter;
 import com.thaitour.thaitourapi.domain.dto.dao.catalog.RawParameter;
-import com.thaitour.thaitourapi.domain.dto.dao.catalog.RawTripParameter;
 import com.thaitour.thaitourapi.domain.enums.ParameterAssingType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -21,14 +19,14 @@ public class ParameterDao {
 
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-    private static final String SQL_GET_ALL_PARAMS_FOR_TRIP_BASE = "from parameter p "
+    private static final String SQL_GET_ALL_PARAMS_FOR_LIST_BASE = "from parameter p "
             + "inner join public.trip_parameter tp on p.id = tp.parameter_id "
             + "left join public.parameter_value pv on p.id = pv.parameter_id ";
 
-    private static final String SQL_GET_ALL_PARAMS_FOR_TRIP = "select pv.id as id, "
+    private static final String SQL_GET_ALL_PARAMS_FOR_LIST = "select pv.id as id, "
     +  "pv.name as name, "
     +  "pv.icon as icon "
-    + SQL_GET_ALL_PARAMS_FOR_TRIP_BASE
+    + SQL_GET_ALL_PARAMS_FOR_LIST_BASE
     +  "group by pv.name, pv.id, pv.icon ";
 
     private static final String SQL_FILTER_PARAMETER_BASE = "from parameter p "
@@ -65,13 +63,13 @@ public class ParameterDao {
         );
     }
 
-    public List<RawTripParameter> findAllParameterForTrips() {
+    public List<RawListParameter> findAllParameterForList() {
         Map<String, Object> params = new HashMap<>();
 
         return namedParameterJdbcTemplate.query(
-                SQL_GET_ALL_PARAMS_FOR_TRIP,
+                SQL_GET_ALL_PARAMS_FOR_LIST,
                 params,
-                new BeanPropertyRowMapper<>(RawTripParameter.class)
+                new BeanPropertyRowMapper<>(RawListParameter.class)
         );
     }
 

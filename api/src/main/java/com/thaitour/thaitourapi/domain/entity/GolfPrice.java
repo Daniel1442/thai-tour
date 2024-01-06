@@ -7,31 +7,35 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(name = "trip_parameter")
+@Table(name = "golf_price")
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 @ToString(of = {"id"})
-public class TripParameter {
+public class GolfPrice {
 
     @Id
     @GeneratedValue
     @Column(name = "id")
     private UUID id;
 
-    @ManyToOne(targetEntity = Place.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "trip_id")
-    private Trip trip;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "golf_id")
+    private Golf golf;
 
-    @ManyToOne(targetEntity = Parameter.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "parameter_id")
-    private Parameter parameter;
+    @Column(name = "price")
+    private Float price;
 
-    @ManyToOne(targetEntity = Parameter.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "parameter_value_id")
-    private ParameterValue parameterValue;
+    @Column(name = "label")
+    private String label;
+
+    @Column(name = "priority")
+    private Integer priority;
+
+    @Column(name = "is_active")
+    private Boolean isActive;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;

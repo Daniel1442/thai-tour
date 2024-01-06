@@ -4,6 +4,7 @@ import com.thaitour.thaitourapi.application.finder.ParameterFinder;
 import com.thaitour.thaitourapi.application.helper.FlashMessageHelper;
 import com.thaitour.thaitourapi.domain.dto.Response;
 import com.thaitour.thaitourapi.domain.dto.catalog.parameter.ParameterRow;
+import com.thaitour.thaitourapi.domain.dto.catalog.trip.ListParameter;
 import com.thaitour.thaitourapi.domain.exception.ThaiTourException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,11 +30,20 @@ public class ParameterController {
         }
     }
 
-
     @GetMapping("/trip/list")
     public Response<List<ParameterRow>> getTripParameters() {
         try {
             return new Response<>(true, parameterFinder.findAllTripParameters(), null);
+        } catch (ThaiTourException e) {
+            FlashMessageHelper.addMessage(FlashMessageHelper.fromException(e));
+            return new Response<>(false, null, FlashMessageHelper.getMessages());
+        }
+    }
+
+    @GetMapping("/list-cities")
+    public Response<List<ListParameter>> parameterList() {
+        try {
+            return new Response<>(true, parameterFinder.findParams(), null);
         } catch (ThaiTourException e) {
             FlashMessageHelper.addMessage(FlashMessageHelper.fromException(e));
             return new Response<>(false, null, FlashMessageHelper.getMessages());

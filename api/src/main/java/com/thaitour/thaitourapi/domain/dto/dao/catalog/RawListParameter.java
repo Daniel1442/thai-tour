@@ -1,24 +1,17 @@
-package com.thaitour.thaitourapi.domain.dto.catalog.trip;
+package com.thaitour.thaitourapi.domain.dto.dao.catalog;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.util.UUID;
-
 @Data
 @Builder
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class TripParameter {
-
-    private UUID parameterValueId;
+public class RawListParameter {
+    private UUID id;
     private String name;
     private String icon;
-
 }

@@ -1,20 +1,33 @@
 package com.thaitour.thaitourapi.domain.entity;
 
-import lombok.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(name = "trip_parameter")
+@Table(name = "golf_parameter")
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 @ToString(of = {"id"})
-public class TripParameter {
+public class GolfParameter {
 
     @Id
     @GeneratedValue
@@ -22,14 +35,14 @@ public class TripParameter {
     private UUID id;
 
     @ManyToOne(targetEntity = Place.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "trip_id")
-    private Trip trip;
+    @JoinColumn(name = "golf_id")
+    private Golf golf;
 
     @ManyToOne(targetEntity = Parameter.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "parameter_id")
     private Parameter parameter;
 
-    @ManyToOne(targetEntity = Parameter.class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = ParameterValue.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "parameter_value_id")
     private ParameterValue parameterValue;
 
