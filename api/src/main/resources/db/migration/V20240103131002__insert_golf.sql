@@ -1,6 +1,7 @@
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Summit Green Valley Country Club',
-       'https://www.thaitour.cz/wp-content/uploads/Green-220x165.gif',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('3cdc03ea-5c9c-4363-8122-ae9f6f4e41f7', 'Summit Green Valley Country Club',
+        'https://www.thaitour.cz/wp-content/uploads/Green-220x165.gif',
         'Golfové hřiště Summit Green Valley Country Club v Chiang Mai bylo postaveno v roce 1990. Toto úchvatné hřiště navrhl pan Dennis Griffiths, který také navrhl golfové hřiště Thai Country Club v Bangkoku. Summit Green Valley Country Club je vždy obsazeno a jde o velmi...',
         3000,
         '186 M.1 Chotana Rd.,Maesa,Maerim,Chiangmai 50180 Thajsko',
@@ -15,11 +16,12 @@ values ('Summit Green Valley Country Club',
         'Denis Griffiths',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Mae Jo Golf Club & Resort',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('e3e5a5b9-6330-4303-a198-515a9b536f06', 'Mae Jo Golf Club & Resort',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'Mae Jo Golf Club & Resort je snadno dostupné golfové hřiště, které se nachází hned vedle Mae Jo univerzity (nejstarší zemědělská škola v Chiang Mai) a je pouhých 20 minut jízdy od města Chiang Mai. Golfové hřiště navrhl známý architekt pan Seni Thirawat. Mae Jo...',
         2250,
@@ -35,10 +37,11 @@ values ('Mae Jo Golf Club & Resort',
         'Seni Thirawat',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Chiang Mai Inthanon Golf Resort',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('99fd3ffe-15ab-49ca-b885-396734734081', 'Chiang Mai Inthanon Golf Resort',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'Chiang Mai Inthanon Golf Resort je top golfové hřiště vysoké kvality na jednom z nejvyšších thajských vrcholů v krásné oblasti a přírodě Chiang Mai. Golfové hřiště je malebné golfové hřiště s panoramatickými výhledy na nejvyšší horu Thajska Doi Inthanon, která...',
         3000,
@@ -54,10 +57,11 @@ values ('Chiang Mai Inthanon Golf Resort',
         'Denis Griffiths',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Chiang Mai Highlands Golf & Spa',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('714c0a84-1e1d-4db9-8cc9-9de0843fd491', 'Chiang Mai Highlands Golf & Spa',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'Chiang Mai Highlands Golf & Spa bylo otevřeno v roce 2005, čímž významně přispělo ke kvalitě golfových hřišť v oblasti Chiang Mai. Nachází se 1000 m n.m. Golfové hřiště s 18 jamkami navrhl Lee Schmidt, světový designér, který se pokusil zachytit krásu Chiang...',
         3500,
@@ -73,10 +77,11 @@ values ('Chiang Mai Highlands Golf & Spa',
         'Suphachai Silamon',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Alpine Chiang Mai Golf Resort',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('bb018836-e17e-4f9f-a9b4-392a42d9381e', 'Alpine Chiang Mai Golf Resort',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'Ronald M. Garl je jeden z nejlepších světových návrhářů golfových hřišť a vyhrál ocenění „Nejlepší designér golfových hřišť“ v roce 1996. Golfová hřiště navrhoval i na Floridě. Golfové hřiště Alpine Chiang Mai Golf Resort se rozléhá na 178 akrů pozemku, umístěného...',
         4050,
@@ -92,10 +97,11 @@ values ('Alpine Chiang Mai Golf Resort',
         'Ronald M. Garl',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Red Mountain Golf Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('e0f3fc7e-b0aa-4aa9-8a5f-abd941dafa69', 'Red Mountain Golf Club',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'The Red Mountain Golf Club se rychle stalo jedním z asijských nejlepších hřišť již od svého otevření v roce 2007. Hřiště se točí přes drsnou krajinu starého cínového dolu. Hřiště nabízí vzrušující hru a ohromující rozmanitost přírody včetně husté džungle. The Red...',
         4980,
@@ -111,10 +117,11 @@ values ('Red Mountain Golf Club',
         'Johnathan Morrow',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Phuket Country Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('55c850c8-994b-4584-9231-a8960145cea7', 'Phuket Country Club',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'Phuket Country Club byl založen v roce 1989 a jedná se o jedno z nejlepších golfových hřišť na Phuketu a zároveň o úplně první golfové hřiště tohoto ostrova na mezinárodní úrovni, které hostilo již několik národních turnajů. Toto 27 jamkové golfové hřiště je doslova...',
         4050,
@@ -130,10 +137,11 @@ values ('Phuket Country Club',
         'Denis Griffiths',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Mission Hills Phuket Golf Resort & Spa',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('314f8bd1-d5bb-4651-a521-fb27f00cae32', 'Mission Hills Phuket Golf Resort & Spa',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'Golfové hřiště Mission Hills Phuket Golf Resort & Spa je zasazeno mezi kaučukové plantáže a malebném pobřežní mangrovových lesů na severu ostrova Phuket, pouhých 10 min. od mezinárodního letiště. Toto 18 jamkové hřiště je populární volbou pro příležitostné...',
         3600,
@@ -149,10 +157,11 @@ values ('Mission Hills Phuket Golf Resort & Spa',
         'Jack Nicklaus',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Loch Palm Golf Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('88c9ec20-8234-47c9-ba35-bb1ba89151e0', 'Loch Palm Golf Club',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'Golfové hřiště Loch Palm Golf Club bylo postaveno v roce 1993 kolem jezera Crystal Lake, které tvoří největší vodní útvar ze všech golfových hřišť na Phuketu. V okolí hřiště je panoramatické pozadí džungle a krásné hory. Loch Palm Golf Club má hladké svahy a...',
         3900,
@@ -168,10 +177,11 @@ values ('Loch Palm Golf Club',
         'Dr. Sukitti Klangvisai',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Blue Canyon Country Club – Lakes Course',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('81ccfdf7-1a93-4d49-9a6a-5ccb78f8cfc3', 'Blue Canyon Country Club – Lakes Course',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'Blue Canyon Country Club – Lakes Course bylo založeno v roce 1999 architektem Yoshikazu Kato, který vytvořil mistrovské hřiště vysoce všemi oceňované. Architekt využil přírodní krajinu a autentické krásy okolí a vytvořil toto mistrovské náročné golfové hřiště...',
         4850,
@@ -187,10 +197,11 @@ values ('Blue Canyon Country Club – Lakes Course',
         'Yoshikazu Kato',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Blue Canyon Country Club – Canyon Course',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('793c24a5-9497-47ce-b50c-fcd5adb0fba6', 'Blue Canyon Country Club – Canyon Course',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'Blue Canyon Country Club – Canyon Course je hodnoceno jako jedno z nejprestižnějších golfových klubů v Asii, které bylo již min. 4x zvoleno jako nejlepší hřiště v Asii. Hřiště je proslulé díky dvojímu hostování turnaje Johnnie Walker Classics Tournament (1994 a...',
         5650,
@@ -206,10 +217,11 @@ values ('Blue Canyon Country Club – Canyon Course',
         'Yoshikazu Kato',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Springfield Royal Country Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('7902f0c0-6714-4dd6-889f-93e15fa312fe', 'Springfield Royal Country Club',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'Springfield Royal Country Club patří k nejlepším golfovým hřištím v oblasti Hua Hin, která je vzdálená cca 30 minut od centra města a nedaleko Bangkoku. Hřiště svým designem splňuje požadavky mistrovského hřiště a hru si zde naplno užijí hráči všech úrovní....',
         2950,
@@ -225,10 +237,11 @@ values ('Springfield Royal Country Club',
         'Jack Nicklaus',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Sea Pine Golf Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('7bf318aa-0f61-4ba9-beae-ec07970f5331', 'Sea Pine Golf Club',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'Sea Pines Golf Course (také známý jako Army Golf Club II) se nachází u Thajského zálivu v Suan Son Pradiphat (Sea Pine Tree Garden). Golfové hřiště v oblasti Hua Hin leží cca 20 min. od Hua Hin a pláže Suan Son Pradiphat Beach. Toto hřiště bylo kreativně zasazeno na...',
         3400,
@@ -244,10 +257,11 @@ values ('Sea Pine Golf Club',
         'Major General W. Phetbuasak',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Royal Hua Hin Golf Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('d519eb94-2ca9-45b1-9403-96d4c90c7741', 'Royal Hua Hin Golf Club',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'Royal Hua Hin Golf Course je nejstarší 18 ti jamkové mezinárodní golfové hřiště v Thajsku. Ve 2. desetiletí 20. století skotský železniční inženýr jménem O. A. Robins navrhl právě toto 1. golfové hřiště Thajska, které bylo otevřeno již v roce 1924 a leží méně jak...',
         2880,
@@ -263,10 +277,11 @@ values ('Royal Hua Hin Golf Club',
         'A. O. Robins',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Palm Hills Resort & Golf Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('5a3b6c47-caab-44a8-bf0c-03e35d3a2aca', 'Palm Hills Resort & Golf Club',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'Palm Hills Golf Club & Residence nabízí golfové hřiště světové třídy a butikový životní styl a zařízení 80 m n. m. Slibuje nezapomenutelný golfový zážitek v přírodním prostředí, na který budete rádi vzpomínat celý život. To vše v prestižní čtvrti Hua Hin – Cha...',
         2450,
@@ -282,10 +297,11 @@ values ('Palm Hills Resort & Golf Club',
         'Max Wexler',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Majestic Creek Country Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('d79f96f1-035b-4432-b74c-f05717ee4b8f', 'Majestic Creek Country Club',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'V roce 1995 zkušený thajský architekt, Dr Sukitti Klangvisai, vytvořil skutečně skvostné golfové hřiště vetkané do potoků naproti ohromujícímu pozadí pohoří na hranicích s Barmou, nazývané Majestic Creek. Stavitelé hřiště byli opatrní, aby uchovali všechny přírodní...',
         2550,
@@ -301,10 +317,11 @@ values ('Majestic Creek Country Club',
         'Dr. Sukitti Klangvisai',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Imperial Lakeview Golf Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('066f5807-e8ce-4ed2-99e4-443e3980457e', 'Imperial Lakeview Golf Club',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'Imperial Lake View Resort & Golf Club bylo první 36 jamkové golfové hřiště v oblasti Hua Hin – Cha-am, cca 35 min. od centra města. Pokud uvažujete o ideálním útěku do klidného a krásného prostředí nedaleko Bangkoku, pak je Imperial Lake View Resort &...',
         1950,
@@ -320,10 +337,11 @@ values ('Imperial Lakeview Golf Club',
         'Roger Packard',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Black Mountain Golf Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('72f9da16-8af5-4400-a142-b3aa368f6409', 'Black Mountain Golf Club',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'Black Mountain je world-class Championship golfové hřiště a je jedním z nejvíce vzrušujících, vyzývajících a nezapomenutelných hřišť v Asii. Zde zažijete to nejlepší z golfu, krásné prostředí, úžasné výhledy téměř z každé jamky, příjemný design a i mnoho výzev pro...',
         3550,
@@ -339,10 +357,11 @@ values ('Black Mountain Golf Club',
         'Phil Ryan',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Banyan Golf Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('faff6288-eb8c-4938-b9ef-89944e18cb38', 'Banyan Golf Club',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'Mistrovské golfové hřiště Banyan Golf Club s klubovnou již tři roky po sobě získalo hodnocení „nejlepší“ hřiště od Asian Golf Monthly. Hřiště Banyan Golf Club také vystupovalo v Top 1000 od World by Rolex. Hřiště bylo otevřeno v roce 2008 a návštěvníkům zajišťuje...',
         3150,
@@ -358,10 +377,11 @@ values ('Banyan Golf Club',
         'Golf East (Pirapon Namatra)',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Waterford Valley Chiang Rai',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('2853a61c-a0b2-4cd2-86a2-8f4e31682156', 'Waterford Valley Chiang Rai',
         'https://www.thaitour.cz/wp-content/uploads/14-32-220x165.jpg',
         'Waterford Valley Chiang Rai Golf Course je překrásné 18 jamkové hřiště obklopené horami. Golfové hřiště navrhl Mark Rathert a vytvořil mistrovské hřiště. Toto kopcovité hřiště poskytuje vzácný golfový zážitek i pro golfové veterány. K dispozici jsou i různé...',
         1750,
@@ -377,10 +397,11 @@ values ('Waterford Valley Chiang Rai',
         'Rathert International Golf Design',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Santiburi Chiang Rai Country Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('83738dc2-d9ca-4246-96a6-6b6526b64728', 'Santiburi Chiang Rai Country Club',
         'https://www.thaitour.cz/wp-content/uploads/2011343632-220x165.jpg',
         'Santiburi Country Club je první a největší 18 jamkové hřiště, které navrhl jeden z nejlepších designérů světa, designér Robert Trent Jones Jr. Jedná se o jedno z nejlepších golfových hřišť světových designérů. Hřiště leží na severu Thajska a jde o krásný golfový...',
         1890,
@@ -396,10 +417,11 @@ values ('Santiburi Chiang Rai Country Club',
         'Robert Trent Jones Jr.',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Happy City Golf Resort',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('ccca02e4-816d-45d8-a64f-ac763b6b3096', 'Happy City Golf Resort',
         'https://www.thaitour.cz/wp-content/uploads/10897801_586229034811542_6808601147086537999_n-220x165.jpg',
         'Happy City Golf Resort je 29 jamkové mistrovské golfové hřiště v podhůří severního Thajska, které se nachází na malebném pohoří a údolí řek a bylo poprvé otevřeno v roce 2012. Jedná se o nejnovější golfové hřiště v Chiang Rai, které se stále snaží zdokonalovat a...',
         1150,
@@ -415,10 +437,11 @@ values ('Happy City Golf Resort',
         'Daengchuang & Srisuphachaiya',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('St Andrews 2000 Golf Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('8162f403-c866-43d4-96fb-4f3a17c1b180', 'St Andrews 2000 Golf Club',
         'https://www.thaitour.cz/wp-content/uploads/150-338-220x165.jpg',
         'St. Andrews 2000 Golf Club v Rayong, cca 40 min. jízdy od města Pattaya a 2 hodiny od Bangkoku, v roce 2000 navrhl Desmond Muirhead. Toto krásné hřiště se nachází 120 km jihovýchodně od Bangkoku a chvilku od přímořského letoviska Pattaya. Pokud cestujete do Thajska...',
         2250,
@@ -434,10 +457,11 @@ values ('St Andrews 2000 Golf Club',
         'Desmond Muirhead',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Siam Country Club (Old, Plantation, Waterside)',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('c6cfa423-97cd-4248-82db-34cd5bc4953a', 'Siam Country Club (Old, Plantation, Waterside)',
         'https://www.thaitour.cz/wp-content/uploads/siam-country-club-plantation-course-220x165.jpg',
         'Siam Country Club Pattaya nabízí tři hřiště: Old Course, Plantation Course a Waterside Course, všechna jsou vzdálena cca 25 min. jízdy od města Pattaya a navržené Izumi, Schmidt a Curley, IMG Golf Course Design. Pro negolfisty je k dispozici restaurace, sauna,...',
         4700,
@@ -453,10 +477,11 @@ values ('Siam Country Club (Old, Plantation, Waterside)',
         'Izumi, Schmidt a Curley',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Laem Chabang International Country Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('0e9016e3-d35b-4274-9f3b-7531ad827354', 'Laem Chabang International Country Club',
         'https://www.thaitour.cz/wp-content/uploads/golf-laemchabang-220x165.jpg',
         'Při návštěvě Thajska byste si neměli nechat ujít golfové hřiště světového standardu Laem Chabang International Country Club. Toto skvělé hřiště navrhl a doporučuje slavný golfista Jack Nicklaus. Toto mistrovské hřiště je jedním z nejlepších v oblasti Pattaya a...',
         2450,
@@ -472,10 +497,11 @@ values ('Laem Chabang International Country Club',
         'Jack Nicklaus',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Phoenix Golf & Country Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('66eba17b-afe8-4027-9738-74c393b18794', 'Phoenix Golf & Country Club',
         'https://www.thaitour.cz/wp-content/uploads/Phoenix-Golf-Country-Club.jpg-220x165.jpg',
         'Phoenix Golf & Country Club se nachází na zvlněném zalesněném terénu v nádherné zeleni plné eukalyptů, bambusů, mangovníků a květin. Má prostornou klubovnu se střechou v barvách sluníčka. Toto hřiště je příjemným mezníkem pro místní i mezinárodní golfisty....',
         2850,
@@ -491,10 +517,11 @@ values ('Phoenix Golf & Country Club',
         'Dennis Griffiths',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Rayong Green Valley Country Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('95cdf4df-8937-40a9-b559-bb778edc8233', 'Rayong Green Valley Country Club',
         'https://www.thaitour.cz/wp-content/uploads/rayong-green-valley-country-club-510fbc3325f77-220x165.jpg',
         'Rayong Green Valley Country Club přitahuje golfisty, kteří chtějí překonat sami sebe. Příroda a krajina na hřišti má vrchy, skály, balvany, kaktusy, původní faunu a svažující se fairways. Tento přírodní výtvor se i nadále uchoval, když se tato krásná krajina...',
         1880,
@@ -510,10 +537,11 @@ values ('Rayong Green Valley Country Club',
         'Peter Thomson',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Khao Kheow Golf Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('80f59bfd-ca10-4319-bed2-7f6b852dd6f6', 'Khao Kheow Golf Club',
         'https://www.thaitour.cz/wp-content/uploads/Khao-Kheow-B9_shrink-220x165.jpg',
         'Khao Kheow Country Club je 27 jamkové hřiště přírodní elegance s jedinečným designem leží v samém srdci golfového koridoru Pattaya u hlavní silnice při cestě do Bangkoku. Hřiště nabízí hru pro golfové nadšence všech úrovní, jak pro začátečníky, tak pro profesionály....',
         2350,
@@ -529,10 +557,11 @@ values ('Khao Kheow Golf Club',
         'Pete Dye',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Royal Chiang Mai Golf Club & Resort',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('dbd8ff50-66d9-4d47-a0b2-753873dc37da', 'Royal Chiang Mai Golf Club & Resort',
         'https://www.thaitour.cz/wp-content/uploads/Royal-Chaing-Mai-Green-220x165.jpg',
         'Royal Chiang Mai Golf Club & Resort se nachází pouhých 30 min. od města Chiang Mai mezi zalesněnými kopci a chladivými klidnými horskými potoky. Je to skvělé místo pro celou rodinu nejen pro golf, ale i pro rekreaci a odpočinek. Toto úchvatné 18 jamkové hřiště...',
         1900,
@@ -548,10 +577,11 @@ values ('Royal Chiang Mai Golf Club & Resort',
         'Peter Thomson',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Burapha Golf Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('bbd57ecf-992a-4e44-8008-577c77988761', 'Burapha Golf Club',
         'https://www.thaitour.cz/wp-content/uploads/Burapha-Golf-Club-003-220x165.jpg',
         'Burapha Golf Club se nachází v Sriracha, provincii Chonburi ve východní části Thajska a nachází se jen 109 km od Bangkoku a 30 km od města Pattaya, jedné z největších turistických destinací Thajska. Hřiště se nachází v kopcovité krajině v blízkosti nové Chonburi...',
         2850,
@@ -567,10 +597,11 @@ values ('Burapha Golf Club',
         'David Graham & Gary Panks',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Santiburi Samui Country Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('d750d100-39fc-48fa-92ea-32402478b35e', 'Santiburi Samui Country Club',
         'https://www.thaitour.cz/wp-content/uploads/santiburi1-220x165.jpg',
         'Santiburi Samui Country Club je 18 jamkové golfové hřiště, které je známé jako jedno z nejkrásnějších golfových hřišť v Asii a je nezbytnou zastávkou pro PGA Asian Tour po mnoho let. Hřiště bylo zařazeno do TOP 5 golfových hřišť v Thajsku. Santiburi Samui Country...',
         4900,
@@ -586,10 +617,11 @@ values ('Santiburi Samui Country Club',
         'E. Thiele & P. Namatra',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('The Royal Gems Golf City',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('0f4c0fb8-4422-43e2-bfda-4d4e43f37854', 'The Royal Gems Golf City',
         'https://www.thaitour.cz/wp-content/uploads/gl2b-220x165.jpg',
         'Golfisté si často přejí hrát na těch nejlepších golfových hřištích a jsou ochotni cestovat i daleko do světa za největšími a nejlepšími golfovými hřišti. Právě The Royal Gems Golf City je nejnovější a nejvíce vzrušující golfové hřiště v jihovýchodní Asii, jde o...',
         3050,
@@ -605,10 +637,11 @@ values ('The Royal Gems Golf City',
         'Ron Garl',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Thana City Golf Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('b1b6ff98-f106-419d-accc-6b2f0f8caa33', 'Thana City Golf Club',
         'https://www.thaitour.cz/wp-content/uploads/thana-city-004-220x165.jpg',
         'Thana City Golf Club je krásné profesionálně spravované 18 jamkové golfové hřiště, které navrhl designer Greg Norman s použitím hladké trávy, spousty písku a rákosí a vytvořil tak iluzi přímořského hřiště uprostřed největšího rozvoje thajského bydlení. Hřiště bylo...',
         2460,
@@ -624,10 +657,11 @@ values ('Thana City Golf Club',
         'Greg Norman',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Thai Country Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('dd0bae33-0de2-401b-a8e3-69a908e28c2e', 'Thai Country Club',
         'https://www.thaitour.cz/wp-content/uploads/Thai-20CC-20--20Green-220x165.jpg',
         'Thai Country Club je prestižní a nejlepší mistrovské hřiště v Asii dle časopisu Asian Golf Monthly, nejpopulárnější golfové publikace. Až taková čest byla udělena právě golfovému hřišti Thai Country Club. Opakovaně patří do top 5 golfových hřišt v Asii. Vliv značky...',
         4450,
@@ -643,10 +677,11 @@ values ('Thai Country Club',
         'Denis Griffiths',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Suwan Golf & Country Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('e30ee403-0fec-4eb7-a6bb-738fa93a9772', 'Suwan Golf & Country Club',
         'https://www.thaitour.cz/wp-content/uploads/Suwan-Golf-220x165.jpg',
         'Suwan Golf & Country Club je novější hřiště na venkově západně od města Bangkok, které leží jen 45 min. cesty od hřiště a kde si golfisté mohou užívat nejlepší povrch a špičkové šikmé a dramatické greeny. Vesnička v okolí dodává hřišti jedinečnost. V okolí jsou...',
         2050,
@@ -662,10 +697,11 @@ values ('Suwan Golf & Country Club',
         'Weeyos Design',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Riverdale Golf Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('4f025e8a-1eb8-47d0-972f-816833d4c93d', 'Riverdale Golf Club',
         'https://www.thaitour.cz/wp-content/uploads/dv7_0755-220x165.jpg',
         'Riverdale Golf Club se nachází nedaleko města Bangkok v okrese Pathumthani. Hřiště bylo poprvé otevřeno 1.8.2010 a navrženo welským architektem Jonathanem Morrow ...',
         3450,
@@ -681,10 +717,11 @@ values ('Riverdale Golf Club',
         'Jonathan Morrow & Al Tikkanen',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Maung Kaew Golf Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('743478af-e594-40c9-b63a-1dc08f1f6ecc', 'Maung Kaew Golf Club',
         'https://www.thaitour.cz/wp-content/uploads/Muang-20Kaew-200611_H18_3135-220x165.jpg',
         'Mistrovské golfové hřiště s 18 jamkami Muang Kaew Golf Course bylo v roce 2003 předesignováno Lee Schmidtem. Krásné jemné hřiště se zvýšenými greeny nabízí výborné podmínky pro golfovou hru spolu s profesionálními službami. Designer Lee Schmidt umí hřiště navrhnout...',
         2450,
@@ -700,10 +737,11 @@ values ('Maung Kaew Golf Club',
         'Lee Schmidt and Brian Curley',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Lam Luk Ka Country Club Thailand',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('931dce23-60b2-42c1-a4a8-7ab0be0b005e', 'Lam Luk Ka Country Club Thailand',
         'https://www.thaitour.cz/wp-content/uploads/13-West-220x165.jpg',
         'Lam Luk Ka Country Club leží jen kousek od metropole Bangkok a jde o velmi relaxační 36 jamkové golfové hřiště. Nabízí 10.000 stromů, vodní cesty a bujnou přírodu, která je domovem pro více jak 100 druhů volně žijících ptáků a zvířat. K dispozici je hodně stínu...',
         1850,
@@ -719,10 +757,11 @@ values ('Lam Luk Ka Country Club Thailand',
         'Roger Packard',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
 
-insert into golf ( name, image, label   , price , location, latitude, longitude, holes, yard, par, opened, driving_range, opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at,updated_by)
-values ('Alpine Golf & Sports Club',
+insert into golf (id, name, image, label, price, location, latitude, longitude, holes, yard, par, opened, driving_range,
+                  opening_year, yard_designer, is_favorite, is_active, created_at, created_by, updated_at, updated_by)
+values ('6eebb6ea-889e-4aac-a41a-3b153321f147', 'Alpine Golf & Sports Club',
         'https://www.thaitour.cz/wp-content/uploads/bg_1-220x165.jpg',
         'Golfové hřiště Alpine Golf & Sports Club bylo navrženo jedním z nejuznávanějších světových architektů, panem Ronaldem M. Garlem a je jedním z nejlepších golfových hřišť v Thajsku se skvělým hodnocením. Leží jen 15 min. od mezinárodního letiště...',
         7400,
@@ -738,4 +777,4 @@ values ('Alpine Golf & Sports Club',
         'Ronald M. Garl',
         false,
         true,
-        null, 'ADMIN' , null, null);
+        null, 'ADMIN', null, null);
