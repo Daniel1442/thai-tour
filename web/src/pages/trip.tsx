@@ -24,6 +24,7 @@ const Trip = () => {
     }, [width]);
 
     useEffect(() => {
+        console.log(id)
         fetchTrip(id as string)
     }, [id]);
 

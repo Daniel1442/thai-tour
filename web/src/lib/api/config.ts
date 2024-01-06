@@ -9,8 +9,15 @@ const API_CONFIG = {
 
     GET_PLACE_PARAMETER: () =>  `http://164.90.210.212:8080/api/v1/catalog/parameters/list`,
 
-    GET_TRIP_LIST: () =>  'http://164.90.210.212:8080/api/v1/catalog/trip/finder',
+    GET_PARAMETER: () =>  `http://164.90.210.212:8080/api/v1/catalog/parameters/trip/list`,
+
+    GET_CITIES_PARAMETER: () =>  `http://164.90.210.212:8080/api/v1/catalog/parameters/list-cities`,
+
+    TRIP_LIST: () =>  'http://164.90.210.212:8080/api/v1/catalog/trip/finder',
     GET_TRIP_DETAIL: (tripId: string) =>  `http://164.90.210.212:8080/api/v1/catalog/trip/${tripId}`,
+
+    GOLF_LIST: () =>  'http://164.90.210.212:8080/api/v1/catalog/golf/finder',
+    GET_GOLF_DETAIL: (golfId: string) =>  `http://164.90.210.212:8080/api/v1/catalog/golf/${golfId}`,
 
     GET_BLOG_LIST: () => 'http://164.90.210.212:8080/api/v1/catalog/article/finder',
     GET_BLOG_DETAIL: (blogId: string) => `http://164.90.210.212:8080/api/v1/catalog/article/${blogId}`,

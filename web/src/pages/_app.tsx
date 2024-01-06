@@ -9,6 +9,7 @@ import MobileFooter from "../modules/common/components/mobileFooter";
 import Footer from "../modules/common/components/footer";
 import ArticleContextProvider from "../context/blogContext";
 import TripContextProvider from "../context/tripContext";
+import GolfContextProvider from "../context/golfContext";
 
 type AppProps<P = any> = {
     pageProps: P;
@@ -18,6 +19,7 @@ export default function App({Component, pageProps}: AppProps): JSX.Element {
         <PlaceContextProvider>
             <ArticleContextProvider>
             <TripContextProvider>
+            <GolfContextProvider>
                 <div className={'homepage'}>
                     <Header/>
                     <Navigation/>
@@ -26,6 +28,7 @@ export default function App({Component, pageProps}: AppProps): JSX.Element {
                     <Footer href={''} contact={''}/>
                     <MobileFooter href={''} contact={''}/>
                 </div>
+            </GolfContextProvider>
             </TripContextProvider>
             </ArticleContextProvider>
         </PlaceContextProvider>

@@ -1,9 +1,10 @@
 import React, {useContext, useEffect} from "react";
-import PlaceTripCard from "../modules/travelCatalog/components/placeTripCard";
 import PlaceTripInfo from "../modules/travelCatalog/components/placeTripInfo";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 import {useRouter} from "next/router";
 import {TripContent, TripContext} from "../context/tripContext";
+import TripCitiesCard from "../modules/travelCatalog/components/tripCitiesCard";
+import {CityRow} from "../modules/homepage/models";
 
 const TripCatalog = () => {
 
@@ -16,12 +17,12 @@ const TripCatalog = () => {
     const router = useRouter()
 
     const {
-        tripList,
-        filterTripF
+        fetchCity,
+        cities
     } = useContext(TripContext) as TripContent;
 
     useEffect(() => {
-        filterTripF()
+        fetchCity()
     }, [router]);
 
     return (<div className={'container'}>
@@ -31,8 +32,8 @@ const TripCatalog = () => {
                 <h3 className={'mt-5 mb-3'}>Destinace pro výlety v Thajsku</h3>
             </div>
 
-            {tripList && tripList.map((trip) => { return <PlaceTripCard trip={trip}/>})}
-
+            {cities && cities.map((city) => { return <TripCitiesCard city={city}/>})}
+            <TripCitiesCard city={{id: "", icon:"http://www.thaitour.cz/wp-content/themes/twentyten/images/vylet_vse.jpg", name: "Zobrazit vše"} as CityRow}/>
         </div>
         <div className={'row'}>
             <div className={'col-lg-4 col-sm-0'}>

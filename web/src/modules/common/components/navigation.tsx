@@ -94,7 +94,7 @@ const Navigation: React.FC = () => {
                                 <a href="/airplaneTickets" className="nav-item nav-link font-white">Letenky</a>
                                 <a href="/transfer" className="nav-item nav-link font-white">Transfer</a>
                                 <a href="/tripCatalog" className="nav-item nav-link font-white">Výlety</a>
-                                <a href="/thaiGolf" className="nav-item nav-link font-white">Golf</a>
+                                <a href="/golfCatalog" className="nav-item nav-link font-white">Golf</a>
                                 <a href="/blog" className="nav-item nav-link font-white">Novinky</a>
                                 <DropdownAboutUs name={'O nás'} link={'/aboutUs'}/>
                             </div>

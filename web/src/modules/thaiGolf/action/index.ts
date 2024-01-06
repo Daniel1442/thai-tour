@@ -1,14 +1,14 @@
 import axios from "axios";
 import API_CONFIG from "../../../lib/api/config";
-import {TripFinderPayload} from "../../homepage/models";
+import {GolfFinderPayload} from "../module";
 
-export const getDetail = (tripId: string) => {
-    return axios.get(API_CONFIG.GET_TRIP_DETAIL(tripId))
+export const getDetail = (golfId: string) => {
+    return axios.get(API_CONFIG.GET_GOLF_DETAIL(golfId))
         .then(response => response.data)
 }
 
-export const filterTrip = (payload: TripFinderPayload) => {
-    return axios.post(API_CONFIG.TRIP_LIST(), payload)
+export const filterGolf = (payload: GolfFinderPayload) => {
+    return axios.post(API_CONFIG.GOLF_LIST(), payload)
         .then(response => response.data)
 }
 

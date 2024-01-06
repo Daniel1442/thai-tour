@@ -109,6 +109,10 @@ export interface PlaceFinderPayload {
     parameterValuesList: [];
 }
 
+export interface TripFinderPayload {
+    parameterValuesList: [];
+}
+
 export interface TripRow {
     id: string;
     image: string;
@@ -126,7 +130,14 @@ export interface TripRow {
     isActive: boolean;
 }
 
-export interface TripDetail {
+
+export interface CityRow {
+    id: string;
+    icon: string;
+    name: string;
+}
+
+export interface GolfDetail {
     id: string;
     name: string;
     image: string;

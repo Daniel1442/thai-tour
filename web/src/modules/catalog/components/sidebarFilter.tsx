@@ -6,14 +6,11 @@ import SidebarFilterParent from "./sidebarFilterParent";
 
 export interface FilterParams {
     params: PlaceParameters[]
+    type: string
 }
 
-const SidebarFilter: React.FC<FilterParams> = ({params}) => {
+const SidebarFilter: React.FC<FilterParams> = ({params, type}) => {
 
-
-    let width = typeof window !== 'undefined' && window.innerWidth;
-
-    console.log(params)
     return (
         <div className={'destinationSideBar background-white rounded px-3 pb-3 pt-0 mobilePaddingColumn'}>
             <div className={'row'}>
@@ -25,7 +22,7 @@ const SidebarFilter: React.FC<FilterParams> = ({params}) => {
             </div>
             {params && params.map((parameter, index) => {
                 return (
-                    <SidebarFilterParent name={parameter.name} childrenParams={parameter.parameterValueList}/>
+                    <SidebarFilterParent name={parameter.name} childrenParams={parameter.parameterValueList} type={type}/>
                 )
             })}
         </div>
