@@ -20,7 +20,7 @@ spring:
   datasource:
     jdbc-url: 'jdbc:postgresql://thai_tour/postgres?currentSchema=public&sslmode=disable'
     username: postgres
-    password: root
+    password: new_password
   jpa:
     hibernate:
       ddl-auto: validate
