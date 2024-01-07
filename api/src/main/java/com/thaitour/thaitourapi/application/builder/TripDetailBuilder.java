@@ -2,6 +2,8 @@ package com.thaitour.thaitourapi.application.builder;
 
 import com.thaitour.thaitourapi.domain.dto.catalog.place.PlaceDetail;
 import com.thaitour.thaitourapi.domain.dto.catalog.trip.TripDetail;
+import com.thaitour.thaitourapi.domain.dto.catalog.trip.TripDetail.TripContent;
+import com.thaitour.thaitourapi.domain.dto.catalog.trip.TripDetail.TripImageList;
 import com.thaitour.thaitourapi.domain.entity.Trip;
 import com.thaitour.thaitourapi.domain.exception.ThaiTourException;
 import com.thaitour.thaitourapi.domain.repository.TripRepository;
@@ -25,17 +27,17 @@ public class TripDetailBuilder {
                 .image(trip.getImage())
                 .name(trip.getName())
                 .tripImageListList(trip.getImages().stream()
-                        .map(tripImage -> TripDetail.TripImageList.builder()
+                        .map(tripImage -> TripImageList.builder()
                                 .original(tripImage.getTarget())
                                 .thumbnail(tripImage.getTarget())
                                 .build()).toList())
                 .tripContentsList(trip.getContents().stream()
-                        .map(tripContent -> TripDetail.TripContent.builder()
+                        .map(tripContent -> TripContent.builder()
                                 .id(tripContent.getId())
                                 .value(tripContent.getValue())
                                 .type(tripContent.getContentType())
                                 .isActive(tripContent.getIsActive()
-                                ).build()).sorted(Comparator.comparing(TripDetail.TripContent::getPriority)).collect(Collectors.toList()))
+                                ).build()).toList())
                 .guide(trip.getGuide())
                 .location(trip.getLocation())
                 .capacity(trip.getCapacity())
