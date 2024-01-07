@@ -1,16 +1,16 @@
 import React, {useContext, useEffect} from "react";
-import InformationImageCard from "../modules/destination/components/informationImageCard";
+import InformationImageCard from "../modules/destination/components/detail/informationImageCard";
 import {useRouter} from "next/router";
 import {PlaceContent, PlaceContext} from "../context/placeContext";
 import Loader from "../modules/common/components/loader";
-import DestinationHeading from "../modules/destination/components/destinationHeading";
-import DestinationSidebarNew from "../modules/destination/components/destinationSidebarNew";
-import DestinationNavbar from "../modules/destination/components/destinationNavbar";
-import AboutDestinationNew from "../modules/destination/components/aboutDestinationNew";
-import DestinationHeadingMobile from "../modules/destination/components/destinationHeadingMobile";
-import DestinationRoom from "../modules/destination/components/destinationRoom";
-import DestinationMap from "../modules/destination/components/destinationMap";
-import DestinationWeather from "../modules/destination/components/destinationWeather";
+import DestinationHeading from "../modules/destination/components/detail/destinationHeading";
+import DestinationSidebarNew from "../modules/destination/components/detail/sidebar/destinationSidebarNew";
+import DestinationNavbar from "../modules/destination/components/detail/destinationNavbar";
+import AboutDestinationNew from "../modules/destination/components/detail/aboutDestinationNew";
+import DestinationHeadingMobile from "../modules/destination/components/detail/destinationHeadingMobile";
+import DestinationRoom from "../modules/destination/components/detail/room/destinationRoom";
+import DestinationMap from "../modules/destination/components/detail/destinationMap";
+import DestinationWeather from "../modules/destination/components/detail/destinationWeather";
 
 const Destination = () => {
     let width = typeof window !== 'undefined' && window.innerWidth;

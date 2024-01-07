@@ -4,8 +4,8 @@ import {faAngleDown, faIcons} from "@fortawesome/free-solid-svg-icons";
 import {useRouter} from "next/router";
 import {PlaceParameterValue} from "../../homepage/models";
 import SidebarFilterChildren from "./sidebarFilterChildren";
-import SidebarFilterTripChildren from "../../trip/components/SidebarFilterTripChildren";
-import SidebarFilterGolfChildren from "../../thaiGolf/components/sidebarFilterGolfChildren";
+import SidebarFilterTripChildren from "../../trip/components/tripList/SidebarFilterTripChildren";
+import SidebarFilterGolfChildren from "../../thaiGolf/components/golfList/sidebarFilterGolfChildren";
 
 interface ComponentProps {
     name: string

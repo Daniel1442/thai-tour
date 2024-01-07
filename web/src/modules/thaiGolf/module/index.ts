@@ -30,9 +30,9 @@ export interface GolfDetail {
     drivingRange: string;
     openingYear: string;
     yardDesigner: string;
-    contents: GolfContent;
-    images: GolfImage;
-    prices: GolfPrice;
+    contents: GolfContent[];
+    images: GolfImage[];
+    prices: GolfPrice[];
 }
 
 export interface GolfContent {

@@ -16,6 +16,8 @@ export type GolfContent = {
     fetchGolf: (id: string) => void
     filterGolfF: (payload: GolfFinderPayload) => void
     fetchCity: () => void
+    golfDescriptionType: string
+    setGolfDescriptionType:  (type: string) => void
     golfList: GolfDetail[]
 }
 export const GolfContext = createContext<GolfContent | null>(null);
@@ -30,6 +32,8 @@ const GolfContextProvider: React.FC<React.ReactNode> = ({children}) => {
     const [golfList, setGolfList] = useState<GolfDetail[]>([]);
     const [parameters, setParameterList] =  useState<PlaceParameters[]>([]);
     const [cities, setCities] = useState<CityRow[]>([]);
+    const [golfDescriptionType, setGolfDescriptionType] = useState<string>('ABOUT');
+
 
     const fetchGolf = (id: string) => {
         getDetail(id as string).then((golf: any) => {
@@ -66,6 +70,8 @@ const GolfContextProvider: React.FC<React.ReactNode> = ({children}) => {
 
     return <GolfContext.Provider value={{
         golf,
+        golfDescriptionType,
+        setGolfDescriptionType,
         cities,
         payload,
         fetchParameters,

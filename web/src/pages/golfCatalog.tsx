@@ -1,10 +1,10 @@
 import React, {useContext, useEffect} from "react";
 import {useRouter} from "next/router";
 import {CityRow} from "../modules/homepage/models";
-import GolfParagraph from "../modules/thaiGolf/components/golfParagraphWithImage";
+import GolfParagraph from "../modules/thaiGolf/components/cityList/golfParagraphWithImage";
 import {Alert} from "react-bootstrap";
 import {GolfContent, GolfContext} from "../context/golfContext";
-import GolfCitiesCard from "../modules/thaiGolf/components/golfCitiesCard";
+import GolfCitiesCard from "../modules/thaiGolf/components/cityList/golfCitiesCard";
 
 const GolfCatalog = () => {
 

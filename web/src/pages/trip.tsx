@@ -1,11 +1,11 @@
 import React, {useContext, useEffect} from "react";
-import InformationImageCard from "../modules/destination/components/informationImageCard";
+import InformationImageCard from "../modules/destination/components/detail/informationImageCard";
 import {useRouter} from "next/router";
 import Loader from "../modules/common/components/loader";
-import TripSidebar from "../modules/trip/components/tripSidebar";
-import AboutTrip from "../modules/trip/components/aboutTrip";
-import TripHeading from "../modules/trip/components/tripHeading";
-import TripHeadingMobile from "../modules/trip/components/tripHeadingMobile";
+import TripSidebar from "../modules/trip/components/detail/tripSidebar";
+import AboutTrip from "../modules/trip/components/detail/aboutTrip";
+import TripHeading from "../modules/trip/components/detail/tripHeading";
+import TripHeadingMobile from "../modules/trip/components/detail/tripHeadingMobile";
 import {TripContent, TripContext} from "../context/tripContext";
 
 const Trip = () => {

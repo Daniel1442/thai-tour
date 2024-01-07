@@ -1,9 +1,9 @@
 import React, {useContext, useEffect} from "react";
 import {useRouter} from "next/router";
-import BlogParagraph from "../modules/blog/components/blogParagraph";
-import BlogSidebar from "../modules/blog/components/blogSidebar";
-import AboutAuthor from "../modules/blog/components/aboutAuthor";
-import SuggestionList from "../modules/blog/components/suggestionList";
+import BlogParagraph from "../modules/blog/components/list/blogParagraph";
+import BlogSidebar from "../modules/blog/components/detail/blogSidebar";
+import AboutAuthor from "../modules/blog/components/detail/aboutAuthor";
+import SuggestionList from "../modules/blog/components/detail/suggestionList";
 import {ArticleContent, ArticleContext} from "../context/blogContext";
 
 const Article = () => {

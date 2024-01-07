@@ -3,8 +3,8 @@ import {useRouter} from "next/router";
 import SidebarFilter from "../modules/catalog/components/sidebarFilter";
 import {GolfContent, GolfContext} from "../context/golfContext";
 import {GolfFinderPayload} from "../modules/thaiGolf/module";
-import CatalogItem from "../modules/thaiGolf/components/catalogItem";
-import CatalogItemMobile from "../modules/thaiGolf/components/catalogItemMobile";
+import CatalogItem from "../modules/thaiGolf/components/golfList/catalogItem";
+import CatalogItemMobile from "../modules/thaiGolf/components/golfList/catalogItemMobile";
 
 const GolfList = () => {
     const router = useRouter()
@@ -28,11 +28,8 @@ const GolfList = () => {
 
     useEffect(() => {
         if (payload == null) {
-            console.log('zde')
             filterGolfF({} as GolfFinderPayload)
         } else {
-            console.log('i  zde')
-            console.log(payload)
             filterGolfF(payload as GolfFinderPayload)
         }
     }, [router, payload]);

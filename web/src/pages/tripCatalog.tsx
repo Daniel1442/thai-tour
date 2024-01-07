@@ -1,9 +1,9 @@
 import React, {useContext, useEffect} from "react";
-import PlaceTripInfo from "../modules/travelCatalog/components/placeTripInfo";
+import PlaceTripInfo from "../modules/trip/components/cityList/placeTripInfo";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 import {useRouter} from "next/router";
 import {TripContent, TripContext} from "../context/tripContext";
-import TripCitiesCard from "../modules/travelCatalog/components/tripCitiesCard";
+import TripCitiesCard from "../modules/trip/components/cityList/tripCitiesCard";
 import {CityRow} from "../modules/homepage/models";
 
 const TripCatalog = () => {

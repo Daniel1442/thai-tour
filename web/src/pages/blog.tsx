@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from "react";
 import {useRouter} from "next/router";
 import {ArticleFinderPayload} from "../modules/blog/models";
-import ArticleItem from "../modules/blog/components/blogRowOne";
+import ArticleItem from "../modules/blog/components/list/blogRowOne";
 import {ArticleContent, ArticleContext} from "../context/blogContext";
 
 const Blog = () => {

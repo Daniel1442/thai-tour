@@ -1,9 +1,9 @@
 import React, {useContext, useEffect} from "react";
 import {useRouter} from "next/router";
 import {TripFinderPayload} from "../modules/homepage/models";
-import CatalogItemMobile from "../modules/travelCatalog/components/catalogItemMobile";
+import CatalogItemMobile from "../modules/trip/components/tripList/catalogItemMobile";
 import {TripContent, TripContext} from "../context/tripContext";
-import CatalogItem from "../modules/travelCatalog/components/catalogItem";
+import CatalogItem from "../modules/trip/components/tripList/catalogItem";
 import SidebarFilter from "../modules/catalog/components/sidebarFilter";
 
 const TripList = () => {

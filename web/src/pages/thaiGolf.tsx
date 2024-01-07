@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
-import PlaceTripCard from "../modules/travelCatalog/components/placeTripCard";
-import GolfParagraph from "../modules/thaiGolf/components/golfParagraphWithImage";
+import PlaceTripCard from "../modules/trip/components/cityList/placeTripCard";
+import GolfParagraph from "../modules/thaiGolf/components/cityList/golfParagraphWithImage";
 import {Alert} from "react-bootstrap";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 import {TripRow} from "../modules/homepage/models";
